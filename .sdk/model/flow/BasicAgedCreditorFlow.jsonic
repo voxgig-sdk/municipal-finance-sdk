@@ -1,0 +1,22 @@
+# BasicAgedCreditorFlow
+
+main: kit: flow: BasicAgedCreditorFlow:
+{
+  entity: "aged_creditor",
+  kind: "basic",
+  name: "BasicAgedCreditorFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "aged_creditor_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAgedCreditorFlow"
+}

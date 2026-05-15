@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "fact": {
+      "FACT00": {
+        "cell": [],
+        "summary": {},
+        "total_cell_count": "s20"
+      },
+      "FACT01": {
+        "cell": [],
+        "summary": {},
+        "total_cell_count": "s3e"
+      },
+      "FACT02": {
+        "cell": [],
+        "summary": {},
+        "total_cell_count": "s5c"
+      }
+    }
+  },
+  "new": {
+    "fact": {
+      "fact_ref01": {
+        "cell": [],
+        "summary": {},
+        "total_cell_count": "s7a"
+      }
+    }
+  }
+}

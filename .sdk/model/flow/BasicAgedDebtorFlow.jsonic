@@ -1,0 +1,22 @@
+# BasicAgedDebtorFlow
+
+main: kit: flow: BasicAgedDebtorFlow:
+{
+  entity: "aged_debtor",
+  kind: "basic",
+  name: "BasicAgedDebtorFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "aged_debtor_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAgedDebtorFlow"
+}

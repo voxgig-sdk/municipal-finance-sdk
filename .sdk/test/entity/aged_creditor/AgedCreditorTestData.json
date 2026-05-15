@@ -1,0 +1,70 @@
+{
+  "existing": {
+    "aged_creditor": {
+      "AGED_CREDITOR00": {
+        "amount_sum": 130,
+        "amount_type_code": "s83",
+        "amount_type_label": "s84",
+        "demarcation_code": "s85",
+        "demarcation_label": "s86",
+        "financial_period_period": "s87",
+        "financial_year_end_year": "s88",
+        "item_code": "s89",
+        "item_composition": "s8a",
+        "item_label": "s8b",
+        "item_position_in_return_form": "s8c",
+        "item_return_form_structure": "s8d",
+        "period_length_length": "s8e"
+      },
+      "AGED_CREDITOR01": {
+        "amount_sum": 260,
+        "amount_type_code": "s105",
+        "amount_type_label": "s106",
+        "demarcation_code": "s107",
+        "demarcation_label": "s108",
+        "financial_period_period": "s109",
+        "financial_year_end_year": "s10a",
+        "item_code": "s10b",
+        "item_composition": "s10c",
+        "item_label": "s10d",
+        "item_position_in_return_form": "s10e",
+        "item_return_form_structure": "s10f",
+        "period_length_length": "s110"
+      },
+      "AGED_CREDITOR02": {
+        "amount_sum": 390,
+        "amount_type_code": "s187",
+        "amount_type_label": "s188",
+        "demarcation_code": "s189",
+        "demarcation_label": "s18a",
+        "financial_period_period": "s18b",
+        "financial_year_end_year": "s18c",
+        "item_code": "s18d",
+        "item_composition": "s18e",
+        "item_label": "s18f",
+        "item_position_in_return_form": "s190",
+        "item_return_form_structure": "s191",
+        "period_length_length": "s192"
+      }
+    }
+  },
+  "new": {
+    "aged_creditor": {
+      "aged_creditor_ref01": {
+        "amount_sum": 520,
+        "amount_type_code": "s209",
+        "amount_type_label": "s20a",
+        "demarcation_code": "s20b",
+        "demarcation_label": "s20c",
+        "financial_period_period": "s20d",
+        "financial_year_end_year": "s20e",
+        "item_code": "s20f",
+        "item_composition": "s210",
+        "item_label": "s211",
+        "item_position_in_return_form": "s212",
+        "item_return_form_structure": "s213",
+        "period_length_length": "s214"
+      }
+    }
+  }
+}

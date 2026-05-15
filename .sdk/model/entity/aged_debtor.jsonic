@@ -1,0 +1,236 @@
+# Entity: aged_debtor
+
+main: kit: entity: aged_debtor: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "amount_sum"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "amount_type_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "amount_type_label"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "customer_group_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "demarcation_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "demarcation_label"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "financial_period_period"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "financial_year_end_year"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "item_code"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "item_composition"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "item_label"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "item_position_in_return_form"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "item_return_form_structure"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "period_length_length"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "aged_debtor"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "aggregate"
+                orig: "aggregate"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "financial_year_end.year:2020|customer_group.code:households"
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "item.code|customer_group.code"
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "order"
+                orig: "order"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 10000
+                kind: "query"
+                name: "pagesize"
+                orig: "pagesize"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/aged_debtor/facts"
+          parts: [
+            "cubes"
+            "aged_debtor"
+            "facts"
+          ]
+          select: {
+            "$action": "fact"
+            exist: [
+              "aggregate"
+              "cut"
+              "drilldown"
+              "order"
+              "page"
+              "pagesize"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "aggregate"
+                orig: "aggregate"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "order"
+                orig: "order"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 0
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                example: 10000
+                kind: "query"
+                name: "pagesize"
+                orig: "pagesize"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/aged_debtor_v2/facts"
+          parts: [
+            "cubes"
+            "aged_debtor_v2"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "aggregate"
+              "cut"
+              "drilldown"
+              "order"
+              "page"
+              "pagesize"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

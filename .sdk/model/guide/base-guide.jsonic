@@ -1,0 +1,82 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 3
+  metrics: count: path: 21
+  metrics: count: method: 21
+
+  entity: aged_creditor: {
+    path: "/cubes/aged_creditor/facts": {
+      action: "fact": {}
+      op: list: method: *GET
+    }
+    path: "/cubes/aged_creditor_v2/facts": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: aged_debtor: {
+    path: "/cubes/aged_debtor/facts": {
+      action: "fact": {}
+      op: list: method: *GET
+    }
+    path: "/cubes/aged_debtor_v2/facts": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: fact: {
+    path: "/cubes/audit_opinions/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/bsheet/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/capital/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/capital_v2/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/cflow/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/cflow_v2/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/conditional_grants/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/demarcation_changes/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/financial_position_v2/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/grants_v2/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/incexp/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/incexp_v2/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/municipalities/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/officials/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/repmaint/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/repmaint_v2/facts": {
+      op: list: method: *GET
+    }
+    path: "/cubes/uifwexp/facts": {
+      op: list: method: *GET
+    }
+  }
+
+}

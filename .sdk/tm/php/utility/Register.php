@@ -1,0 +1,67 @@
+<?php
+declare(strict_types=1);
+
+// MunicipalFinance SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+MunicipalFinanceUtility::setRegistrar(function (MunicipalFinanceUtility $u): void {
+    $u->clean = [MunicipalFinanceClean::class, 'call'];
+    $u->done = [MunicipalFinanceDone::class, 'call'];
+    $u->make_error = [MunicipalFinanceMakeError::class, 'call'];
+    $u->feature_add = [MunicipalFinanceFeatureAdd::class, 'call'];
+    $u->feature_hook = [MunicipalFinanceFeatureHook::class, 'call'];
+    $u->feature_init = [MunicipalFinanceFeatureInit::class, 'call'];
+    $u->fetcher = [MunicipalFinanceFetcher::class, 'call'];
+    $u->make_fetch_def = [MunicipalFinanceMakeFetchDef::class, 'call'];
+    $u->make_context = [MunicipalFinanceMakeContext::class, 'call'];
+    $u->make_options = [MunicipalFinanceMakeOptions::class, 'call'];
+    $u->make_request = [MunicipalFinanceMakeRequest::class, 'call'];
+    $u->make_response = [MunicipalFinanceMakeResponse::class, 'call'];
+    $u->make_result = [MunicipalFinanceMakeResult::class, 'call'];
+    $u->make_point = [MunicipalFinanceMakePoint::class, 'call'];
+    $u->make_spec = [MunicipalFinanceMakeSpec::class, 'call'];
+    $u->make_url = [MunicipalFinanceMakeUrl::class, 'call'];
+    $u->param = [MunicipalFinanceParam::class, 'call'];
+    $u->prepare_auth = [MunicipalFinancePrepareAuth::class, 'call'];
+    $u->prepare_body = [MunicipalFinancePrepareBody::class, 'call'];
+    $u->prepare_headers = [MunicipalFinancePrepareHeaders::class, 'call'];
+    $u->prepare_method = [MunicipalFinancePrepareMethod::class, 'call'];
+    $u->prepare_params = [MunicipalFinancePrepareParams::class, 'call'];
+    $u->prepare_path = [MunicipalFinancePreparePath::class, 'call'];
+    $u->prepare_query = [MunicipalFinancePrepareQuery::class, 'call'];
+    $u->result_basic = [MunicipalFinanceResultBasic::class, 'call'];
+    $u->result_body = [MunicipalFinanceResultBody::class, 'call'];
+    $u->result_headers = [MunicipalFinanceResultHeaders::class, 'call'];
+    $u->transform_request = [MunicipalFinanceTransformRequest::class, 'call'];
+    $u->transform_response = [MunicipalFinanceTransformResponse::class, 'call'];
+});

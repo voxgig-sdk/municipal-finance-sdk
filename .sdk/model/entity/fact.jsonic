@@ -1,0 +1,665 @@
+# Entity: fact
+
+main: kit: entity: fact: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "cell"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "summary"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "total_cell_count"
+      req: false
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "fact"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/audit_opinions/facts"
+          parts: [
+            "cubes"
+            "audit_opinions"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/bsheet/facts"
+          parts: [
+            "cubes"
+            "bsheet"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/capital/facts"
+          parts: [
+            "cubes"
+            "capital"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/capital_v2/facts"
+          parts: [
+            "cubes"
+            "capital_v2"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/cflow/facts"
+          parts: [
+            "cubes"
+            "cflow"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/cflow_v2/facts"
+          parts: [
+            "cubes"
+            "cflow_v2"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/conditional_grants/facts"
+          parts: [
+            "cubes"
+            "conditional_grants"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/demarcation_changes/facts"
+          parts: [
+            "cubes"
+            "demarcation_changes"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/financial_position_v2/facts"
+          parts: [
+            "cubes"
+            "financial_position_v2"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/grants_v2/facts"
+          parts: [
+            "cubes"
+            "grants_v2"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/incexp/facts"
+          parts: [
+            "cubes"
+            "incexp"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/incexp_v2/facts"
+          parts: [
+            "cubes"
+            "incexp_v2"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/municipalities/facts"
+          parts: [
+            "cubes"
+            "municipalities"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/officials/facts"
+          parts: [
+            "cubes"
+            "officials"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/repmaint/facts"
+          parts: [
+            "cubes"
+            "repmaint"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/repmaint_v2/facts"
+          parts: [
+            "cubes"
+            "repmaint_v2"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "cut"
+                orig: "cut"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "drilldown"
+                orig: "drilldown"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/cubes/uifwexp/facts"
+          parts: [
+            "cubes"
+            "uifwexp"
+            "facts"
+          ]
+          select: {
+            exist: [
+              "cut"
+              "drilldown"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

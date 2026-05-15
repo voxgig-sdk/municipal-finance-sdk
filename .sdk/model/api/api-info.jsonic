@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "OpenUp and National Treasury"
+        url: "https://municipaldata.treasury.gov.za/docs#general"
+      }
+      description: "This API provides access to current and historical financial data from South African municipalities, enabling users to gather insights about municipal finances. It includes data sets covering various aspects of municipal financial performance and accountability, sourced from the National Treasury."
+      servers: [
+        {
+          description: "Production API Server"
+          url: "https://municipaldata.treasury.gov.za/api"
+        }
+      ]
+      termsOfService: "https://municipaldata.treasury.gov.za/docs#general"
+      title: "Municipal Finance API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

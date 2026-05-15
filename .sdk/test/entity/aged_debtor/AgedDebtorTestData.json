@@ -1,0 +1,74 @@
+{
+  "existing": {
+    "aged_debtor": {
+      "AGED_DEBTOR00": {
+        "amount_sum": 140,
+        "amount_type_code": "s8d",
+        "amount_type_label": "s8e",
+        "customer_group_code": "s8f",
+        "demarcation_code": "s90",
+        "demarcation_label": "s91",
+        "financial_period_period": "s92",
+        "financial_year_end_year": "s93",
+        "item_code": "s94",
+        "item_composition": "s95",
+        "item_label": "s96",
+        "item_position_in_return_form": "s97",
+        "item_return_form_structure": "s98",
+        "period_length_length": "s99"
+      },
+      "AGED_DEBTOR01": {
+        "amount_sum": 280,
+        "amount_type_code": "s119",
+        "amount_type_label": "s11a",
+        "customer_group_code": "s11b",
+        "demarcation_code": "s11c",
+        "demarcation_label": "s11d",
+        "financial_period_period": "s11e",
+        "financial_year_end_year": "s11f",
+        "item_code": "s120",
+        "item_composition": "s121",
+        "item_label": "s122",
+        "item_position_in_return_form": "s123",
+        "item_return_form_structure": "s124",
+        "period_length_length": "s125"
+      },
+      "AGED_DEBTOR02": {
+        "amount_sum": 420,
+        "amount_type_code": "s1a5",
+        "amount_type_label": "s1a6",
+        "customer_group_code": "s1a7",
+        "demarcation_code": "s1a8",
+        "demarcation_label": "s1a9",
+        "financial_period_period": "s1aa",
+        "financial_year_end_year": "s1ab",
+        "item_code": "s1ac",
+        "item_composition": "s1ad",
+        "item_label": "s1ae",
+        "item_position_in_return_form": "s1af",
+        "item_return_form_structure": "s1b0",
+        "period_length_length": "s1b1"
+      }
+    }
+  },
+  "new": {
+    "aged_debtor": {
+      "aged_debtor_ref01": {
+        "amount_sum": 560,
+        "amount_type_code": "s231",
+        "amount_type_label": "s232",
+        "customer_group_code": "s233",
+        "demarcation_code": "s234",
+        "demarcation_label": "s235",
+        "financial_period_period": "s236",
+        "financial_year_end_year": "s237",
+        "item_code": "s238",
+        "item_composition": "s239",
+        "item_label": "s23a",
+        "item_position_in_return_form": "s23b",
+        "item_return_form_structure": "s23c",
+        "period_length_length": "s23d"
+      }
+    }
+  }
+}
