@@ -3,9 +3,9 @@ package utility
 import (
 	"strings"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/municipal-finance-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/municipal-finance-sdk/core"
+	"github.com/voxgig-sdk/municipal-finance-sdk/go/core"
 )
 
 func makeSpecUtil(ctx *core.Context) (*core.Spec, error) {

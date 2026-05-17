@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/municipal-finance-sdk/core"
+	"github.com/voxgig-sdk/municipal-finance-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/municipal-finance-sdk/go/utility/struct"
 )
 
 type FactEntity struct {

@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/municipal-finance-sdk"
-	"github.com/voxgig-sdk/municipal-finance-sdk/core"
+	sdk "github.com/voxgig-sdk/municipal-finance-sdk/go"
+	"github.com/voxgig-sdk/municipal-finance-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/municipal-finance-sdk/go/utility/struct"
 )
 
 func TestFactEntity(t *testing.T) {

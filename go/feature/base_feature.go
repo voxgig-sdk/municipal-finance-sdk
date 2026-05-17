@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/municipal-finance-sdk/core"
+	"github.com/voxgig-sdk/municipal-finance-sdk/go/core"
 )
 
 type BaseFeature struct {

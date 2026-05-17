@@ -1,10 +1,10 @@
 package voxgigmunicipalfinancesdk
 
 import (
-	"github.com/voxgig-sdk/municipal-finance-sdk/core"
-	"github.com/voxgig-sdk/municipal-finance-sdk/entity"
-	"github.com/voxgig-sdk/municipal-finance-sdk/feature"
-	_ "github.com/voxgig-sdk/municipal-finance-sdk/utility"
+	"github.com/voxgig-sdk/municipal-finance-sdk/go/core"
+	"github.com/voxgig-sdk/municipal-finance-sdk/go/entity"
+	"github.com/voxgig-sdk/municipal-finance-sdk/go/feature"
+	_ "github.com/voxgig-sdk/municipal-finance-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/municipal-finance-sdk"
-	"github.com/voxgig-sdk/municipal-finance-sdk/core"
+	sdk "github.com/voxgig-sdk/municipal-finance-sdk/go"
+	"github.com/voxgig-sdk/municipal-finance-sdk/go/core"
 )
 
 func TestAgedCreditorDirect(t *testing.T) {

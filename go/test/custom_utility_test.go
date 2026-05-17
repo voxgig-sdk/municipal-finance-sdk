@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/municipal-finance-sdk"
+	sdk "github.com/voxgig-sdk/municipal-finance-sdk/go"
 )
 
 func TestCustomUtility(t *testing.T) {
