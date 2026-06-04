@@ -92,7 +92,6 @@ def _aged_creditor_basic_setup(extra):
         "MUNICIPALFINANCE_TEST_AGED_CREDITOR_ENTID": idmap,
         "MUNICIPALFINANCE_TEST_LIVE": "FALSE",
         "MUNICIPALFINANCE_TEST_EXPLAIN": "FALSE",
-        "MUNICIPALFINANCE_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +102,6 @@ def _aged_creditor_basic_setup(extra):
     if env.get("MUNICIPALFINANCE_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("MUNICIPALFINANCE_APIKEY"),
             },
             extra or {},
         ])
