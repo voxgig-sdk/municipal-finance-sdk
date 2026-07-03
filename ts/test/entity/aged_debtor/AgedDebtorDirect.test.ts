@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'MUNICIPALFINANCE_TEST_AGED_DEBTOR_ENTID': {},
     'MUNICIPALFINANCE_TEST_LIVE': 'FALSE',
+    'MUNICIPALFINANCE_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.MUNICIPALFINANCE_TEST_LIVE
 
   if (live) {
     const client = new MunicipalFinanceSDK({
+      apikey: env.MUNICIPALFINANCE_APIKEY,
     })
 
     let idmap: any = env['MUNICIPALFINANCE_TEST_AGED_DEBTOR_ENTID']

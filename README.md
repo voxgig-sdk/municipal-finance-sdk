@@ -1,20 +1,8 @@
 # MunicipalFinance SDK
 
-Query South African municipal financial data published by the National Treasury
+Municipal Finance API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Municipal Finance API
-
-The [Municipal Money API](https://municipaldata.treasury.gov.za/) publishes financial information for every South African metro, district and local municipality in a machine-readable form. The platform is operated by the [South African National Treasury](https://municipaldata.treasury.gov.za/) in partnership with [OpenUp](https://openup.org.za/), and exposes data drawn from Section 71 submissions signed off by each municipality's Manager and Chief Financial Officer.
-
-What you get from the API:
-
-- Financial "cubes" covering aged creditor and aged debtor analyses, balance sheets, capital acquisition, cash flow, income and expenditure, conditional grants, audit opinions, repairs and maintenance, and unauthorised / irregular / wasteful expenditure.
-- Both current and historical periods for each cube, with figures aligned to the municipal Standard Chart of Accounts (mSCOA) for the 2019/20 financial year onwards.
-- A common cube-model surface (for example `GET /api/cubes` and `GET /api/cubes/{name}/model`) for discovering dimensions and measures before querying facts.
-
-No authentication is required for read access. Bulk CSV and XLSX downloads of the same data are available alongside the API for analysts who need full extracts.
 
 ## Try it
 
@@ -48,29 +36,31 @@ gem install municipal-finance-sdk
 luarocks install municipal-finance-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { MunicipalFinanceSDK } from 'municipal-finance'
 
-const client = new MunicipalFinanceSDK({})
+const client = new MunicipalFinanceSDK({
+  apikey: process.env.MUNICIPAL-FINANCE_APIKEY,
+})
 
 // List all agedcreditors
 const agedcreditors = await client.AgedCreditor().list()
+console.log(agedcreditors.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,9 +90,9 @@ The API exposes 3 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **AgedCreditor** | Aged-creditor analyses for South African municipalities, exposed as one of the Municipal Money financial cubes under `/api/cubes`. | `/cubes/aged_creditor/facts` |
-| **AgedDebtor** | Aged-debtor analyses for South African municipalities, exposed as a financial cube under `/api/cubes`. | `/cubes/aged_debtor/facts` |
-| **Fact** | Generic fact-query surface for a cube — the shared endpoint used to retrieve the actual numeric rows for any cube once you know its model from `/api/cubes/{name}/model`. | `/cubes/audit_opinions/facts` |
+| **AgedCreditor** |  | `/cubes/aged_creditor/facts` |
+| **AgedDebtor** |  | `/cubes/aged_debtor/facts` |
+| **Fact** |  | `/cubes/audit_opinions/facts` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -112,12 +102,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from municipalfinance_sdk import MunicipalFinanceSDK
 
-client = MunicipalFinanceSDK({})
+client = MunicipalFinanceSDK({
+    "apikey": os.environ.get("MUNICIPAL-FINANCE_APIKEY"),
+})
 
 # List all agedcreditors
-agedcreditors, err = client.AgedCreditor(None).list(None, None)
+agedcreditors, err = client.AgedCreditor().list()
+print(agedcreditors)
 ```
 
 ### PHP
@@ -126,10 +120,13 @@ agedcreditors, err = client.AgedCreditor(None).list(None, None)
 <?php
 require_once 'municipalfinance_sdk.php';
 
-$client = new MunicipalFinanceSDK([]);
+$client = new MunicipalFinanceSDK([
+    "apikey" => getenv("MUNICIPAL-FINANCE_APIKEY"),
+]);
 
 // List all agedcreditors
-[$agedcreditors, $err] = $client->AgedCreditor(null)->list(null, null);
+[$agedcreditors, $err] = $client->AgedCreditor()->list();
+print_r($agedcreditors);
 ```
 
 ### Golang
@@ -137,10 +134,13 @@ $client = new MunicipalFinanceSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/municipal-finance-sdk/go"
 
-client := sdk.NewMunicipalFinanceSDK(map[string]any{})
+client := sdk.NewMunicipalFinanceSDK(map[string]any{
+    "apikey": os.Getenv("MUNICIPAL-FINANCE_APIKEY"),
+})
 
 // List all agedcreditors
 agedcreditors, err := client.AgedCreditor(nil).List(nil, nil)
+fmt.Println(agedcreditors)
 ```
 
 ### Ruby
@@ -148,10 +148,13 @@ agedcreditors, err := client.AgedCreditor(nil).List(nil, nil)
 ```ruby
 require_relative "MunicipalFinance_sdk"
 
-client = MunicipalFinanceSDK.new({})
+client = MunicipalFinanceSDK.new({
+  "apikey" => ENV["MUNICIPAL-FINANCE_APIKEY"],
+})
 
 # List all agedcreditors
-agedcreditors, err = client.AgedCreditor(nil).list(nil, nil)
+agedcreditors, err = client.AgedCreditor().list
+puts agedcreditors
 ```
 
 ### Lua
@@ -159,10 +162,13 @@ agedcreditors, err = client.AgedCreditor(nil).list(nil, nil)
 ```lua
 local sdk = require("municipal-finance_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("MUNICIPAL-FINANCE_APIKEY"),
+})
 
 -- List all agedcreditors
-local agedcreditors, err = client:AgedCreditor(nil):list(nil, nil)
+local agedcreditors, err = client:AgedCreditor():list()
+print(agedcreditors)
 ```
 
 ## Unit testing in offline mode
@@ -181,25 +187,21 @@ const result = await client.AgedCreditor().load({ id: 'test01' })
 ### Python
 
 ```python
-client = MunicipalFinanceSDK.test(None, None)
-result, err = client.AgedCreditor(None).load(
-    {"id": "test01"}, None
-)
+client = MunicipalFinanceSDK.test()
+result, err = client.AgedCreditor().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = MunicipalFinanceSDK::test(null, null);
-[$result, $err] = $client->AgedCreditor(null)->load(
-    ["id" => "test01"], null
-);
+$client = MunicipalFinanceSDK::test();
+[$result, $err] = $client->AgedCreditor()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.AgedCreditor(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -208,19 +210,15 @@ result, err := client.AgedCreditor(nil).Load(
 ### Ruby
 
 ```ruby
-client = MunicipalFinanceSDK.test(nil, nil)
-result, err = client.AgedCreditor(nil).load(
-  { "id" => "test01" }, nil
-)
+client = MunicipalFinanceSDK.test
+result, err = client.AgedCreditor().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:AgedCreditor(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:AgedCreditor():load({ id = "test01" })
 ```
 
 ## How it works
@@ -324,16 +322,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Municipal Finance API
-
-- Upstream: [https://municipaldata.treasury.gov.za/](https://municipaldata.treasury.gov.za/)
-- API docs: [https://municipaldata.treasury.gov.za/docs](https://municipaldata.treasury.gov.za/docs)
-
-- Data is published by the [South African National Treasury](https://municipaldata.treasury.gov.za/) under the Municipal Money platform.
-- Use is subject to the platform's Terms of Use; check the [documentation site](https://municipaldata.treasury.gov.za/docs) for the current terms.
-- Attribute the National Treasury (and OpenUp, who built the platform) when republishing.
-- The underlying figures originate from Section 71 submissions by municipalities; treat them as official but verify against published Treasury reports for critical use.
 
 ---
 

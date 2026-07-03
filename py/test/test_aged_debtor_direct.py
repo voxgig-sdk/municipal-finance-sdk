@@ -61,12 +61,14 @@ def _aged_debtor_direct_setup(mockres):
     env = runner.env_override({
         "MUNICIPALFINANCE_TEST_AGED_DEBTOR_ENTID": {},
         "MUNICIPALFINANCE_TEST_LIVE": "FALSE",
+        "MUNICIPALFINANCE_APIKEY": "NONE",
     })
 
     live = env.get("MUNICIPALFINANCE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("MUNICIPALFINANCE_APIKEY"),
         }
         client = MunicipalFinanceSDK(merged_opts)
         return {

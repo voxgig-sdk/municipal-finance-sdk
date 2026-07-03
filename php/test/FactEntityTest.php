@@ -86,6 +86,7 @@ function fact_basic_setup($extra)
         "MUNICIPALFINANCE_TEST_FACT_ENTID" => $idmap,
         "MUNICIPALFINANCE_TEST_LIVE" => "FALSE",
         "MUNICIPALFINANCE_TEST_EXPLAIN" => "FALSE",
+        "MUNICIPALFINANCE_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,6 +98,7 @@ function fact_basic_setup($extra)
     if ($env["MUNICIPALFINANCE_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["MUNICIPALFINANCE_APIKEY"],
             ],
             $extra ?? [],
         ]);

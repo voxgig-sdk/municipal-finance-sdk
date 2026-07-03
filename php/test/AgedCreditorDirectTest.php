@@ -68,12 +68,14 @@ function aged_creditor_direct_setup($mockres)
     $env = Runner::env_override([
         "MUNICIPALFINANCE_TEST_AGED_CREDITOR_ENTID" => [],
         "MUNICIPALFINANCE_TEST_LIVE" => "FALSE",
+        "MUNICIPALFINANCE_APIKEY" => "NONE",
     ]);
 
     $live = $env["MUNICIPALFINANCE_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["MUNICIPALFINANCE_APIKEY"],
         ];
         $client = new MunicipalFinanceSDK($merged_opts);
         return [

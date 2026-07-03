@@ -18,29 +18,7 @@ main: {
       termsOfService: "https://municipaldata.treasury.gov.za/docs#general"
       title: "Municipal Finance API"
       version: "1.0.0"
-      tagline: "Query South African municipal financial data published by the National Treasury"
-      homepage: "https://municipaldata.treasury.gov.za/"
-      docs_url: "https://municipaldata.treasury.gov.za/docs"
-      license_short: "Subject to the Municipal Money Terms of Use; data published by the South African National Treasury."
-      license_md: `- Data is published by the [South African National Treasury](https://municipaldata.treasury.gov.za/) under the Municipal Money platform.
-- Use is subject to the platform's Terms of Use; check the [documentation site](https://municipaldata.treasury.gov.za/docs) for the current terms.
-- Attribute the National Treasury (and OpenUp, who built the platform) when republishing.
-- The underlying figures originate from Section 71 submissions by municipalities; treat them as official but verify against published Treasury reports for critical use.`
-      about_md: `The [Municipal Money API](https://municipaldata.treasury.gov.za/) publishes financial information for every South African metro, district and local municipality in a machine-readable form. The platform is operated by the [South African National Treasury](https://municipaldata.treasury.gov.za/) in partnership with [OpenUp](https://openup.org.za/), and exposes data drawn from Section 71 submissions signed off by each municipality's Manager and Chief Financial Officer.
-
-What you get from the API:
-
-- Financial "cubes" covering aged creditor and aged debtor analyses, balance sheets, capital acquisition, cash flow, income and expenditure, conditional grants, audit opinions, repairs and maintenance, and unauthorised / irregular / wasteful expenditure.
-- Both current and historical periods for each cube, with figures aligned to the municipal Standard Chart of Accounts (mSCOA) for the 2019/20 financial year onwards.
-- A common cube-model surface (for example \`GET /api/cubes\` and \`GET /api/cubes/{name}/model\`) for discovering dimensions and measures before querying facts.
-
-No authentication is required for read access. Bulk CSV and XLSX downloads of the same data are available alongside the API for analysts who need full extracts.`
-      entity_desc: {
-        aged_creditor: "Aged-creditor analyses for South African municipalities, exposed as one of the Municipal Money financial cubes under `/api/cubes`."
-        aged_debtor: "Aged-debtor analyses for South African municipalities, exposed as a financial cube under `/api/cubes`."
-        fact: "Generic fact-query surface for a cube — the shared endpoint used to retrieve the actual numeric rows for any cube once you know its model from `/api/cubes/{name}/model`."
-      }
-      auth: false
     }
   }
 }
+
