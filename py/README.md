@@ -10,7 +10,7 @@ The Python SDK for the MunicipalFinance API — an entity-oriented client follow
 
 ## Install
 ```bash
-pip install municipal-finance-sdk
+pip install voxgig-sdk-municipal-finance
 ```
 
 Or install from source:

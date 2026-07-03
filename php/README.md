@@ -10,7 +10,7 @@ The PHP SDK for the MunicipalFinance API — an entity-oriented client using PHP
 
 ## Install
 ```bash
-composer require voxgig/municipal-finance-sdk
+composer require voxgig-sdk/municipal-finance
 ```
 
 

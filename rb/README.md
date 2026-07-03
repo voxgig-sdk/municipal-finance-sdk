@@ -10,13 +10,13 @@ The Ruby SDK for the MunicipalFinance API — an entity-oriented client using id
 
 ## Install
 ```bash
-gem install municipal-finance-sdk
+gem install voxgig-sdk-municipal-finance
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "municipal-finance-sdk"
+gem "voxgig-sdk-municipal-finance"
 ```
 
 Then run:

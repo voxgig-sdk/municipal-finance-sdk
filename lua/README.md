@@ -10,7 +10,7 @@ The Lua SDK for the MunicipalFinance API — an entity-oriented client using Lua
 
 ## Install
 ```bash
-luarocks install municipal-finance-sdk
+luarocks install voxgig-sdk-municipal-finance
 ```
 
 If the module is not yet published, add the source directory to

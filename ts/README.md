@@ -10,7 +10,7 @@ The TypeScript SDK for the MunicipalFinance API — a type-safe, entity-oriented
 
 ## Install
 ```bash
-npm install municipal-finance
+npm install @voxgig-sdk/municipal-finance
 ```
 ## Tutorial: your first API call
 
