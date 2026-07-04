@@ -133,7 +133,7 @@ Alias for `MunicipalFinanceSDK.test()`.
 ## AgedCreditorEntity
 
 ```ts
-const aged_creditor = client.aged_creditor
+const aged_creditor = client.AgedCreditor()
 ```
 
 ### Fields
@@ -161,7 +161,7 @@ const aged_creditor = client.aged_creditor
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.aged_creditor.list()
+const results = await client.AgedCreditor().list()
 ```
 
 ### Common Methods
@@ -195,7 +195,7 @@ Return a copy of the entity options.
 ## AgedDebtorEntity
 
 ```ts
-const aged_debtor = client.aged_debtor
+const aged_debtor = client.AgedDebtor()
 ```
 
 ### Fields
@@ -224,7 +224,7 @@ const aged_debtor = client.aged_debtor
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.aged_debtor.list()
+const results = await client.AgedDebtor().list()
 ```
 
 ### Common Methods
@@ -258,7 +258,7 @@ Return a copy of the entity options.
 ## FactEntity
 
 ```ts
-const fact = client.fact
+const fact = client.Fact()
 ```
 
 ### Fields
@@ -276,7 +276,7 @@ const fact = client.fact
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.fact.list()
+const results = await client.Fact().list()
 ```
 
 ### Common Methods

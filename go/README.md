@@ -30,37 +30,33 @@ go mod edit -replace github.com/voxgig-sdk/municipal-finance-sdk/go=../municipal
 This tutorial walks through creating a client, listing entities, and
 loading a specific record.
 
-### 1. Create a client
+### Quickstart
+
+A complete program: create a client, then call the entity operations.
+Each operation returns `(value, error)` — the value is the data itself
+(there is no `{ok, data}` wrapper), so check `err` and use the value
+directly.
 
 ```go
 package main
 
 import (
     "fmt"
-
     sdk "github.com/voxgig-sdk/municipal-finance-sdk/go"
-    "github.com/voxgig-sdk/municipal-finance-sdk/go/core"
 )
 
 func main() {
     client := sdk.New()
-```
 
-### 2. List agedcreditors
-
-```go
-    result, err := client.AgedCreditor(nil).List(nil, nil)
+    // List agedcreditor records — the value is the array of records itself.
+    agedcreditors, err := client.AgedCreditor(nil).List(nil, nil)
     if err != nil {
         panic(err)
     }
-
-    rm := core.ToMapAny(result)
-    if rm["ok"] == true {
-        for _, item := range rm["data"].([]any) {
-            p := core.ToMapAny(item)
-            fmt.Println(p["id"], p["name"])
-        }
+    for _, item := range agedcreditors.([]any) {
+        fmt.Println(item)
     }
+}
 ```
 
 
@@ -110,10 +106,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-result, err := client.AgedCreditor(nil).Load(
+agedcreditor, err := client.AgedCreditor(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
-// result contains mock response data
+if err != nil {
+    panic(err)
+}
+fmt.Println(agedcreditor) // the loaded mock data
 ```
 
 ### Use a custom fetch function
@@ -190,8 +189,8 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `GetUtility` | `() *Utility` | Copy of the SDK utility object. |
 | `Prepare` | `(fetchargs map[string]any) (map[string]any, error)` | Build an HTTP request definition without sending. |
 | `Direct` | `(fetchargs map[string]any) (map[string]any, error)` | Build and send an HTTP request. |
-| `AgedCreditor` | `(data map[string]any) MunicipalFinanceEntity` | Create a AgedCreditor entity instance. |
-| `AgedDebtor` | `(data map[string]any) MunicipalFinanceEntity` | Create a AgedDebtor entity instance. |
+| `AgedCreditor` | `(data map[string]any) MunicipalFinanceEntity` | Create an AgedCreditor entity instance. |
+| `AgedDebtor` | `(data map[string]any) MunicipalFinanceEntity` | Create an AgedDebtor entity instance. |
 | `Fact` | `(data map[string]any) MunicipalFinanceEntity` | Create a Fact entity instance. |
 
 ### Entity interface (MunicipalFinanceEntity)
@@ -212,17 +211,24 @@ All entities implement the `MunicipalFinanceEntity` interface.
 
 ### Result shape
 
-Entity operations return `(any, error)`. The `any` value is a
-`map[string]any` with these keys:
+Entity operations return `(value, error)`. The `value` is the
+operation's data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `"ok"` | `bool` | `true` if the HTTP status is 2xx. |
-| `"status"` | `int` | HTTP status code. |
-| `"headers"` | `map[string]any` | Response headers. |
-| `"data"` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `Load` / `Create` / `Update` / `Remove` | the entity record (`map[string]any`) |
+| `List` | a `[]any` of entity records |
 
-On error, `"ok"` is `false` and `"err"` contains the error value.
+Check `err` first, then use the value directly (or the typed
+`...Typed` variants, which return the entity's model struct and a typed
+slice):
+
+    agedcreditor, err := client.AgedCreditor(nil).Load(map[string]any{"id": "example_id"}, nil)
+    if err != nil { /* handle */ }
+    // agedcreditor is the loaded record
+
+Only `Direct()` returns a response envelope — a `map[string]any` with
+`"ok"`, `"status"`, `"headers"`, and `"data"` keys.
 
 ### Entities
 
@@ -319,7 +325,11 @@ Create an instance: `aged_creditor := client.AgedCreditor(nil)`
 #### Example: List
 
 ```go
-results, err := client.AgedCreditor(nil).List(nil, nil)
+aged_creditors, err := client.AgedCreditor(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(aged_creditors) // the array of records
 ```
 
 
@@ -355,7 +365,11 @@ Create an instance: `aged_debtor := client.AgedDebtor(nil)`
 #### Example: List
 
 ```go
-results, err := client.AgedDebtor(nil).List(nil, nil)
+aged_debtors, err := client.AgedDebtor(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(aged_debtors) // the array of records
 ```
 
 
@@ -380,7 +394,11 @@ Create an instance: `fact := client.Fact(nil)`
 #### Example: List
 
 ```go
-results, err := client.Fact(nil).List(nil, nil)
+facts, err := client.Fact(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(facts) // the array of records
 ```
 
 

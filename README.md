@@ -26,9 +26,11 @@ import { MunicipalFinanceSDK } from '@voxgig-sdk/municipal-finance'
 
 const client = new MunicipalFinanceSDK()
 
-// List all agedcreditors
-const agedcreditors = await client.agedcreditor.list()
-console.log(agedcreditors.data)
+// List all agedcreditors (returns AgedCreditor[])
+const agedcreditors = await client.AgedCreditor().list()
+for (const agedcreditor of agedcreditors) {
+  console.log(agedcreditor)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -85,9 +87,10 @@ from municipalfinance_sdk import MunicipalFinanceSDK
 
 client = MunicipalFinanceSDK()
 
-# List all agedcreditors
-agedcreditors = client.agedcreditor.list()
-print(agedcreditors)
+# List all agedcreditors (returns a list, raises on error)
+agedcreditors = client.AgedCreditor().list({})
+for agedcreditor in agedcreditors:
+    print(agedcreditor)
 ```
 
 ### PHP
@@ -98,8 +101,8 @@ require_once 'municipalfinance_sdk.php';
 
 $client = new MunicipalFinanceSDK();
 
-// List all agedcreditors (throws on error)
-$agedcreditors = $client->agedcreditor()->list();
+// List all agedcreditors (returns an array; throws on error)
+$agedcreditors = $client->AgedCreditor()->list();
 print_r($agedcreditors);
 ```
 
@@ -122,8 +125,8 @@ require_relative "MunicipalFinance_sdk"
 
 client = MunicipalFinanceSDK.new
 
-# List all agedcreditors
-agedcreditors = client.agedcreditor.list
+# List all agedcreditors (returns an Array; raises on error)
+agedcreditors = client.AgedCreditor.list
 puts agedcreditors
 ```
 
@@ -135,7 +138,7 @@ local sdk = require("municipal-finance_sdk")
 local client = sdk.new()
 
 -- List all agedcreditors
-local agedcreditors, err = client:agedcreditor():list()
+local agedcreditors, err = client:AgedCreditor():list()
 print(agedcreditors)
 ```
 
@@ -148,22 +151,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = MunicipalFinanceSDK.test()
-const result = await client.agedcreditor.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const agedcreditor = await client.AgedCreditor().load({ id: 'test01' })
+// agedcreditor is a bare AgedCreditor populated with mock data
+console.log(agedcreditor)
 ```
 
 ### Python
 
 ```python
 client = MunicipalFinanceSDK.test()
-result = client.agedcreditor.load({"id": "test01"})
+agedcreditor = client.AgedCreditor().load({"id": "test01"})
+print(agedcreditor)
 ```
 
 ### PHP
 
 ```php
-$client = MunicipalFinanceSDK::test();
-$result = $client->agedcreditor()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = MunicipalFinanceSDK::test([
+    "entity" => ["agedcreditor" => ["test01" => ["id" => "test01"]]],
+]);
+$agedcreditor = $client->AgedCreditor()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -178,15 +186,18 @@ result, err := client.AgedCreditor(nil).Load(
 ### Ruby
 
 ```ruby
-client = MunicipalFinanceSDK.test
-result = client.agedcreditor.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = MunicipalFinanceSDK.test({
+  "entity" => { "agedcreditor" => { "test01" => { "id" => "test01" } } },
+})
+agedcreditor = client.AgedCreditor.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:agedcreditor():load({ id = "test01" })
+local result, err = client:AgedCreditor():load({ id = "test01" })
 ```
 
 ## How it works
@@ -234,6 +245,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

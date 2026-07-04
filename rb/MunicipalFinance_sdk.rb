@@ -208,39 +208,21 @@ class MunicipalFinanceSDK
   end
 
 
-  # Idiomatic facade: client.aged_creditor.list / client.aged_creditor.load({ "id" => ... })
-  def aged_creditor
-    require_relative 'entity/aged_creditor_entity'
-    @aged_creditor ||= AgedCreditorEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.aged_creditor instead.
+  # Canonical facade: client.AgedCreditor.list / client.AgedCreditor.load({ "id" => ... })
   def AgedCreditor(data = nil)
     require_relative 'entity/aged_creditor_entity'
     AgedCreditorEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.aged_debtor.list / client.aged_debtor.load({ "id" => ... })
-  def aged_debtor
-    require_relative 'entity/aged_debtor_entity'
-    @aged_debtor ||= AgedDebtorEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.aged_debtor instead.
+  # Canonical facade: client.AgedDebtor.list / client.AgedDebtor.load({ "id" => ... })
   def AgedDebtor(data = nil)
     require_relative 'entity/aged_debtor_entity'
     AgedDebtorEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.fact.list / client.fact.load({ "id" => ... })
-  def fact
-    require_relative 'entity/fact_entity'
-    @fact ||= FactEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.fact instead.
+  # Canonical facade: client.Fact.list / client.Fact.load({ "id" => ... })
   def Fact(data = nil)
     require_relative 'entity/fact_entity'
     FactEntity.new(self, data)

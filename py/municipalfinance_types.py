@@ -4,93 +4,91 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class AgedCreditor:
-    amount_sum: Optional[float] = None
-    amount_type_code: Optional[str] = None
-    amount_type_label: Optional[str] = None
-    demarcation_code: Optional[str] = None
-    demarcation_label: Optional[str] = None
-    financial_period_period: Optional[int] = None
-    financial_year_end_year: Optional[int] = None
-    item_code: Optional[str] = None
-    item_composition: Optional[str] = None
-    item_label: Optional[str] = None
-    item_position_in_return_form: Optional[int] = None
-    item_return_form_structure: Optional[str] = None
-    period_length_length: Optional[str] = None
+class AgedCreditor(TypedDict, total=False):
+    amount_sum: float
+    amount_type_code: str
+    amount_type_label: str
+    demarcation_code: str
+    demarcation_label: str
+    financial_period_period: int
+    financial_year_end_year: int
+    item_code: str
+    item_composition: str
+    item_label: str
+    item_position_in_return_form: int
+    item_return_form_structure: str
+    period_length_length: str
 
 
-@dataclass
-class AgedCreditorListMatch:
-    amount_sum: Optional[float] = None
-    amount_type_code: Optional[str] = None
-    amount_type_label: Optional[str] = None
-    demarcation_code: Optional[str] = None
-    demarcation_label: Optional[str] = None
-    financial_period_period: Optional[int] = None
-    financial_year_end_year: Optional[int] = None
-    item_code: Optional[str] = None
-    item_composition: Optional[str] = None
-    item_label: Optional[str] = None
-    item_position_in_return_form: Optional[int] = None
-    item_return_form_structure: Optional[str] = None
-    period_length_length: Optional[str] = None
+class AgedCreditorListMatch(TypedDict, total=False):
+    amount_sum: float
+    amount_type_code: str
+    amount_type_label: str
+    demarcation_code: str
+    demarcation_label: str
+    financial_period_period: int
+    financial_year_end_year: int
+    item_code: str
+    item_composition: str
+    item_label: str
+    item_position_in_return_form: int
+    item_return_form_structure: str
+    period_length_length: str
 
 
-@dataclass
-class AgedDebtor:
-    amount_sum: Optional[float] = None
-    amount_type_code: Optional[str] = None
-    amount_type_label: Optional[str] = None
-    customer_group_code: Optional[str] = None
-    demarcation_code: Optional[str] = None
-    demarcation_label: Optional[str] = None
-    financial_period_period: Optional[int] = None
-    financial_year_end_year: Optional[int] = None
-    item_code: Optional[str] = None
-    item_composition: Optional[str] = None
-    item_label: Optional[str] = None
-    item_position_in_return_form: Optional[int] = None
-    item_return_form_structure: Optional[str] = None
-    period_length_length: Optional[str] = None
+class AgedDebtor(TypedDict, total=False):
+    amount_sum: float
+    amount_type_code: str
+    amount_type_label: str
+    customer_group_code: str
+    demarcation_code: str
+    demarcation_label: str
+    financial_period_period: int
+    financial_year_end_year: int
+    item_code: str
+    item_composition: str
+    item_label: str
+    item_position_in_return_form: int
+    item_return_form_structure: str
+    period_length_length: str
 
 
-@dataclass
-class AgedDebtorListMatch:
-    amount_sum: Optional[float] = None
-    amount_type_code: Optional[str] = None
-    amount_type_label: Optional[str] = None
-    customer_group_code: Optional[str] = None
-    demarcation_code: Optional[str] = None
-    demarcation_label: Optional[str] = None
-    financial_period_period: Optional[int] = None
-    financial_year_end_year: Optional[int] = None
-    item_code: Optional[str] = None
-    item_composition: Optional[str] = None
-    item_label: Optional[str] = None
-    item_position_in_return_form: Optional[int] = None
-    item_return_form_structure: Optional[str] = None
-    period_length_length: Optional[str] = None
+class AgedDebtorListMatch(TypedDict, total=False):
+    amount_sum: float
+    amount_type_code: str
+    amount_type_label: str
+    customer_group_code: str
+    demarcation_code: str
+    demarcation_label: str
+    financial_period_period: int
+    financial_year_end_year: int
+    item_code: str
+    item_composition: str
+    item_label: str
+    item_position_in_return_form: int
+    item_return_form_structure: str
+    period_length_length: str
 
 
-@dataclass
-class Fact:
-    cell: Optional[list] = None
-    summary: Optional[dict] = None
-    total_cell_count: Optional[int] = None
+class Fact(TypedDict, total=False):
+    cell: list
+    summary: dict
+    total_cell_count: int
 
 
-@dataclass
-class FactListMatch:
-    cell: Optional[list] = None
-    summary: Optional[dict] = None
-    total_cell_count: Optional[int] = None
-
+class FactListMatch(TypedDict, total=False):
+    cell: list
+    summary: dict
+    total_cell_count: int

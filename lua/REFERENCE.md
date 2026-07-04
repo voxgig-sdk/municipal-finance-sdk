@@ -91,7 +91,7 @@ same parameters as `direct()`.
 ## AgedCreditorEntity
 
 ```lua
-local aged_creditor = client:aged_creditor(nil)
+local aged_creditor = client:AgedCreditor(nil)
 ```
 
 ### Fields
@@ -119,7 +119,7 @@ local aged_creditor = client:aged_creditor(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:aged_creditor():list()
+local results, err = client:AgedCreditor():list()
 ```
 
 ### Common Methods
@@ -155,7 +155,7 @@ Return the entity name.
 ## AgedDebtorEntity
 
 ```lua
-local aged_debtor = client:aged_debtor(nil)
+local aged_debtor = client:AgedDebtor(nil)
 ```
 
 ### Fields
@@ -184,7 +184,7 @@ local aged_debtor = client:aged_debtor(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:aged_debtor():list()
+local results, err = client:AgedDebtor():list()
 ```
 
 ### Common Methods
@@ -220,7 +220,7 @@ Return the entity name.
 ## FactEntity
 
 ```lua
-local fact = client:fact(nil)
+local fact = client:Fact(nil)
 ```
 
 ### Fields
@@ -238,7 +238,7 @@ local fact = client:fact(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:fact():list()
+local results, err = client:Fact():list()
 ```
 
 ### Common Methods

@@ -94,7 +94,7 @@ same parameters as `direct()`. Raises on error.
 ## AgedCreditorEntity
 
 ```ruby
-aged_creditor = client.aged_creditor
+aged_creditor = client.AgedCreditor
 ```
 
 ### Fields
@@ -122,7 +122,7 @@ aged_creditor = client.aged_creditor
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.aged_creditor.list(nil)
+results = client.AgedCreditor.list(nil)
 ```
 
 ### Common Methods
@@ -158,7 +158,7 @@ Return the entity name.
 ## AgedDebtorEntity
 
 ```ruby
-aged_debtor = client.aged_debtor
+aged_debtor = client.AgedDebtor
 ```
 
 ### Fields
@@ -187,7 +187,7 @@ aged_debtor = client.aged_debtor
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.aged_debtor.list(nil)
+results = client.AgedDebtor.list(nil)
 ```
 
 ### Common Methods
@@ -223,7 +223,7 @@ Return the entity name.
 ## FactEntity
 
 ```ruby
-fact = client.fact
+fact = client.Fact
 ```
 
 ### Fields
@@ -241,7 +241,7 @@ fact = client.fact
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.fact.list(nil)
+results = client.Fact.list(nil)
 ```
 
 ### Common Methods

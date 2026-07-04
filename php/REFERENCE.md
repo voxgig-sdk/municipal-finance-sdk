@@ -93,7 +93,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## AgedCreditorEntity
 
 ```php
-$aged_creditor = $client->aged_creditor();
+$aged_creditor = $client->AgedCreditor();
 ```
 
 ### Fields
@@ -121,7 +121,7 @@ $aged_creditor = $client->aged_creditor();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->aged_creditor()->list([]);
+$results = $client->AgedCreditor()->list([]);
 ```
 
 ### Common Methods
@@ -157,7 +157,7 @@ Return the entity name.
 ## AgedDebtorEntity
 
 ```php
-$aged_debtor = $client->aged_debtor();
+$aged_debtor = $client->AgedDebtor();
 ```
 
 ### Fields
@@ -186,7 +186,7 @@ $aged_debtor = $client->aged_debtor();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->aged_debtor()->list([]);
+$results = $client->AgedDebtor()->list([]);
 ```
 
 ### Common Methods
@@ -222,7 +222,7 @@ Return the entity name.
 ## FactEntity
 
 ```php
-$fact = $client->fact();
+$fact = $client->Fact();
 ```
 
 ### Fields
@@ -240,7 +240,7 @@ $fact = $client->fact();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->fact()->list([]);
+$results = $client->Fact()->list([]);
 ```
 
 ### Common Methods

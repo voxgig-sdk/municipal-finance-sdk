@@ -88,7 +88,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## AgedCreditorEntity
 
 ```python
-aged_creditor = client.aged_creditor
+aged_creditor = client.AgedCreditor()
 ```
 
 ### Fields
@@ -116,7 +116,9 @@ aged_creditor = client.aged_creditor
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.aged_creditor.list({})
+results = client.AgedCreditor().list({})
+for aged_creditor in results:
+    print(aged_creditor)
 ```
 
 ### Common Methods
@@ -151,7 +153,7 @@ Return the entity name.
 ## AgedDebtorEntity
 
 ```python
-aged_debtor = client.aged_debtor
+aged_debtor = client.AgedDebtor()
 ```
 
 ### Fields
@@ -180,7 +182,9 @@ aged_debtor = client.aged_debtor
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.aged_debtor.list({})
+results = client.AgedDebtor().list({})
+for aged_debtor in results:
+    print(aged_debtor)
 ```
 
 ### Common Methods
@@ -215,7 +219,7 @@ Return the entity name.
 ## FactEntity
 
 ```python
-fact = client.fact
+fact = client.Fact()
 ```
 
 ### Fields
@@ -233,7 +237,9 @@ fact = client.fact
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.fact.list({})
+results = client.Fact().list({})
+for fact in results:
+    print(fact)
 ```
 
 ### Common Methods

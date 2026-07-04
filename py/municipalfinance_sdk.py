@@ -220,57 +220,27 @@ class MunicipalFinanceSDK:
         }
 
 
-    @property
-    def aged_creditor(self):
-        """Idiomatic facade: client.aged_creditor.list() / client.aged_creditor.load({"id": ...})."""
-        from entity.aged_creditor_entity import AgedCreditorEntity
-        cached = getattr(self, "_aged_creditor", None)
-        if cached is None:
-            cached = AgedCreditorEntity(self, None)
-            self._aged_creditor = cached
-        return cached
-
-    def AgedCreditor(self, data=None):
-        # Deprecated: use client.aged_creditor instead.
+    def AgedCreditor(self, data=None) -> "AgedCreditorEntity":
+        """Entity factory: client.AgedCreditor().list({}) / client.AgedCreditor().load({"id": ...})."""
         from entity.aged_creditor_entity import AgedCreditorEntity
         return AgedCreditorEntity(self, data)
 
 
-    @property
-    def aged_debtor(self):
-        """Idiomatic facade: client.aged_debtor.list() / client.aged_debtor.load({"id": ...})."""
-        from entity.aged_debtor_entity import AgedDebtorEntity
-        cached = getattr(self, "_aged_debtor", None)
-        if cached is None:
-            cached = AgedDebtorEntity(self, None)
-            self._aged_debtor = cached
-        return cached
-
-    def AgedDebtor(self, data=None):
-        # Deprecated: use client.aged_debtor instead.
+    def AgedDebtor(self, data=None) -> "AgedDebtorEntity":
+        """Entity factory: client.AgedDebtor().list({}) / client.AgedDebtor().load({"id": ...})."""
         from entity.aged_debtor_entity import AgedDebtorEntity
         return AgedDebtorEntity(self, data)
 
 
-    @property
-    def fact(self):
-        """Idiomatic facade: client.fact.list() / client.fact.load({"id": ...})."""
-        from entity.fact_entity import FactEntity
-        cached = getattr(self, "_fact", None)
-        if cached is None:
-            cached = FactEntity(self, None)
-            self._fact = cached
-        return cached
-
-    def Fact(self, data=None):
-        # Deprecated: use client.fact instead.
+    def Fact(self, data=None) -> "FactEntity":
+        """Entity factory: client.Fact().list({}) / client.Fact().load({"id": ...})."""
         from entity.fact_entity import FactEntity
         return FactEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "MunicipalFinanceSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -290,3 +260,11 @@ class MunicipalFinanceSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.aged_creditor_entity import AgedCreditorEntity
+    from entity.aged_debtor_entity import AgedDebtorEntity
+    from entity.fact_entity import FactEntity

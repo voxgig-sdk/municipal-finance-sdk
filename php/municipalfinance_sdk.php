@@ -233,10 +233,10 @@ class MunicipalFinanceSDK
 
     private $_aged_creditor = null;
 
-    // Idiomatic facade: $client->aged_creditor()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias AgedCreditor() (PHP method
-    // names are case-insensitive).
-    public function aged_creditor($data = null)
+    // Canonical facade: $client->AgedCreditor()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->aged_creditor()
+    // resolves here too.
+    public function AgedCreditor($data = null)
     {
         require_once __DIR__ . '/entity/aged_creditor_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class MunicipalFinanceSDK
 
     private $_aged_debtor = null;
 
-    // Idiomatic facade: $client->aged_debtor()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias AgedDebtor() (PHP method
-    // names are case-insensitive).
-    public function aged_debtor($data = null)
+    // Canonical facade: $client->AgedDebtor()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->aged_debtor()
+    // resolves here too.
+    public function AgedDebtor($data = null)
     {
         require_once __DIR__ . '/entity/aged_debtor_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class MunicipalFinanceSDK
 
     private $_fact = null;
 
-    // Idiomatic facade: $client->fact()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Fact() (PHP method
-    // names are case-insensitive).
-    public function fact($data = null)
+    // Canonical facade: $client->Fact()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->fact()
+    // resolves here too.
+    public function Fact($data = null)
     {
         require_once __DIR__ . '/entity/fact_entity.php';
         if ($data === null) {

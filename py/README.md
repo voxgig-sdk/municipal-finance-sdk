@@ -31,14 +31,16 @@ from municipalfinance_sdk import MunicipalFinanceSDK
 client = MunicipalFinanceSDK()
 ```
 
-### 2. List agedcreditors
+### 2. List agedcreditor records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.agedcreditor.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    agedcreditors = client.AgedCreditor().list({})
+    for agedcreditor in agedcreditors:
+        print(agedcreditor)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = MunicipalFinanceSDK.test()
 
-result = client.agedcreditor.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+agedcreditor = client.AgedCreditor().load({"id": "test01"})
+# agedcreditor contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -163,8 +166,8 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
-| `AgedCreditor` | `(data) -> AgedCreditorEntity` | Create a AgedCreditor entity instance. |
-| `AgedDebtor` | `(data) -> AgedDebtorEntity` | Create a AgedDebtor entity instance. |
+| `AgedCreditor` | `(data) -> AgedCreditorEntity` | Create an AgedCreditor entity instance. |
+| `AgedDebtor` | `(data) -> AgedDebtorEntity` | Create an AgedDebtor entity instance. |
 | `Fact` | `(data) -> FactEntity` | Create a Fact entity instance. |
 
 ### Entity interface
@@ -269,7 +272,7 @@ API path: `/cubes/audit_opinions/facts`
 
 ### AgedCreditor
 
-Create an instance: `const aged_creditor = client.aged_creditor`
+Create an instance: `aged_creditor = client.AgedCreditor()`
 
 #### Operations
 
@@ -297,14 +300,14 @@ Create an instance: `const aged_creditor = client.aged_creditor`
 
 #### Example: List
 
-```ts
-const aged_creditors = await client.aged_creditor.list()
+```python
+aged_creditors = client.AgedCreditor().list({})
 ```
 
 
 ### AgedDebtor
 
-Create an instance: `const aged_debtor = client.aged_debtor`
+Create an instance: `aged_debtor = client.AgedDebtor()`
 
 #### Operations
 
@@ -333,14 +336,14 @@ Create an instance: `const aged_debtor = client.aged_debtor`
 
 #### Example: List
 
-```ts
-const aged_debtors = await client.aged_debtor.list()
+```python
+aged_debtors = client.AgedDebtor().list({})
 ```
 
 
 ### Fact
 
-Create an instance: `const fact = client.fact`
+Create an instance: `fact = client.Fact()`
 
 #### Operations
 
@@ -358,8 +361,8 @@ Create an instance: `const fact = client.fact`
 
 #### Example: List
 
-```ts
-const facts = await client.fact.list()
+```python
+facts = client.Fact().list({})
 ```
 
 
@@ -433,7 +436,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-agedcreditor = client.agedcreditor
+agedcreditor = client.AgedCreditor()
 agedcreditor.load({"id": "example_id"})
 
 # agedcreditor.data_get() now returns the loaded agedcreditor data

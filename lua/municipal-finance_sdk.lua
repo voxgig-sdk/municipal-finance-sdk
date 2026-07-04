@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:aged_creditor():list() / client:aged_creditor():load({ id = ... })
-function MunicipalFinanceSDK:aged_creditor(data)
+-- Idiomatic facade: client:AgedCreditor():list() / client:AgedCreditor():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function MunicipalFinanceSDK:AgedCreditor(data)
   local EntityMod = require("entity.aged_creditor_entity")
   if data == nil then
     if self._aged_creditor == nil then
@@ -256,15 +257,10 @@ function MunicipalFinanceSDK:aged_creditor(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:aged_creditor() instead.
-function MunicipalFinanceSDK:AgedCreditor(data)
-  local EntityMod = require("entity.aged_creditor_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:aged_debtor():list() / client:aged_debtor():load({ id = ... })
-function MunicipalFinanceSDK:aged_debtor(data)
+-- Idiomatic facade: client:AgedDebtor():list() / client:AgedDebtor():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function MunicipalFinanceSDK:AgedDebtor(data)
   local EntityMod = require("entity.aged_debtor_entity")
   if data == nil then
     if self._aged_debtor == nil then
@@ -275,15 +271,10 @@ function MunicipalFinanceSDK:aged_debtor(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:aged_debtor() instead.
-function MunicipalFinanceSDK:AgedDebtor(data)
-  local EntityMod = require("entity.aged_debtor_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:fact():list() / client:fact():load({ id = ... })
-function MunicipalFinanceSDK:fact(data)
+-- Idiomatic facade: client:Fact():list() / client:Fact():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function MunicipalFinanceSDK:Fact(data)
   local EntityMod = require("entity.fact_entity")
   if data == nil then
     if self._fact == nil then
@@ -291,12 +282,6 @@ function MunicipalFinanceSDK:fact(data)
     end
     return self._fact
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:fact() instead.
-function MunicipalFinanceSDK:Fact(data)
-  local EntityMod = require("entity.fact_entity")
   return EntityMod.new(self, data)
 end
 

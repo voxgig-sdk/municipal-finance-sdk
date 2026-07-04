@@ -29,18 +29,16 @@ require_once 'municipalfinance_sdk.php';
 $client = new MunicipalFinanceSDK();
 ```
 
-### 2. List agedcreditors
+### 2. List agedcreditor records
 
 ```php
 try {
-    $result = $client->agedcreditor()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of AgedCreditor records — iterate directly.
+    $agedcreditors = $client->AgedCreditor()->list();
+    foreach ($agedcreditors as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = MunicipalFinanceSDK::test();
+$client = MunicipalFinanceSDK::test([
+    "entity" => ["agedcreditor" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->agedcreditor()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$agedcreditor = $client->AgedCreditor()->load(["id" => "test01"]);
+print_r($agedcreditor);
 ```
 
 ### Use a custom fetch function
@@ -171,8 +173,8 @@ Creates a test-mode client with mock transport. Both arguments may be `null`.
 | `get_utility` | `(): Utility` | Copy of the SDK utility object. |
 | `prepare` | `(array $fetchargs): array` | Build an HTTP request definition without sending. |
 | `direct` | `(array $fetchargs): array` | Build and send an HTTP request. |
-| `AgedCreditor` | `($data): AgedCreditorEntity` | Create a AgedCreditor entity instance. |
-| `AgedDebtor` | `($data): AgedDebtorEntity` | Create a AgedDebtor entity instance. |
+| `AgedCreditor` | `($data): AgedCreditorEntity` | Create an AgedCreditor entity instance. |
+| `AgedDebtor` | `($data): AgedDebtorEntity` | Create an AgedDebtor entity instance. |
 | `Fact` | `($data): FactEntity` | Create a Fact entity instance. |
 
 ### Entity interface
@@ -277,7 +279,7 @@ API path: `/cubes/audit_opinions/facts`
 
 ### AgedCreditor
 
-Create an instance: `const aged_creditor = client.aged_creditor`
+Create an instance: `$aged_creditor = $client->AgedCreditor();`
 
 #### Operations
 
@@ -305,14 +307,15 @@ Create an instance: `const aged_creditor = client.aged_creditor`
 
 #### Example: List
 
-```ts
-const aged_creditors = await client.aged_creditor.list()
+```php
+// list() returns an array of AgedCreditor records (throws on error).
+$aged_creditors = $client->AgedCreditor()->list();
 ```
 
 
 ### AgedDebtor
 
-Create an instance: `const aged_debtor = client.aged_debtor`
+Create an instance: `$aged_debtor = $client->AgedDebtor();`
 
 #### Operations
 
@@ -341,14 +344,15 @@ Create an instance: `const aged_debtor = client.aged_debtor`
 
 #### Example: List
 
-```ts
-const aged_debtors = await client.aged_debtor.list()
+```php
+// list() returns an array of AgedDebtor records (throws on error).
+$aged_debtors = $client->AgedDebtor()->list();
 ```
 
 
 ### Fact
 
-Create an instance: `const fact = client.fact`
+Create an instance: `$fact = $client->Fact();`
 
 #### Operations
 
@@ -366,8 +370,9 @@ Create an instance: `const fact = client.fact`
 
 #### Example: List
 
-```ts
-const facts = await client.fact.list()
+```php
+// list() returns an array of Fact records (throws on error).
+$facts = $client->Fact()->list();
 ```
 
 
@@ -442,7 +447,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$agedcreditor = $client->agedcreditor();
+$agedcreditor = $client->AgedCreditor();
 $agedcreditor->load(["id" => "example_id"]);
 
 // $agedcreditor->dataGet() now returns the loaded agedcreditor data

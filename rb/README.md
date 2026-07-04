@@ -28,16 +28,14 @@ require_relative "MunicipalFinance_sdk"
 client = MunicipalFinanceSDK.new
 ```
 
-### 2. List agedcreditors
+### 2. List agedcreditor records
 
 ```ruby
 begin
-  result = client.agedcreditor.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of AgedCreditor records — iterate directly.
+  agedcreditors = client.AgedCreditor.list
+  agedcreditors.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -85,13 +83,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = MunicipalFinanceSDK.test
+client = MunicipalFinanceSDK.test({
+  "entity" => { "agedcreditor" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.agedcreditor.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+agedcreditor = client.AgedCreditor.load({ "id" => "test01" })
+puts agedcreditor
 ```
 
 ### Use a custom fetch function
@@ -167,8 +169,8 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> Hash` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> Hash` | Build and send an HTTP request. Returns a result hash (`result["ok"]`); does not raise. |
-| `AgedCreditor` | `(data) -> AgedCreditorEntity` | Create a AgedCreditor entity instance. |
-| `AgedDebtor` | `(data) -> AgedDebtorEntity` | Create a AgedDebtor entity instance. |
+| `AgedCreditor` | `(data) -> AgedCreditorEntity` | Create an AgedCreditor entity instance. |
+| `AgedDebtor` | `(data) -> AgedDebtorEntity` | Create an AgedDebtor entity instance. |
 | `Fact` | `(data) -> FactEntity` | Create a Fact entity instance. |
 
 ### Entity interface
@@ -272,7 +274,7 @@ API path: `/cubes/audit_opinions/facts`
 
 ### AgedCreditor
 
-Create an instance: `const aged_creditor = client.aged_creditor`
+Create an instance: `aged_creditor = client.AgedCreditor`
 
 #### Operations
 
@@ -300,14 +302,15 @@ Create an instance: `const aged_creditor = client.aged_creditor`
 
 #### Example: List
 
-```ts
-const aged_creditors = await client.aged_creditor.list()
+```ruby
+# list returns an Array of AgedCreditor records (raises on error).
+aged_creditors = client.AgedCreditor.list
 ```
 
 
 ### AgedDebtor
 
-Create an instance: `const aged_debtor = client.aged_debtor`
+Create an instance: `aged_debtor = client.AgedDebtor`
 
 #### Operations
 
@@ -336,14 +339,15 @@ Create an instance: `const aged_debtor = client.aged_debtor`
 
 #### Example: List
 
-```ts
-const aged_debtors = await client.aged_debtor.list()
+```ruby
+# list returns an Array of AgedDebtor records (raises on error).
+aged_debtors = client.AgedDebtor.list
 ```
 
 
 ### Fact
 
-Create an instance: `const fact = client.fact`
+Create an instance: `fact = client.Fact`
 
 #### Operations
 
@@ -361,8 +365,9 @@ Create an instance: `const fact = client.fact`
 
 #### Example: List
 
-```ts
-const facts = await client.fact.list()
+```ruby
+# list returns an Array of Fact records (raises on error).
+facts = client.Fact.list
 ```
 
 
@@ -437,7 +442,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-agedcreditor = client.agedcreditor
+agedcreditor = client.AgedCreditor
 agedcreditor.load({ "id" => "example_id" })
 
 # agedcreditor.data_get now returns the loaded agedcreditor data
