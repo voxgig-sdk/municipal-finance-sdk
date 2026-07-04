@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  AgedCreditor,
+  AgedCreditorListMatch,
+} from '../MunicipalFinanceTypes'
 
 // TODO: needs Entity superclass
-class AgedCreditorEntity extends MunicipalFinanceEntityBase {
+class AgedCreditorEntity extends MunicipalFinanceEntityBase<AgedCreditor> {
 
   constructor(client: MunicipalFinanceSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class AgedCreditorEntity extends MunicipalFinanceEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: AgedCreditorListMatch, ctrl?: Control): Promise<AgedCreditor[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class AgedCreditorEntity extends MunicipalFinanceEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<AgedCreditor[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

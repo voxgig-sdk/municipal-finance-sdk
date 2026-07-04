@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         name: "OpenUp and National Treasury"
         url: "https://municipaldata.treasury.gov.za/docs#general"

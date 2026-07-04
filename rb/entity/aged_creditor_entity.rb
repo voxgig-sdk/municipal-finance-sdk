@@ -45,6 +45,7 @@ class AgedCreditorEntity
     end
   end
 
+  # @return [AgedCreditor, Hash] the current AgedCreditor data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class AgedCreditorEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of AgedCreditor fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class AgedCreditorEntity
   
 
   
+  # List AgedCreditor items matching the given filter.
+  #
+  # @param reqmatch [AgedCreditorListMatch, Hash, nil] match filter (any subset of AgedCreditor fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<AgedCreditor>, Array] the matching AgedCreditor items; raises MunicipalFinanceError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

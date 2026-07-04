@@ -93,14 +93,12 @@ func factDirectSetup(mockres any) *factDirectSetupResult {
 	env := envOverride(map[string]any{
 		"MUNICIPALFINANCE_TEST_FACT_ENTID": map[string]any{},
 		"MUNICIPALFINANCE_TEST_LIVE":    "FALSE",
-		"MUNICIPALFINANCE_APIKEY":       "NONE",
 	})
 
 	live := env["MUNICIPALFINANCE_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["MUNICIPALFINANCE_APIKEY"],
 		}
 		client := sdk.NewMunicipalFinanceSDK(mergedOpts)
 

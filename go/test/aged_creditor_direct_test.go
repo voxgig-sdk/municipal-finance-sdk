@@ -93,14 +93,12 @@ func aged_creditorDirectSetup(mockres any) *aged_creditorDirectSetupResult {
 	env := envOverride(map[string]any{
 		"MUNICIPALFINANCE_TEST_AGED_CREDITOR_ENTID": map[string]any{},
 		"MUNICIPALFINANCE_TEST_LIVE":    "FALSE",
-		"MUNICIPALFINANCE_APIKEY":       "NONE",
 	})
 
 	live := env["MUNICIPALFINANCE_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["MUNICIPALFINANCE_APIKEY"],
 		}
 		client := sdk.NewMunicipalFinanceSDK(mergedOpts)
 

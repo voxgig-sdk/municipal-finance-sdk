@@ -43,8 +43,7 @@ class AgedDebtorEntityTest < Minitest::Test
     aged_debtor_ref01_ent = client.AgedDebtor(nil)
     aged_debtor_ref01_match = {}
 
-    aged_debtor_ref01_list_result, err = aged_debtor_ref01_ent.list(aged_debtor_ref01_match, nil)
-    assert_nil err
+    aged_debtor_ref01_list_result = aged_debtor_ref01_ent.list(aged_debtor_ref01_match, nil)
     assert aged_debtor_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def aged_debtor_basic_setup(extra)
     "MUNICIPALFINANCE_TEST_AGED_DEBTOR_ENTID" => idmap,
     "MUNICIPALFINANCE_TEST_LIVE" => "FALSE",
     "MUNICIPALFINANCE_TEST_EXPLAIN" => "FALSE",
-    "MUNICIPALFINANCE_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def aged_debtor_basic_setup(extra)
   if env["MUNICIPALFINANCE_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["MUNICIPALFINANCE_APIKEY"],
       },
       extra || {},
     ])

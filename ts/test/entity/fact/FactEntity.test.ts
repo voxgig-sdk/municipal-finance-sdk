@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'MUNICIPAL_FINANCE_TEST_FACT_ENTID': idmap,
     'MUNICIPAL_FINANCE_TEST_LIVE': 'FALSE',
     'MUNICIPAL_FINANCE_TEST_EXPLAIN': 'FALSE',
-    'MUNICIPAL_FINANCE_APIKEY': 'NONE',
   })
 
   idmap = env['MUNICIPAL_FINANCE_TEST_FACT_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new MunicipalFinanceSDK(merge([
       {
-        apikey: env.MUNICIPAL_FINANCE_APIKEY,
       },
       extra
     ]))

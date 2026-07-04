@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -134,7 +133,7 @@ Alias for `MunicipalFinanceSDK.test()`.
 ## AgedCreditorEntity
 
 ```ts
-const aged_creditor = client.AgedCreditor()
+const aged_creditor = client.aged_creditor
 ```
 
 ### Fields
@@ -162,7 +161,7 @@ const aged_creditor = client.AgedCreditor()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.AgedCreditor().list()
+const results = await client.aged_creditor.list()
 ```
 
 ### Common Methods
@@ -196,7 +195,7 @@ Return a copy of the entity options.
 ## AgedDebtorEntity
 
 ```ts
-const aged_debtor = client.AgedDebtor()
+const aged_debtor = client.aged_debtor
 ```
 
 ### Fields
@@ -225,7 +224,7 @@ const aged_debtor = client.AgedDebtor()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.AgedDebtor().list()
+const results = await client.aged_debtor.list()
 ```
 
 ### Common Methods
@@ -259,7 +258,7 @@ Return a copy of the entity options.
 ## FactEntity
 
 ```ts
-const fact = client.Fact()
+const fact = client.fact
 ```
 
 ### Fields
@@ -277,7 +276,7 @@ const fact = client.Fact()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Fact().list()
+const results = await client.fact.list()
 ```
 
 ### Common Methods

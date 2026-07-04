@@ -144,16 +144,23 @@ class MunicipalFinanceSDK:
 
         _, err = utility.prepare_auth(ctx)
         if err is not None:
-            return None, err
+            raise err
 
-        return utility.make_fetch_def(ctx)
+        fetchdef, err = utility.make_fetch_def(ctx)
+        if err is not None:
+            raise err
+
+        return fetchdef
 
     def direct(self, fetchargs=None):
         utility = self._utility
 
-        fetchdef, err = self.prepare(fetchargs)
-        if err is not None:
-            return {"ok": False, "err": err}, None
+        try:
+            fetchdef = self.prepare(fetchargs)
+        except Exception as err:
+            # direct() is the raw-HTTP escape hatch: it never raises, it
+            # returns a result object callers branch on via result["ok"].
+            return {"ok": False, "err": err}
 
         if fetchargs is None:
             fetchargs = {}
@@ -170,13 +177,13 @@ class MunicipalFinanceSDK:
         fetched, fetch_err = utility.fetcher(ctx, url, fetchdef)
 
         if fetch_err is not None:
-            return {"ok": False, "err": fetch_err}, None
+            return {"ok": False, "err": fetch_err}
 
         if fetched is None:
             return {
                 "ok": False,
                 "err": ctx.make_error("direct_no_response", "response: undefined"),
-            }, None
+            }
 
         if isinstance(fetched, dict):
             status = helpers.to_int(vs.getprop(fetched, "status"))
@@ -205,25 +212,58 @@ class MunicipalFinanceSDK:
                 "status": status,
                 "headers": headers,
                 "data": json_data,
-            }, None
+            }
 
         return {
             "ok": False,
             "err": ctx.make_error("direct_invalid", "invalid response type"),
-        }, None
+        }
 
+
+    @property
+    def aged_creditor(self):
+        """Idiomatic facade: client.aged_creditor.list() / client.aged_creditor.load({"id": ...})."""
+        from entity.aged_creditor_entity import AgedCreditorEntity
+        cached = getattr(self, "_aged_creditor", None)
+        if cached is None:
+            cached = AgedCreditorEntity(self, None)
+            self._aged_creditor = cached
+        return cached
 
     def AgedCreditor(self, data=None):
+        # Deprecated: use client.aged_creditor instead.
         from entity.aged_creditor_entity import AgedCreditorEntity
         return AgedCreditorEntity(self, data)
 
 
+    @property
+    def aged_debtor(self):
+        """Idiomatic facade: client.aged_debtor.list() / client.aged_debtor.load({"id": ...})."""
+        from entity.aged_debtor_entity import AgedDebtorEntity
+        cached = getattr(self, "_aged_debtor", None)
+        if cached is None:
+            cached = AgedDebtorEntity(self, None)
+            self._aged_debtor = cached
+        return cached
+
     def AgedDebtor(self, data=None):
+        # Deprecated: use client.aged_debtor instead.
         from entity.aged_debtor_entity import AgedDebtorEntity
         return AgedDebtorEntity(self, data)
 
 
+    @property
+    def fact(self):
+        """Idiomatic facade: client.fact.list() / client.fact.load({"id": ...})."""
+        from entity.fact_entity import FactEntity
+        cached = getattr(self, "_fact", None)
+        if cached is None:
+            cached = FactEntity(self, None)
+            self._fact = cached
+        return cached
+
     def Fact(self, data=None):
+        # Deprecated: use client.fact instead.
         from entity.fact_entity import FactEntity
         return FactEntity(self, data)
 

@@ -4,6 +4,8 @@ import { AgedCreditorEntity } from './entity/AgedCreditorEntity'
 import { AgedDebtorEntity } from './entity/AgedDebtorEntity'
 import { FactEntity } from './entity/FactEntity'
 
+export type * from './MunicipalFinanceTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -204,18 +206,42 @@ class MunicipalFinanceSDK {
 
 
 
+  _aged_creditor?: AgedCreditorEntity
+
+  // Idiomatic facade: `client.aged_creditor.list()` / `client.aged_creditor.load({ id })`.
+  get aged_creditor(): AgedCreditorEntity {
+    return (this._aged_creditor ??= new AgedCreditorEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.aged_creditor` instead. */
   AgedCreditor(data?: any) {
     const self = this
     return new AgedCreditorEntity(self,data)
   }
 
 
+  _aged_debtor?: AgedDebtorEntity
+
+  // Idiomatic facade: `client.aged_debtor.list()` / `client.aged_debtor.load({ id })`.
+  get aged_debtor(): AgedDebtorEntity {
+    return (this._aged_debtor ??= new AgedDebtorEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.aged_debtor` instead. */
   AgedDebtor(data?: any) {
     const self = this
     return new AgedDebtorEntity(self,data)
   }
 
 
+  _fact?: FactEntity
+
+  // Idiomatic facade: `client.fact.list()` / `client.fact.load({ id })`.
+  get fact(): FactEntity {
+    return (this._fact ??= new FactEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.fact` instead. */
   Fact(data?: any) {
     const self = this
     return new FactEntity(self,data)

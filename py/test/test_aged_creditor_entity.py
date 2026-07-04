@@ -50,8 +50,7 @@ class TestAgedCreditorEntity:
         aged_creditor_ref01_ent = client.AgedCreditor(None)
         aged_creditor_ref01_match = {}
 
-        aged_creditor_ref01_list_result, err = aged_creditor_ref01_ent.list(aged_creditor_ref01_match, None)
-        assert err is None
+        aged_creditor_ref01_list_result = aged_creditor_ref01_ent.list(aged_creditor_ref01_match, None)
         assert isinstance(aged_creditor_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _aged_creditor_basic_setup(extra):
         "MUNICIPALFINANCE_TEST_AGED_CREDITOR_ENTID": idmap,
         "MUNICIPALFINANCE_TEST_LIVE": "FALSE",
         "MUNICIPALFINANCE_TEST_EXPLAIN": "FALSE",
-        "MUNICIPALFINANCE_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _aged_creditor_basic_setup(extra):
     if env.get("MUNICIPALFINANCE_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("MUNICIPALFINANCE_APIKEY"),
             },
             extra or {},
         ])

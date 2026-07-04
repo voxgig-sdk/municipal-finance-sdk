@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -92,7 +91,7 @@ same parameters as `direct()`.
 ## AgedCreditorEntity
 
 ```lua
-local aged_creditor = client:AgedCreditor(nil)
+local aged_creditor = client:aged_creditor(nil)
 ```
 
 ### Fields
@@ -120,7 +119,7 @@ local aged_creditor = client:AgedCreditor(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:AgedCreditor():list()
+local results, err = client:aged_creditor():list()
 ```
 
 ### Common Methods
@@ -156,7 +155,7 @@ Return the entity name.
 ## AgedDebtorEntity
 
 ```lua
-local aged_debtor = client:AgedDebtor(nil)
+local aged_debtor = client:aged_debtor(nil)
 ```
 
 ### Fields
@@ -185,7 +184,7 @@ local aged_debtor = client:AgedDebtor(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:AgedDebtor():list()
+local results, err = client:aged_debtor():list()
 ```
 
 ### Common Methods
@@ -221,7 +220,7 @@ Return the entity name.
 ## FactEntity
 
 ```lua
-local fact = client:Fact(nil)
+local fact = client:fact(nil)
 ```
 
 ### Fields
@@ -239,7 +238,7 @@ local fact = client:Fact(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Fact():list()
+local results, err = client:fact():list()
 ```
 
 ### Common Methods

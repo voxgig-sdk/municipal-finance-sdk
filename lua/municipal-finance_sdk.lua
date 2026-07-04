@@ -244,18 +244,57 @@ end
 
 
 
+-- Idiomatic facade: client:aged_creditor():list() / client:aged_creditor():load({ id = ... })
+function MunicipalFinanceSDK:aged_creditor(data)
+  local EntityMod = require("entity.aged_creditor_entity")
+  if data == nil then
+    if self._aged_creditor == nil then
+      self._aged_creditor = EntityMod.new(self, nil)
+    end
+    return self._aged_creditor
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:aged_creditor() instead.
 function MunicipalFinanceSDK:AgedCreditor(data)
   local EntityMod = require("entity.aged_creditor_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:aged_debtor():list() / client:aged_debtor():load({ id = ... })
+function MunicipalFinanceSDK:aged_debtor(data)
+  local EntityMod = require("entity.aged_debtor_entity")
+  if data == nil then
+    if self._aged_debtor == nil then
+      self._aged_debtor = EntityMod.new(self, nil)
+    end
+    return self._aged_debtor
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:aged_debtor() instead.
 function MunicipalFinanceSDK:AgedDebtor(data)
   local EntityMod = require("entity.aged_debtor_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:fact():list() / client:fact():load({ id = ... })
+function MunicipalFinanceSDK:fact(data)
+  local EntityMod = require("entity.fact_entity")
+  if data == nil then
+    if self._fact == nil then
+      self._fact = EntityMod.new(self, nil)
+    end
+    return self._fact
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:fact() instead.
 function MunicipalFinanceSDK:Fact(data)
   local EntityMod = require("entity.fact_entity")
   return EntityMod.new(self, data)

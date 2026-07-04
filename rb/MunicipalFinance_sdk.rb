@@ -13,6 +13,9 @@ require_relative 'config'
 require_relative 'feature/base_feature'
 require_relative 'features'
 
+# Load typed models (Struct value objects).
+require_relative 'MunicipalFinance_types'
+
 
 class MunicipalFinanceSDK
   attr_accessor :mode, :features, :options
@@ -131,7 +134,7 @@ class MunicipalFinanceSDK
     end
 
     _, err = utility.prepare_auth.call(ctx)
-    return nil, err if err
+    raise err if err
 
     utility.make_fetch_def.call(ctx)
   end
@@ -139,8 +142,14 @@ class MunicipalFinanceSDK
   def direct(fetchargs = {})
     utility = @_utility
 
-    fetchdef, err = prepare(fetchargs)
-    return { "ok" => false, "err" => err }, nil if err
+    # direct() is the raw-HTTP escape hatch: it always returns a result hash
+    # ({ "ok" => ..., ... }) and never raises. prepare() raises on error, so
+    # trap that and surface it in the hash.
+    begin
+      fetchdef = prepare(fetchargs)
+    rescue MunicipalFinanceError => err
+      return { "ok" => false, "err" => err }
+    end
 
     fetchargs ||= {}
     ctrl = MunicipalFinanceHelpers.to_map(VoxgigStruct.getprop(fetchargs, "ctrl")) || {}
@@ -153,13 +162,13 @@ class MunicipalFinanceSDK
     url = fetchdef["url"] || ""
     fetched, fetch_err = utility.fetcher.call(ctx, url, fetchdef)
 
-    return { "ok" => false, "err" => fetch_err }, nil if fetch_err
+    return { "ok" => false, "err" => fetch_err } if fetch_err
 
     if fetched.nil?
       return {
         "ok" => false,
         "err" => ctx.make_error("direct_no_response", "response: undefined"),
-      }, nil
+      }
     end
 
     if fetched.is_a?(Hash)
@@ -189,28 +198,49 @@ class MunicipalFinanceSDK
         "status" => status,
         "headers" => headers,
         "data" => json_data,
-      }, nil
+      }
     end
 
     return {
       "ok" => false,
       "err" => ctx.make_error("direct_invalid", "invalid response type"),
-    }, nil
+    }
   end
 
 
+  # Idiomatic facade: client.aged_creditor.list / client.aged_creditor.load({ "id" => ... })
+  def aged_creditor
+    require_relative 'entity/aged_creditor_entity'
+    @aged_creditor ||= AgedCreditorEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.aged_creditor instead.
   def AgedCreditor(data = nil)
     require_relative 'entity/aged_creditor_entity'
     AgedCreditorEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.aged_debtor.list / client.aged_debtor.load({ "id" => ... })
+  def aged_debtor
+    require_relative 'entity/aged_debtor_entity'
+    @aged_debtor ||= AgedDebtorEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.aged_debtor instead.
   def AgedDebtor(data = nil)
     require_relative 'entity/aged_debtor_entity'
     AgedDebtorEntity.new(self, data)
   end
 
 
+  # Idiomatic facade: client.fact.list / client.fact.load({ "id" => ... })
+  def fact
+    require_relative 'entity/fact_entity'
+    @fact ||= FactEntity.new(self, nil)
+  end
+
+  # Deprecated: use client.fact instead.
   def Fact(data = nil)
     require_relative 'entity/fact_entity'
     FactEntity.new(self, data)

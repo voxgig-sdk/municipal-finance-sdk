@@ -245,16 +245,25 @@ func (sdk *MunicipalFinanceSDK) Direct(fetchargs map[string]any) (map[string]any
 }
 
 
+// AgedCreditor returns a AgedCreditor entity bound to this client.
+// Idiomatic usage: client.AgedCreditor(nil).List(nil, nil) or
+// client.AgedCreditor(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *MunicipalFinanceSDK) AgedCreditor(data map[string]any) MunicipalFinanceEntity {
 	return NewAgedCreditorEntityFunc(sdk, data)
 }
 
 
+// AgedDebtor returns a AgedDebtor entity bound to this client.
+// Idiomatic usage: client.AgedDebtor(nil).List(nil, nil) or
+// client.AgedDebtor(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *MunicipalFinanceSDK) AgedDebtor(data map[string]any) MunicipalFinanceEntity {
 	return NewAgedDebtorEntityFunc(sdk, data)
 }
 
 
+// Fact returns a Fact entity bound to this client.
+// Idiomatic usage: client.Fact(nil).List(nil, nil) or
+// client.Fact(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *MunicipalFinanceSDK) Fact(data map[string]any) MunicipalFinanceEntity {
 	return NewFactEntityFunc(sdk, data)
 }

@@ -119,7 +119,6 @@ func factBasicSetup(extra map[string]any) *entityTestSetup {
 		"MUNICIPALFINANCE_TEST_FACT_ENTID": idmap,
 		"MUNICIPALFINANCE_TEST_LIVE":      "FALSE",
 		"MUNICIPALFINANCE_TEST_EXPLAIN":   "FALSE",
-		"MUNICIPALFINANCE_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["MUNICIPALFINANCE_TEST_FACT_ENTID"])
@@ -130,7 +129,6 @@ func factBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["MUNICIPALFINANCE_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["MUNICIPALFINANCE_APIKEY"],
 			},
 			extra,
 		})

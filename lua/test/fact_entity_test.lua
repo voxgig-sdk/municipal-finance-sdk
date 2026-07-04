@@ -92,7 +92,6 @@ function fact_basic_setup(extra)
     ["MUNICIPALFINANCE_TEST_FACT_ENTID"] = idmap,
     ["MUNICIPALFINANCE_TEST_LIVE"] = "FALSE",
     ["MUNICIPALFINANCE_TEST_EXPLAIN"] = "FALSE",
-    ["MUNICIPALFINANCE_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -104,7 +103,6 @@ function fact_basic_setup(extra)
   if env["MUNICIPALFINANCE_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["MUNICIPALFINANCE_APIKEY"],
       },
       extra or {},
     })

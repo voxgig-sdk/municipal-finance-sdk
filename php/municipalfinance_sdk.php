@@ -103,7 +103,7 @@ class MunicipalFinanceSDK
         return $this->_rootctx;
     }
 
-    public function prepare(array $fetchargs = []): array
+    public function prepare(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
         $fetchargs = $fetchargs ?? [];
@@ -149,19 +149,27 @@ class MunicipalFinanceSDK
 
         [$_, $err] = ($utility->prepare_auth)($ctx);
         if ($err) {
-            return [null, $err];
+            return ($utility->make_error)($ctx, $err);
         }
 
-        return ($utility->make_fetch_def)($ctx);
+        [$fetchdef, $fd_err] = ($utility->make_fetch_def)($ctx);
+        if ($fd_err) {
+            return ($utility->make_error)($ctx, $fd_err);
+        }
+        return $fetchdef;
     }
 
-    public function direct(array $fetchargs = []): array
+    public function direct(array $fetchargs = []): mixed
     {
         $utility = $this->_utility;
 
-        [$fetchdef, $err] = $this->prepare($fetchargs);
-        if ($err) {
-            return [["ok" => false, "err" => $err], null];
+        // direct() is the raw-HTTP escape hatch: it never throws, it returns
+        // an {ok, err, ...} dict. prepare() now raises on error, so catch it
+        // and surface the failure through the dict instead.
+        try {
+            $fetchdef = $this->prepare($fetchargs);
+        } catch (\Throwable $err) {
+            return ["ok" => false, "err" => $err];
         }
 
         $fetchargs = $fetchargs ?? [];
@@ -176,14 +184,14 @@ class MunicipalFinanceSDK
         [$fetched, $fetch_err] = ($utility->fetcher)($ctx, $url, $fetchdef);
 
         if ($fetch_err) {
-            return [["ok" => false, "err" => $fetch_err], null];
+            return ["ok" => false, "err" => $fetch_err];
         }
 
         if ($fetched === null) {
-            return [[
+            return [
                 "ok" => false,
                 "err" => $ctx->make_error("direct_no_response", "response: undefined"),
-            ], null];
+            ];
         }
 
         if (is_array($fetched)) {
@@ -208,38 +216,71 @@ class MunicipalFinanceSDK
                 }
             }
 
-            return [[
+            return [
                 "ok" => $status >= 200 && $status < 300,
                 "status" => $status,
                 "headers" => Struct::getprop($fetched, "headers"),
                 "data" => $json_data,
-            ], null];
+            ];
         }
 
-        return [[
+        return [
             "ok" => false,
             "err" => $ctx->make_error("direct_invalid", "invalid response type"),
-        ], null];
+        ];
     }
 
 
-    public function AgedCreditor($data = null)
+    private $_aged_creditor = null;
+
+    // Idiomatic facade: $client->aged_creditor()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias AgedCreditor() (PHP method
+    // names are case-insensitive).
+    public function aged_creditor($data = null)
     {
         require_once __DIR__ . '/entity/aged_creditor_entity.php';
+        if ($data === null) {
+            if ($this->_aged_creditor === null) {
+                $this->_aged_creditor = new AgedCreditorEntity($this, null);
+            }
+            return $this->_aged_creditor;
+        }
         return new AgedCreditorEntity($this, $data);
     }
 
 
-    public function AgedDebtor($data = null)
+    private $_aged_debtor = null;
+
+    // Idiomatic facade: $client->aged_debtor()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias AgedDebtor() (PHP method
+    // names are case-insensitive).
+    public function aged_debtor($data = null)
     {
         require_once __DIR__ . '/entity/aged_debtor_entity.php';
+        if ($data === null) {
+            if ($this->_aged_debtor === null) {
+                $this->_aged_debtor = new AgedDebtorEntity($this, null);
+            }
+            return $this->_aged_debtor;
+        }
         return new AgedDebtorEntity($this, $data);
     }
 
 
-    public function Fact($data = null)
+    private $_fact = null;
+
+    // Idiomatic facade: $client->fact()->list() / ->load(["id" => ...]).
+    // Also serves the deprecated PascalCase alias Fact() (PHP method
+    // names are case-insensitive).
+    public function fact($data = null)
     {
         require_once __DIR__ . '/entity/fact_entity.php';
+        if ($data === null) {
+            if ($this->_fact === null) {
+                $this->_fact = new FactEntity($this, null);
+            }
+            return $this->_fact;
+        }
         return new FactEntity($this, $data);
     }
 

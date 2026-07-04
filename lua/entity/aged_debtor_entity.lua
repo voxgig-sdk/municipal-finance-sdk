@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch AgedDebtorListMatch
+---@param ctrl? table
+---@return AgedDebtor[]
+---@return string? err
 function AgedDebtorEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

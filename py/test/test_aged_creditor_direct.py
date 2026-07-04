@@ -24,7 +24,7 @@ class TestAgedCreditorDirect:
         client = setup["client"]
 
 
-        result, err = client.direct({
+        result = client.direct({
             "path": "cubes/aged_creditor/facts",
             "method": "GET",
             "params": {},
@@ -33,8 +33,8 @@ class TestAgedCreditorDirect:
             # Live mode is lenient: synthetic IDs frequently 4xx and the
             # list-response shape varies wildly across public APIs. Skip
             # rather than fail when the call doesn't return a usable list.
-            if err is not None:
-                pytest.skip(f"list call failed (likely synthetic IDs against live API): {err}")
+            if result.get("err") is not None:
+                pytest.skip(f"list call failed (likely synthetic IDs against live API): {result.get('err')}")
                 return
             if not result.get("ok"):
                 pytest.skip("list call not ok (likely synthetic IDs against live API)")
@@ -44,7 +44,6 @@ class TestAgedCreditorDirect:
                 pytest.skip(f"expected 2xx status, got {status}")
                 return
         else:
-            assert err is None
             assert result["ok"] is True
             assert helpers.to_int(result["status"]) == 200
             assert isinstance(result["data"], list)
@@ -61,14 +60,12 @@ def _aged_creditor_direct_setup(mockres):
     env = runner.env_override({
         "MUNICIPALFINANCE_TEST_AGED_CREDITOR_ENTID": {},
         "MUNICIPALFINANCE_TEST_LIVE": "FALSE",
-        "MUNICIPALFINANCE_APIKEY": "NONE",
     })
 
     live = env.get("MUNICIPALFINANCE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("MUNICIPALFINANCE_APIKEY"),
         }
         client = MunicipalFinanceSDK(merged_opts)
         return {
