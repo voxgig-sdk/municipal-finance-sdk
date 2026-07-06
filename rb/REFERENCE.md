@@ -8,7 +8,7 @@ Complete API reference for the MunicipalFinance Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'municipal-finance_sdk'
+require_relative 'MunicipalFinance_sdk'
 
 client = MunicipalFinanceSDK.new(options)
 ```
@@ -101,28 +101,28 @@ aged_creditor = client.AgedCreditor
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount_sum` | ``$NUMBER`` | No |  |
-| `amount_type_code` | ``$STRING`` | No |  |
-| `amount_type_label` | ``$STRING`` | No |  |
-| `demarcation_code` | ``$STRING`` | No |  |
-| `demarcation_label` | ``$STRING`` | No |  |
-| `financial_period_period` | ``$INTEGER`` | No |  |
-| `financial_year_end_year` | ``$INTEGER`` | No |  |
-| `item_code` | ``$STRING`` | No |  |
-| `item_composition` | ``$STRING`` | No |  |
-| `item_label` | ``$STRING`` | No |  |
-| `item_position_in_return_form` | ``$INTEGER`` | No |  |
-| `item_return_form_structure` | ``$STRING`` | No |  |
-| `period_length_length` | ``$STRING`` | No |  |
+| `amount_sum` | `Float` | No |  |
+| `amount_type_code` | `String` | No |  |
+| `amount_type_label` | `String` | No |  |
+| `demarcation_code` | `String` | No |  |
+| `demarcation_label` | `String` | No |  |
+| `financial_period_period` | `Integer` | No |  |
+| `financial_year_end_year` | `Integer` | No |  |
+| `item_code` | `String` | No |  |
+| `item_composition` | `String` | No |  |
+| `item_label` | `String` | No |  |
+| `item_position_in_return_form` | `Integer` | No |  |
+| `item_return_form_structure` | `String` | No |  |
+| `period_length_length` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.AgedCreditor.list(nil)
+results = client.AgedCreditor.list
 ```
 
 ### Common Methods
@@ -165,29 +165,29 @@ aged_debtor = client.AgedDebtor
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount_sum` | ``$NUMBER`` | No |  |
-| `amount_type_code` | ``$STRING`` | No |  |
-| `amount_type_label` | ``$STRING`` | No |  |
-| `customer_group_code` | ``$STRING`` | No |  |
-| `demarcation_code` | ``$STRING`` | No |  |
-| `demarcation_label` | ``$STRING`` | No |  |
-| `financial_period_period` | ``$INTEGER`` | No |  |
-| `financial_year_end_year` | ``$INTEGER`` | No |  |
-| `item_code` | ``$STRING`` | No |  |
-| `item_composition` | ``$STRING`` | No |  |
-| `item_label` | ``$STRING`` | No |  |
-| `item_position_in_return_form` | ``$INTEGER`` | No |  |
-| `item_return_form_structure` | ``$STRING`` | No |  |
-| `period_length_length` | ``$STRING`` | No |  |
+| `amount_sum` | `Float` | No |  |
+| `amount_type_code` | `String` | No |  |
+| `amount_type_label` | `String` | No |  |
+| `customer_group_code` | `String` | No |  |
+| `demarcation_code` | `String` | No |  |
+| `demarcation_label` | `String` | No |  |
+| `financial_period_period` | `Integer` | No |  |
+| `financial_year_end_year` | `Integer` | No |  |
+| `item_code` | `String` | No |  |
+| `item_composition` | `String` | No |  |
+| `item_label` | `String` | No |  |
+| `item_position_in_return_form` | `Integer` | No |  |
+| `item_return_form_structure` | `String` | No |  |
+| `period_length_length` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.AgedDebtor.list(nil)
+results = client.AgedDebtor.list
 ```
 
 ### Common Methods
@@ -230,18 +230,18 @@ fact = client.Fact
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cell` | ``$ARRAY`` | No |  |
-| `summary` | ``$OBJECT`` | No |  |
-| `total_cell_count` | ``$INTEGER`` | No |  |
+| `cell` | `Array` | No |  |
+| `summary` | `Hash` | No |  |
+| `total_cell_count` | `Integer` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Fact.list(nil)
+results = client.Fact.list
 ```
 
 ### Common Methods

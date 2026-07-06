@@ -4,6 +4,8 @@
 
 The PHP SDK for the MunicipalFinance API — an entity-oriented client using PHP conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `$client->AgedCreditor()` — with named operations (`list`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -36,10 +38,41 @@ try {
     // list() returns an array of AgedCreditor records — iterate directly.
     $agedcreditors = $client->AgedCreditor()->list();
     foreach ($agedcreditors as $item) {
-        echo $item["id"] . " " . $item["name"] . "\n";
+        echo $item["amount_sum"] . "\n";
     }
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
+}
+```
+
+
+## Error handling
+
+Entity operations throw a `\Throwable` on failure, so wrap them in
+`try` / `catch`:
+
+```php
+try {
+    $agedcreditors = $client->AgedCreditor()->list();
+} catch (\Throwable $err) {
+    echo "Error: " . $err->getMessage();
+}
+```
+
+`direct()` does **not** throw — it returns the result array. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```php
+$result = $client->direct([
+    "path" => "/api/resource/{id}",
+    "method" => "GET",
+    "params" => ["id" => "example_id"],
+]);
+
+if (! $result["ok"]) {
+    $err = $result["err"] ?? null;
+    echo "request failed: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -63,7 +96,10 @@ if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
 } else {
-    echo "Error: " . $result["err"]->getMessage();
+    // On an HTTP error status there is no err (only a transport failure sets
+    // it), so fall back to the status code.
+    $err = $result["err"] ?? null;
+    echo "Error: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -84,16 +120,13 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```php
-$client = MunicipalFinanceSDK::test([
-    "entity" => ["agedcreditor" => ["test01" => ["id" => "test01"]]],
-]);
+$client = MunicipalFinanceSDK::test();
 
-// load() returns the bare mock record (throws on error).
-$agedcreditor = $client->AgedCreditor()->load(["id" => "test01"]);
+// Entity ops return the bare mock record (throws on error).
+$agedcreditor = $client->AgedCreditor()->list();
 print_r($agedcreditor);
 ```
 
@@ -183,11 +216,7 @@ All entities share the same interface.
 
 | Method | Signature | Description |
 | --- | --- | --- |
-| `load` | `($reqmatch, $ctrl): array` | Load a single entity by match criteria. |
-| `list` | `($reqmatch, $ctrl): array` | List entities matching the criteria. |
-| `create` | `($reqdata, $ctrl): array` | Create a new entity. |
-| `update` | `($reqdata, $ctrl): array` | Update an existing entity. |
-| `remove` | `($reqmatch, $ctrl): array` | Remove an entity. |
+| `list` | `(?array $reqmatch = null, $ctrl): array` | List entities matching the criteria (call with no argument to list all). |
 | `data_get` | `(): array` | Get entity data. |
 | `data_set` | `($data): void` | Set entity data. |
 | `match_get` | `(): array` | Get entity match criteria. |
@@ -291,19 +320,19 @@ Create an instance: `$aged_creditor = $client->AgedCreditor();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `amount_sum` | ``$NUMBER`` |  |
-| `amount_type_code` | ``$STRING`` |  |
-| `amount_type_label` | ``$STRING`` |  |
-| `demarcation_code` | ``$STRING`` |  |
-| `demarcation_label` | ``$STRING`` |  |
-| `financial_period_period` | ``$INTEGER`` |  |
-| `financial_year_end_year` | ``$INTEGER`` |  |
-| `item_code` | ``$STRING`` |  |
-| `item_composition` | ``$STRING`` |  |
-| `item_label` | ``$STRING`` |  |
-| `item_position_in_return_form` | ``$INTEGER`` |  |
-| `item_return_form_structure` | ``$STRING`` |  |
-| `period_length_length` | ``$STRING`` |  |
+| `amount_sum` | `float` |  |
+| `amount_type_code` | `string` |  |
+| `amount_type_label` | `string` |  |
+| `demarcation_code` | `string` |  |
+| `demarcation_label` | `string` |  |
+| `financial_period_period` | `int` |  |
+| `financial_year_end_year` | `int` |  |
+| `item_code` | `string` |  |
+| `item_composition` | `string` |  |
+| `item_label` | `string` |  |
+| `item_position_in_return_form` | `int` |  |
+| `item_return_form_structure` | `string` |  |
+| `period_length_length` | `string` |  |
 
 #### Example: List
 
@@ -327,20 +356,20 @@ Create an instance: `$aged_debtor = $client->AgedDebtor();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `amount_sum` | ``$NUMBER`` |  |
-| `amount_type_code` | ``$STRING`` |  |
-| `amount_type_label` | ``$STRING`` |  |
-| `customer_group_code` | ``$STRING`` |  |
-| `demarcation_code` | ``$STRING`` |  |
-| `demarcation_label` | ``$STRING`` |  |
-| `financial_period_period` | ``$INTEGER`` |  |
-| `financial_year_end_year` | ``$INTEGER`` |  |
-| `item_code` | ``$STRING`` |  |
-| `item_composition` | ``$STRING`` |  |
-| `item_label` | ``$STRING`` |  |
-| `item_position_in_return_form` | ``$INTEGER`` |  |
-| `item_return_form_structure` | ``$STRING`` |  |
-| `period_length_length` | ``$STRING`` |  |
+| `amount_sum` | `float` |  |
+| `amount_type_code` | `string` |  |
+| `amount_type_label` | `string` |  |
+| `customer_group_code` | `string` |  |
+| `demarcation_code` | `string` |  |
+| `demarcation_label` | `string` |  |
+| `financial_period_period` | `int` |  |
+| `financial_year_end_year` | `int` |  |
+| `item_code` | `string` |  |
+| `item_composition` | `string` |  |
+| `item_label` | `string` |  |
+| `item_position_in_return_form` | `int` |  |
+| `item_return_form_structure` | `string` |  |
+| `period_length_length` | `string` |  |
 
 #### Example: List
 
@@ -364,9 +393,9 @@ Create an instance: `$fact = $client->Fact();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `cell` | ``$ARRAY`` |  |
-| `summary` | ``$OBJECT`` |  |
-| `total_cell_count` | ``$INTEGER`` |  |
+| `cell` | `array` |  |
+| `summary` | `array` |  |
+| `total_cell_count` | `int` |  |
 
 #### Example: List
 
@@ -376,12 +405,16 @@ $facts = $client->Fact()->list();
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -398,8 +431,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as the second element in the return array.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -443,15 +477,15 @@ when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
 $agedcreditor = $client->AgedCreditor();
-$agedcreditor->load(["id" => "example_id"]);
+$agedcreditor->list();
 
-// $agedcreditor->dataGet() now returns the loaded agedcreditor data
-// $agedcreditor->matchGet() returns the last match criteria
+// $agedcreditor->data_get() now returns the agedcreditor data from the last list
+// $agedcreditor->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

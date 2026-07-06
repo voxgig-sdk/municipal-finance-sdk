@@ -105,19 +105,19 @@ aged_creditor := client.AgedCreditor(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount_sum` | ``$NUMBER`` | No |  |
-| `amount_type_code` | ``$STRING`` | No |  |
-| `amount_type_label` | ``$STRING`` | No |  |
-| `demarcation_code` | ``$STRING`` | No |  |
-| `demarcation_label` | ``$STRING`` | No |  |
-| `financial_period_period` | ``$INTEGER`` | No |  |
-| `financial_year_end_year` | ``$INTEGER`` | No |  |
-| `item_code` | ``$STRING`` | No |  |
-| `item_composition` | ``$STRING`` | No |  |
-| `item_label` | ``$STRING`` | No |  |
-| `item_position_in_return_form` | ``$INTEGER`` | No |  |
-| `item_return_form_structure` | ``$STRING`` | No |  |
-| `period_length_length` | ``$STRING`` | No |  |
+| `amount_sum` | `float64` | No |  |
+| `amount_type_code` | `string` | No |  |
+| `amount_type_label` | `string` | No |  |
+| `demarcation_code` | `string` | No |  |
+| `demarcation_label` | `string` | No |  |
+| `financial_period_period` | `int` | No |  |
+| `financial_year_end_year` | `int` | No |  |
+| `item_code` | `string` | No |  |
+| `item_composition` | `string` | No |  |
+| `item_label` | `string` | No |  |
+| `item_position_in_return_form` | `int` | No |  |
+| `item_return_form_structure` | `string` | No |  |
+| `period_length_length` | `string` | No |  |
 
 ### Operations
 
@@ -163,20 +163,20 @@ aged_debtor := client.AgedDebtor(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount_sum` | ``$NUMBER`` | No |  |
-| `amount_type_code` | ``$STRING`` | No |  |
-| `amount_type_label` | ``$STRING`` | No |  |
-| `customer_group_code` | ``$STRING`` | No |  |
-| `demarcation_code` | ``$STRING`` | No |  |
-| `demarcation_label` | ``$STRING`` | No |  |
-| `financial_period_period` | ``$INTEGER`` | No |  |
-| `financial_year_end_year` | ``$INTEGER`` | No |  |
-| `item_code` | ``$STRING`` | No |  |
-| `item_composition` | ``$STRING`` | No |  |
-| `item_label` | ``$STRING`` | No |  |
-| `item_position_in_return_form` | ``$INTEGER`` | No |  |
-| `item_return_form_structure` | ``$STRING`` | No |  |
-| `period_length_length` | ``$STRING`` | No |  |
+| `amount_sum` | `float64` | No |  |
+| `amount_type_code` | `string` | No |  |
+| `amount_type_label` | `string` | No |  |
+| `customer_group_code` | `string` | No |  |
+| `demarcation_code` | `string` | No |  |
+| `demarcation_label` | `string` | No |  |
+| `financial_period_period` | `int` | No |  |
+| `financial_year_end_year` | `int` | No |  |
+| `item_code` | `string` | No |  |
+| `item_composition` | `string` | No |  |
+| `item_label` | `string` | No |  |
+| `item_position_in_return_form` | `int` | No |  |
+| `item_return_form_structure` | `string` | No |  |
+| `period_length_length` | `string` | No |  |
 
 ### Operations
 
@@ -222,9 +222,9 @@ fact := client.Fact(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cell` | ``$ARRAY`` | No |  |
-| `summary` | ``$OBJECT`` | No |  |
-| `total_cell_count` | ``$INTEGER`` | No |  |
+| `cell` | `[]any` | No |  |
+| `summary` | `map[string]any` | No |  |
+| `total_cell_count` | `int` | No |  |
 
 ### Operations
 

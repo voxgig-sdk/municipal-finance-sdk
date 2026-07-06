@@ -8,7 +8,7 @@ Complete API reference for the MunicipalFinance PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/municipal-finance_sdk.php';
+require_once __DIR__ . '/municipalfinance_sdk.php';
 
 $client = new MunicipalFinanceSDK($options);
 ```
@@ -53,11 +53,11 @@ Create a new `AgedDebtorEntity` instance. Pass `null` for no initial data.
 
 Create a new `FactEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): MunicipalFinanceUtility`
 
 Return a copy of the SDK utility object.
 
@@ -100,45 +100,45 @@ $aged_creditor = $client->AgedCreditor();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount_sum` | ``$NUMBER`` | No |  |
-| `amount_type_code` | ``$STRING`` | No |  |
-| `amount_type_label` | ``$STRING`` | No |  |
-| `demarcation_code` | ``$STRING`` | No |  |
-| `demarcation_label` | ``$STRING`` | No |  |
-| `financial_period_period` | ``$INTEGER`` | No |  |
-| `financial_year_end_year` | ``$INTEGER`` | No |  |
-| `item_code` | ``$STRING`` | No |  |
-| `item_composition` | ``$STRING`` | No |  |
-| `item_label` | ``$STRING`` | No |  |
-| `item_position_in_return_form` | ``$INTEGER`` | No |  |
-| `item_return_form_structure` | ``$STRING`` | No |  |
-| `period_length_length` | ``$STRING`` | No |  |
+| `amount_sum` | `float` | No |  |
+| `amount_type_code` | `string` | No |  |
+| `amount_type_label` | `string` | No |  |
+| `demarcation_code` | `string` | No |  |
+| `demarcation_label` | `string` | No |  |
+| `financial_period_period` | `int` | No |  |
+| `financial_year_end_year` | `int` | No |  |
+| `item_code` | `string` | No |  |
+| `item_composition` | `string` | No |  |
+| `item_label` | `string` | No |  |
+| `item_position_in_return_form` | `int` | No |  |
+| `item_return_form_structure` | `string` | No |  |
+| `period_length_length` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->AgedCreditor()->list([]);
+$results = $client->AgedCreditor()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -147,7 +147,7 @@ Set the entity match criteria.
 Create a new `AgedCreditorEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -164,46 +164,46 @@ $aged_debtor = $client->AgedDebtor();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount_sum` | ``$NUMBER`` | No |  |
-| `amount_type_code` | ``$STRING`` | No |  |
-| `amount_type_label` | ``$STRING`` | No |  |
-| `customer_group_code` | ``$STRING`` | No |  |
-| `demarcation_code` | ``$STRING`` | No |  |
-| `demarcation_label` | ``$STRING`` | No |  |
-| `financial_period_period` | ``$INTEGER`` | No |  |
-| `financial_year_end_year` | ``$INTEGER`` | No |  |
-| `item_code` | ``$STRING`` | No |  |
-| `item_composition` | ``$STRING`` | No |  |
-| `item_label` | ``$STRING`` | No |  |
-| `item_position_in_return_form` | ``$INTEGER`` | No |  |
-| `item_return_form_structure` | ``$STRING`` | No |  |
-| `period_length_length` | ``$STRING`` | No |  |
+| `amount_sum` | `float` | No |  |
+| `amount_type_code` | `string` | No |  |
+| `amount_type_label` | `string` | No |  |
+| `customer_group_code` | `string` | No |  |
+| `demarcation_code` | `string` | No |  |
+| `demarcation_label` | `string` | No |  |
+| `financial_period_period` | `int` | No |  |
+| `financial_year_end_year` | `int` | No |  |
+| `item_code` | `string` | No |  |
+| `item_composition` | `string` | No |  |
+| `item_label` | `string` | No |  |
+| `item_position_in_return_form` | `int` | No |  |
+| `item_return_form_structure` | `string` | No |  |
+| `period_length_length` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->AgedDebtor()->list([]);
+$results = $client->AgedDebtor()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -212,7 +212,7 @@ Set the entity match criteria.
 Create a new `AgedDebtorEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -229,35 +229,35 @@ $fact = $client->Fact();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cell` | ``$ARRAY`` | No |  |
-| `summary` | ``$OBJECT`` | No |  |
-| `total_cell_count` | ``$INTEGER`` | No |  |
+| `cell` | `array` | No |  |
+| `summary` | `array` | No |  |
+| `total_cell_count` | `int` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Fact()->list([]);
+$results = $client->Fact()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -266,7 +266,7 @@ Set the entity match criteria.
 Create a new `FactEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

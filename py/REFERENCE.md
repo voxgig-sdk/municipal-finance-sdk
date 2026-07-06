@@ -8,7 +8,7 @@ Complete API reference for the MunicipalFinance Python SDK.
 ### Constructor
 
 ```python
-from municipal-finance_sdk import MunicipalFinanceSDK
+from municipalfinance_sdk import MunicipalFinanceSDK
 
 client = MunicipalFinanceSDK(options)
 ```
@@ -95,28 +95,28 @@ aged_creditor = client.AgedCreditor()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount_sum` | ``$NUMBER`` | No |  |
-| `amount_type_code` | ``$STRING`` | No |  |
-| `amount_type_label` | ``$STRING`` | No |  |
-| `demarcation_code` | ``$STRING`` | No |  |
-| `demarcation_label` | ``$STRING`` | No |  |
-| `financial_period_period` | ``$INTEGER`` | No |  |
-| `financial_year_end_year` | ``$INTEGER`` | No |  |
-| `item_code` | ``$STRING`` | No |  |
-| `item_composition` | ``$STRING`` | No |  |
-| `item_label` | ``$STRING`` | No |  |
-| `item_position_in_return_form` | ``$INTEGER`` | No |  |
-| `item_return_form_structure` | ``$STRING`` | No |  |
-| `period_length_length` | ``$STRING`` | No |  |
+| `amount_sum` | `float` | No |  |
+| `amount_type_code` | `str` | No |  |
+| `amount_type_label` | `str` | No |  |
+| `demarcation_code` | `str` | No |  |
+| `demarcation_label` | `str` | No |  |
+| `financial_period_period` | `int` | No |  |
+| `financial_year_end_year` | `int` | No |  |
+| `item_code` | `str` | No |  |
+| `item_composition` | `str` | No |  |
+| `item_label` | `str` | No |  |
+| `item_position_in_return_form` | `int` | No |  |
+| `item_return_form_structure` | `str` | No |  |
+| `period_length_length` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.AgedCreditor().list({})
+results = client.AgedCreditor().list()
 for aged_creditor in results:
     print(aged_creditor)
 ```
@@ -160,29 +160,29 @@ aged_debtor = client.AgedDebtor()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount_sum` | ``$NUMBER`` | No |  |
-| `amount_type_code` | ``$STRING`` | No |  |
-| `amount_type_label` | ``$STRING`` | No |  |
-| `customer_group_code` | ``$STRING`` | No |  |
-| `demarcation_code` | ``$STRING`` | No |  |
-| `demarcation_label` | ``$STRING`` | No |  |
-| `financial_period_period` | ``$INTEGER`` | No |  |
-| `financial_year_end_year` | ``$INTEGER`` | No |  |
-| `item_code` | ``$STRING`` | No |  |
-| `item_composition` | ``$STRING`` | No |  |
-| `item_label` | ``$STRING`` | No |  |
-| `item_position_in_return_form` | ``$INTEGER`` | No |  |
-| `item_return_form_structure` | ``$STRING`` | No |  |
-| `period_length_length` | ``$STRING`` | No |  |
+| `amount_sum` | `float` | No |  |
+| `amount_type_code` | `str` | No |  |
+| `amount_type_label` | `str` | No |  |
+| `customer_group_code` | `str` | No |  |
+| `demarcation_code` | `str` | No |  |
+| `demarcation_label` | `str` | No |  |
+| `financial_period_period` | `int` | No |  |
+| `financial_year_end_year` | `int` | No |  |
+| `item_code` | `str` | No |  |
+| `item_composition` | `str` | No |  |
+| `item_label` | `str` | No |  |
+| `item_position_in_return_form` | `int` | No |  |
+| `item_return_form_structure` | `str` | No |  |
+| `period_length_length` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.AgedDebtor().list({})
+results = client.AgedDebtor().list()
 for aged_debtor in results:
     print(aged_debtor)
 ```
@@ -226,18 +226,18 @@ fact = client.Fact()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cell` | ``$ARRAY`` | No |  |
-| `summary` | ``$OBJECT`` | No |  |
-| `total_cell_count` | ``$INTEGER`` | No |  |
+| `cell` | `list` | No |  |
+| `summary` | `dict` | No |  |
+| `total_cell_count` | `int` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Fact().list({})
+results = client.Fact().list()
 for fact in results:
     print(fact)
 ```

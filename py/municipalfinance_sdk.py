@@ -221,19 +221,19 @@ class MunicipalFinanceSDK:
 
 
     def AgedCreditor(self, data=None) -> "AgedCreditorEntity":
-        """Entity factory: client.AgedCreditor().list({}) / client.AgedCreditor().load({"id": ...})."""
+        """Entity factory: client.AgedCreditor().list() / client.AgedCreditor().load({"id": ...})."""
         from entity.aged_creditor_entity import AgedCreditorEntity
         return AgedCreditorEntity(self, data)
 
 
     def AgedDebtor(self, data=None) -> "AgedDebtorEntity":
-        """Entity factory: client.AgedDebtor().list({}) / client.AgedDebtor().load({"id": ...})."""
+        """Entity factory: client.AgedDebtor().list() / client.AgedDebtor().load({"id": ...})."""
         from entity.aged_debtor_entity import AgedDebtorEntity
         return AgedDebtorEntity(self, data)
 
 
     def Fact(self, data=None) -> "FactEntity":
-        """Entity factory: client.Fact().list({}) / client.Fact().load({"id": ...})."""
+        """Entity factory: client.Fact().list() / client.Fact().load({"id": ...})."""
         from entity.fact_entity import FactEntity
         return FactEntity(self, data)
 

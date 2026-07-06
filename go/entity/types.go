@@ -25,8 +25,7 @@ type AgedCreditor struct {
 	PeriodLengthLength *string `json:"period_length_length,omitempty"`
 }
 
-// AgedCreditorListMatch mirrors the aged_creditor fields as an all-optional match
-// filter (Go analog of Partial<AgedCreditor>).
+// AgedCreditorListMatch is the typed request payload for AgedCreditor.ListTyped.
 type AgedCreditorListMatch struct {
 	AmountSum *float64 `json:"amount_sum,omitempty"`
 	AmountTypeCode *string `json:"amount_type_code,omitempty"`
@@ -61,8 +60,7 @@ type AgedDebtor struct {
 	PeriodLengthLength *string `json:"period_length_length,omitempty"`
 }
 
-// AgedDebtorListMatch mirrors the aged_debtor fields as an all-optional match
-// filter (Go analog of Partial<AgedDebtor>).
+// AgedDebtorListMatch is the typed request payload for AgedDebtor.ListTyped.
 type AgedDebtorListMatch struct {
 	AmountSum *float64 `json:"amount_sum,omitempty"`
 	AmountTypeCode *string `json:"amount_type_code,omitempty"`
@@ -87,8 +85,7 @@ type Fact struct {
 	TotalCellCount *int `json:"total_cell_count,omitempty"`
 }
 
-// FactListMatch mirrors the fact fields as an all-optional match
-// filter (Go analog of Partial<Fact>).
+// FactListMatch is the typed request payload for Fact.ListTyped.
 type FactListMatch struct {
 	Cell *[]any `json:"cell,omitempty"`
 	Summary *map[string]any `json:"summary,omitempty"`

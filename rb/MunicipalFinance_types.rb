@@ -65,7 +65,7 @@ AgedCreditor = Struct.new(
   keyword_init: true
 )
 
-# Match filter for AgedCreditor#list (any subset of AgedCreditor fields).
+# Request payload for AgedCreditor#list.
 #
 # @!attribute [rw] amount_sum
 #   @return [Float, nil]
@@ -183,7 +183,7 @@ AgedDebtor = Struct.new(
   keyword_init: true
 )
 
-# Match filter for AgedDebtor#list (any subset of AgedDebtor fields).
+# Request payload for AgedDebtor#list.
 #
 # @!attribute [rw] amount_sum
 #   @return [Float, nil]
@@ -261,7 +261,7 @@ Fact = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Fact#list (any subset of Fact fields).
+# Request payload for Fact#list.
 #
 # @!attribute [rw] cell
 #   @return [Array, nil]

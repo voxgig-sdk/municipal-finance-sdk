@@ -21,7 +21,21 @@ export interface AgedCreditor {
   period_length_length?: string
 }
 
-export type AgedCreditorListMatch = Partial<AgedCreditor>
+export interface AgedCreditorListMatch {
+  amount_sum?: number
+  amount_type_code?: string
+  amount_type_label?: string
+  demarcation_code?: string
+  demarcation_label?: string
+  financial_period_period?: number
+  financial_year_end_year?: number
+  item_code?: string
+  item_composition?: string
+  item_label?: string
+  item_position_in_return_form?: number
+  item_return_form_structure?: string
+  period_length_length?: string
+}
 
 export interface AgedDebtor {
   amount_sum?: number
@@ -40,7 +54,22 @@ export interface AgedDebtor {
   period_length_length?: string
 }
 
-export type AgedDebtorListMatch = Partial<AgedDebtor>
+export interface AgedDebtorListMatch {
+  amount_sum?: number
+  amount_type_code?: string
+  amount_type_label?: string
+  customer_group_code?: string
+  demarcation_code?: string
+  demarcation_label?: string
+  financial_period_period?: number
+  financial_year_end_year?: number
+  item_code?: string
+  item_composition?: string
+  item_label?: string
+  item_position_in_return_form?: number
+  item_return_form_structure?: string
+  period_length_length?: string
+}
 
 export interface Fact {
   cell?: any[]
@@ -48,5 +77,9 @@ export interface Fact {
   total_cell_count?: number
 }
 
-export type FactListMatch = Partial<Fact>
+export interface FactListMatch {
+  cell?: any[]
+  summary?: Record<string, any>
+  total_cell_count?: number
+}
 

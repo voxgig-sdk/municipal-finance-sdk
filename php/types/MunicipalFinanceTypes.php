@@ -30,7 +30,7 @@ class AgedCreditor
     public ?string $period_length_length = null;
 }
 
-/** Match filter for AgedCreditor#list (any subset of AgedCreditor fields). */
+/** Request payload for AgedCreditor#list. */
 class AgedCreditorListMatch
 {
     public ?float $amount_sum = null;
@@ -67,7 +67,7 @@ class AgedDebtor
     public ?string $period_length_length = null;
 }
 
-/** Match filter for AgedDebtor#list (any subset of AgedDebtor fields). */
+/** Request payload for AgedDebtor#list. */
 class AgedDebtorListMatch
 {
     public ?float $amount_sum = null;
@@ -94,7 +94,7 @@ class Fact
     public ?int $total_cell_count = null;
 }
 
-/** Match filter for Fact#list (any subset of Fact fields). */
+/** Request payload for Fact#list. */
 class FactListMatch
 {
     public ?array $cell = null;
