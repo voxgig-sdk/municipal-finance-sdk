@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -1443,15 +1440,18 @@
           "url": "https://municipaldata.treasury.gov.za/docs#general"
         },
         "description": "This API provides access to current and historical financial data from South African municipalities, enabling users to gather insights about municipal finances. It includes data sets covering various aspects of municipal financial performance and accountability, sourced from the National Treasury.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production API Server",
             "url": "https://municipaldata.treasury.gov.za/api"
           }
         ],
+        "summary": "This API provides access to current and historical financial data from South African municipalities, enabling users to gather insights about municipal finances.",
         "termsOfService": "https://municipaldata.treasury.gov.za/docs#general",
         "title": "Municipal Finance API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://municipaldata.treasury.gov.za"
       },
       "option": {},
       "target": {
@@ -1504,6 +1504,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -1554,6 +1557,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

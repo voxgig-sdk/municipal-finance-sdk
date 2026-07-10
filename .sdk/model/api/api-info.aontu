@@ -16,10 +16,10 @@ main: {
           url: "https://municipaldata.treasury.gov.za/api"
         }
       ]
+      summary: "This API provides access to current and historical financial data from South African municipalities, enabling users to gather insights about municipal finances."
       termsOfService: "https://municipaldata.treasury.gov.za/docs#general"
       title: "Municipal Finance API"
       version: "1.0.0"
+      website: "https://municipaldata.treasury.gov.za"
     }
   }
-}
-

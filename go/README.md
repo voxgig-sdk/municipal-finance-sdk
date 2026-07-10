@@ -50,12 +50,12 @@ import (
 func main() {
     client := sdk.New()
 
-    // List agedcreditor records — the value is the array of records itself.
-    agedcreditors, err := client.AgedCreditor(nil).List(nil, nil)
+    // List agedCreditor records — the value is the array of records itself.
+    agedCreditors, err := client.AgedCreditor(nil).List(nil, nil)
     if err != nil {
         panic(err)
     }
-    for _, item := range agedcreditors.([]any) {
+    for _, item := range agedCreditors.([]any) {
         fmt.Println(item)
     }
 }
@@ -137,13 +137,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-agedcreditor, err := client.AgedCreditor(nil).List(
+agedCreditor, err := client.AgedCreditor(nil).List(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(agedcreditor) // the returned mock data
+fmt.Println(agedCreditor) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -249,9 +249,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    agedcreditor, err := client.AgedCreditor(nil).List(map[string]any{/* fields */}, nil)
+    agedCreditor, err := client.AgedCreditor(nil).List(map[string]any{/* fields */}, nil)
     if err != nil { /* handle */ }
-    // agedcreditor is the returned record
+    // agedCreditor is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -322,7 +322,7 @@ API path: `/cubes/audit_opinions/facts`
 
 ### AgedCreditor
 
-Create an instance: `aged_creditor := client.AgedCreditor(nil)`
+Create an instance: `agedCreditor := client.AgedCreditor(nil)`
 
 #### Operations
 
@@ -351,17 +351,17 @@ Create an instance: `aged_creditor := client.AgedCreditor(nil)`
 #### Example: List
 
 ```go
-aged_creditors, err := client.AgedCreditor(nil).List(nil, nil)
+agedCreditors, err := client.AgedCreditor(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(aged_creditors) // the array of records
+fmt.Println(agedCreditors) // the array of records
 ```
 
 
 ### AgedDebtor
 
-Create an instance: `aged_debtor := client.AgedDebtor(nil)`
+Create an instance: `agedDebtor := client.AgedDebtor(nil)`
 
 #### Operations
 
@@ -391,11 +391,11 @@ Create an instance: `aged_debtor := client.AgedDebtor(nil)`
 #### Example: List
 
 ```go
-aged_debtors, err := client.AgedDebtor(nil).List(nil, nil)
+agedDebtors, err := client.AgedDebtor(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(aged_debtors) // the array of records
+fmt.Println(agedDebtors) // the array of records
 ```
 
 

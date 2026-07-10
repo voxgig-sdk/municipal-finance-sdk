@@ -98,7 +98,8 @@ same parameters as `Direct()`.
 ## AgedCreditorEntity
 
 ```go
-aged_creditor := client.AgedCreditor(nil)
+agedCreditor := client.AgedCreditor(nil)
+fmt.Println(agedCreditor.GetName()) // "aged_creditor"
 ```
 
 ### Fields
@@ -127,6 +128,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.AgedCreditor(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -156,7 +161,8 @@ Return the entity name.
 ## AgedDebtorEntity
 
 ```go
-aged_debtor := client.AgedDebtor(nil)
+agedDebtor := client.AgedDebtor(nil)
+fmt.Println(agedDebtor.GetName()) // "aged_debtor"
 ```
 
 ### Fields
@@ -186,6 +192,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.AgedDebtor(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
@@ -216,6 +226,7 @@ Return the entity name.
 
 ```go
 fact := client.Fact(nil)
+fmt.Println(fact.GetName()) // "fact"
 ```
 
 ### Fields
@@ -234,6 +245,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Fact(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods
