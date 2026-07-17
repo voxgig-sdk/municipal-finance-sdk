@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- MunicipalFinance SDK exists test
 
 local sdk = require("municipal-finance_sdk")
 
