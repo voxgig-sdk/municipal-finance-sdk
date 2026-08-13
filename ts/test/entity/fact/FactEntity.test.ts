@@ -26,8 +26,8 @@ import {
 describe('FactEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when MUNICIPALFINANCE_TEST_LIVE=TRUE.
-  afterEach(liveDelay('MUNICIPALFINANCE_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when MUNICIPAL_FINANCE_TEST_LIVE=TRUE.
+  afterEach(liveDelay('MUNICIPAL_FINANCE_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = MunicipalFinanceSDK.test()
@@ -63,7 +63,7 @@ describe('FactEntity', async () => {
     const fact_ref01_ent = client.Fact()
     const fact_ref01_match: any = {}
 
-    const fact_ref01_list = await fact_ref01_ent.list(fact_ref01_match)
+    const fact_ref01_list = (await fact_ref01_ent.list(fact_ref01_match)).map((e: any) => e.data())
 
 
   })

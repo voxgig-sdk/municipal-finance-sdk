@@ -51,7 +51,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  agedcreditors = client.AgedCreditor.list()
+  ageddebtors = client.AgedDebtor.list()
 rescue => err
   warn "list failed: #{err}"
 end
@@ -119,9 +119,10 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = MunicipalFinanceSDK.test
 
-# Entity ops return the bare mock record (raises on error).
-agedcreditor = client.AgedCreditor.list()
-puts agedcreditor
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
+ageddebtor = client.AgedDebtor.list()
+puts ageddebtor
 ```
 
 ### Use a custom fetch function
@@ -283,7 +284,7 @@ API path: `/cubes/aged_debtor/facts`
 
 | Field | Description |
 | --- | --- |
-| `cell` |  |
+| `cells` |  |
 | `summary` |  |
 | `total_cell_count` |  |
 
@@ -383,7 +384,7 @@ Create an instance: `fact = client.Fact`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `cell` | `Array` |  |
+| `cells` | `Array` |  |
 | `summary` | `Hash` |  |
 | `total_cell_count` | `Integer` |  |
 
@@ -471,11 +472,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-agedcreditor = client.AgedCreditor
-agedcreditor.list()
+ageddebtor = client.AgedDebtor
+ageddebtor.list()
 
-# agedcreditor.data_get now returns the agedcreditor data from the last list
-# agedcreditor.match_get returns the last match criteria
+# ageddebtor.data_get now returns the ageddebtor data from the last list
+# ageddebtor.match_get returns the last match criteria
 ```
 
 Call `make` to create a fresh instance with the same configuration

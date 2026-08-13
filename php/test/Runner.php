@@ -43,8 +43,8 @@ class MunicipalFinanceTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('MUNICIPALFINANCE_TEST_LIVE');
-        $override = self::getenv('MUNICIPALFINANCE_TEST_OVERRIDE');
+        $live = self::getenv('MUNICIPAL_FINANCE_TEST_LIVE');
+        $override = self::getenv('MUNICIPAL_FINANCE_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class MunicipalFinanceTestRunner
             }
         }
 
-        $explain = self::getenv('MUNICIPALFINANCE_TEST_EXPLAIN');
+        $explain = self::getenv('MUNICIPAL_FINANCE_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['MUNICIPALFINANCE_TEST_EXPLAIN'] = $explain;
+            $m['MUNICIPAL_FINANCE_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

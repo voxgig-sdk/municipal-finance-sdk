@@ -229,7 +229,7 @@ $fact = $client->Fact();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cell` | `array` | No |  |
+| `cells` | `array` | No |  |
 | `summary` | `array` | No |  |
 | `total_cell_count` | `int` | No |  |
 

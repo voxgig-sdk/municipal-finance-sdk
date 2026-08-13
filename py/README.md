@@ -57,8 +57,8 @@ Entity operations raise on failure, so wrap them in `try` / `except`:
 
 ```python
 try:
-    agedcreditors = client.AgedCreditor().list()
-    print(agedcreditors)
+    ageddebtors = client.AgedDebtor().list()
+    print(ageddebtors)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -124,9 +124,10 @@ Create a mock client for unit testing — no server required:
 ```python
 client = MunicipalFinanceSDK.test()
 
-# Entity ops return the bare record and raise on error.
-agedcreditor = client.AgedCreditor().list()
-# agedcreditor contains the mock response record
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
+ageddebtor = client.AgedDebtor().list()
+# ageddebtor contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -222,7 +223,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -289,7 +290,7 @@ API path: `/cubes/aged_debtor/facts`
 
 | Field | Description |
 | --- | --- |
-| `cell` |  |
+| `cells` |  |
 | `summary` |  |
 | `total_cell_count` |  |
 
@@ -387,7 +388,7 @@ Create an instance: `fact = client.Fact()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `cell` | `list` |  |
+| `cells` | `list` |  |
 | `summary` | `dict` |  |
 | `total_cell_count` | `int` |  |
 
@@ -473,11 +474,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-agedcreditor = client.AgedCreditor()
-agedcreditor.list()
+ageddebtor = client.AgedDebtor()
+ageddebtor.list()
 
-# agedcreditor.data_get() now returns the agedcreditor data from the last list
-# agedcreditor.match_get() returns the last match criteria
+# ageddebtor.data_get() now returns the ageddebtor data from the last list
+# ageddebtor.match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

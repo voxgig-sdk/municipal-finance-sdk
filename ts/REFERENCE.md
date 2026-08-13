@@ -154,6 +154,26 @@ const aged_creditor = client.AgedCreditor()
 | `item_return_form_structure` | `string` | No |  |
 | `period_length_length` | `string` | No |  |
 
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `fact` | `/cubes/aged_creditor/facts` | `client.AgedCreditor().list({ $action: 'fact', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+AgedCreditor record — check the API definition for its shape.
+
+```ts
+const result = await client.AgedCreditor().list({
+  $action: 'fact',
+  /* ...the action's own arguments */
+})
+```
+
 ### Operations
 
 #### `list(match: object, ctrl?: object)`
@@ -217,6 +237,26 @@ const aged_debtor = client.AgedDebtor()
 | `item_return_form_structure` | `string` | No |  |
 | `period_length_length` | `string` | No |  |
 
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `fact` | `/cubes/aged_debtor/facts` | `client.AgedDebtor().list({ $action: 'fact', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+AgedDebtor record — check the API definition for its shape.
+
+```ts
+const result = await client.AgedDebtor().list({
+  $action: 'fact',
+  /* ...the action's own arguments */
+})
+```
+
 ### Operations
 
 #### `list(match: object, ctrl?: object)`
@@ -265,7 +305,7 @@ const fact = client.Fact()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cell` | `any[]` | No |  |
+| `cells` | `any[]` | No |  |
 | `summary` | `Record<string, any>` | No |  |
 | `total_cell_count` | `number` | No |  |
 

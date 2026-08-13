@@ -26,8 +26,8 @@ import {
 describe('AgedCreditorEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when MUNICIPALFINANCE_TEST_LIVE=TRUE.
-  afterEach(liveDelay('MUNICIPALFINANCE_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when MUNICIPAL_FINANCE_TEST_LIVE=TRUE.
+  afterEach(liveDelay('MUNICIPAL_FINANCE_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = MunicipalFinanceSDK.test()
@@ -63,7 +63,7 @@ describe('AgedCreditorEntity', async () => {
     const aged_creditor_ref01_ent = client.AgedCreditor()
     const aged_creditor_ref01_match: any = {}
 
-    const aged_creditor_ref01_list = await aged_creditor_ref01_ent.list(aged_creditor_ref01_match)
+    const aged_creditor_ref01_list = (await aged_creditor_ref01_ent.list(aged_creditor_ref01_match)).map((e: any) => e.data())
 
 
   })

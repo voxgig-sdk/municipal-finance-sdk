@@ -230,7 +230,7 @@ fact = client.Fact
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cell` | `Array` | No |  |
+| `cells` | `Array` | No |  |
 | `summary` | `Hash` | No |  |
 | `total_cell_count` | `Integer` | No |  |
 

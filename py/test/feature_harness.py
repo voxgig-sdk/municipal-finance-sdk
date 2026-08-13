@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import MunicipalFinanceControl
-from core.error import MunicipalFinanceError
-from core.result import MunicipalFinanceResult
-from core.spec import MunicipalFinanceSpec
+from municipalfinance_sdk.config import make_config
+from municipalfinance_sdk.features import _make_feature
+from municipalfinance_sdk.core.control import MunicipalFinanceControl
+from municipalfinance_sdk.core.error import MunicipalFinanceError
+from municipalfinance_sdk.core.result import MunicipalFinanceResult
+from municipalfinance_sdk.core.spec import MunicipalFinanceSpec
 
 
 # True when this SDK was generated with the named feature.

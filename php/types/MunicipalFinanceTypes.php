@@ -89,7 +89,7 @@ class AgedDebtorListMatch
 /** Fact entity data model. */
 class Fact
 {
-    public ?array $cell = null;
+    public ?array $cells = null;
     public ?array $summary = null;
     public ?int $total_cell_count = null;
 }
@@ -97,7 +97,7 @@ class Fact
 /** Request payload for Fact#list. */
 class FactListMatch
 {
-    public ?array $cell = null;
+    public ?array $cells = null;
     public ?array $summary = null;
     public ?int $total_cell_count = null;
 }

@@ -69,12 +69,12 @@
 ---@field period_length_length? string
 
 ---@class Fact
----@field cell? table
+---@field cells? table
 ---@field summary? table
 ---@field total_cell_count? number
 
 ---@class FactListMatch
----@field cell? table
+---@field cells? table
 ---@field summary? table
 ---@field total_cell_count? number
 

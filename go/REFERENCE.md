@@ -233,7 +233,7 @@ fmt.Println(fact.GetName()) // "fact"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cell` | `[]any` | No |  |
+| `cells` | `[]any` | No |  |
 | `summary` | `map[string]any` | No |  |
 | `total_cell_count` | `int` | No |  |
 

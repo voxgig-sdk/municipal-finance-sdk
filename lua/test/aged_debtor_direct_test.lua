@@ -61,11 +61,11 @@ function aged_debtor_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["MUNICIPALFINANCE_TEST_AGED_DEBTOR_ENTID"] = {},
-    ["MUNICIPALFINANCE_TEST_LIVE"] = "FALSE",
+    ["MUNICIPAL_FINANCE_TEST_AGED_DEBTOR_ENTID"] = {},
+    ["MUNICIPAL_FINANCE_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["MUNICIPALFINANCE_TEST_LIVE"] == "TRUE"
+  local live = env["MUNICIPAL_FINANCE_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

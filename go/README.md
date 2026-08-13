@@ -68,12 +68,12 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-agedcreditors, err := client.AgedCreditor(nil).List(nil, nil)
+ageddebtors, err := client.AgedDebtor(nil).List(nil, nil)
 if err != nil {
     // handle err
     return
 }
-_ = agedcreditors
+_ = ageddebtors
 ```
 
 `Direct` follows the same `(value, error)` convention:
@@ -137,13 +137,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-agedCreditor, err := client.AgedCreditor(nil).List(
+agedDebtor, err := client.AgedDebtor(nil).List(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(agedCreditor) // the returned mock data
+fmt.Println(agedDebtor) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -307,7 +307,7 @@ API path: `/cubes/aged_debtor/facts`
 
 | Field | Description |
 | --- | --- |
-| `"cell"` |  |
+| `"cells"` |  |
 | `"summary"` |  |
 | `"total_cell_count"` |  |
 
@@ -413,7 +413,7 @@ Create an instance: `fact := client.Fact(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `cell` | `[]any` |  |
+| `cells` | `[]any` |  |
 | `summary` | `map[string]any` |  |
 | `total_cell_count` | `int` |  |
 
@@ -501,11 +501,11 @@ Entity instances are stateful. After a successful `List`, the entity
 stores the returned data and match criteria internally.
 
 ```go
-agedcreditor := client.AgedCreditor(nil)
-agedcreditor.List(nil, nil)
+ageddebtor := client.AgedDebtor(nil)
+ageddebtor.List(nil, nil)
 
-// agedcreditor.Data() now returns the agedcreditor data from the last list
-// agedcreditor.Match() returns the last match criteria
+// ageddebtor.Data() now returns the ageddebtor data from the last list
+// ageddebtor.Match() returns the last match criteria
 ```
 
 Call `Make()` to create a fresh instance with the same configuration

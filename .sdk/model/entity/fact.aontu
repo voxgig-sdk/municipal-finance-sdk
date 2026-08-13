@@ -6,7 +6,7 @@ main: kit: entity: fact: {
 
   fields: [
     {
-      name: "cell"
+      name: "cells"
       req: false
       type: "`$ARRAY`"
     }

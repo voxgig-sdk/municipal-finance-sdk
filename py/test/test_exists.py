@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# MunicipalFinance SDK exists test
 
 import pytest
 from municipalfinance_sdk import MunicipalFinanceSDK

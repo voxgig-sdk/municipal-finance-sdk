@@ -66,11 +66,11 @@ function aged_creditor_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "MUNICIPALFINANCE_TEST_AGED_CREDITOR_ENTID" => [],
-        "MUNICIPALFINANCE_TEST_LIVE" => "FALSE",
+        "MUNICIPAL_FINANCE_TEST_AGED_CREDITOR_ENTID" => [],
+        "MUNICIPAL_FINANCE_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["MUNICIPALFINANCE_TEST_LIVE"] === "TRUE";
+    $live = $env["MUNICIPAL_FINANCE_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

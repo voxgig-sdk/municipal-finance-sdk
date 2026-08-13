@@ -54,7 +54,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local agedcreditors, err = client:AgedCreditor():list()
+local ageddebtors, err = client:AgedDebtor():list()
 if err then error(err) end
 ```
 
@@ -112,7 +112,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:AgedCreditor():list()
+local result, err = client:AgedDebtor():list()
 -- result is the returned data; err is set on failure
 ```
 
@@ -220,9 +220,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local aged_creditor, err = client:AgedCreditor():load()
+    local aged_creditor, err = client:AgedCreditor():list()
     if err then error(err) end
-    -- aged_creditor is the loaded record
+    -- aged_creditor is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -278,7 +278,7 @@ API path: `/cubes/aged_debtor/facts`
 
 | Field | Description |
 | --- | --- |
-| `cell` |  |
+| `cells` |  |
 | `summary` |  |
 | `total_cell_count` |  |
 
@@ -376,7 +376,7 @@ Create an instance: `local fact = client:Fact(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `cell` | `table` |  |
+| `cells` | `table` |  |
 | `summary` | `table` |  |
 | `total_cell_count` | `number` |  |
 
@@ -463,11 +463,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local agedcreditor = client:AgedCreditor()
-agedcreditor:list()
+local ageddebtor = client:AgedDebtor()
+ageddebtor:list()
 
--- agedcreditor:data_get() now returns the agedcreditor data from the last list
--- agedcreditor:match_get() returns the last match criteria
+-- ageddebtor:data_get() now returns the ageddebtor data from the last list
+-- ageddebtor:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

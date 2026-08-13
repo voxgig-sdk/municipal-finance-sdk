@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from municipalfinance_sdk.utility.voxgig_struct import voxgig_struct as vs
 from municipalfinance_sdk import MunicipalFinanceSDK
-from core import helpers
+from municipalfinance_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _aged_debtor_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "MUNICIPALFINANCE_TEST_AGED_DEBTOR_ENTID": {},
-        "MUNICIPALFINANCE_TEST_LIVE": "FALSE",
+        "MUNICIPAL_FINANCE_TEST_AGED_DEBTOR_ENTID": {},
+        "MUNICIPAL_FINANCE_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("MUNICIPALFINANCE_TEST_LIVE") == "TRUE"
+    live = env.get("MUNICIPAL_FINANCE_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

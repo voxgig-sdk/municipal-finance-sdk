@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ MunicipalFinanceUtility.registrar = ->(u) {
   u.prepare_params = MunicipalFinanceUtilities::PrepareParams
   u.prepare_path = MunicipalFinanceUtilities::PreparePath
   u.prepare_query = MunicipalFinanceUtilities::PrepareQuery
+  u.graphql_body = MunicipalFinanceUtilities::GraphqlBody
+  u.graphql_errors = MunicipalFinanceUtilities::GraphqlErrors
   u.result_basic = MunicipalFinanceUtilities::ResultBasic
   u.result_body = MunicipalFinanceUtilities::ResultBody
   u.result_headers = MunicipalFinanceUtilities::ResultHeaders

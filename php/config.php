@@ -190,6 +190,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/aged_creditor/facts',
                   'parts' => [
@@ -270,6 +271,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/aged_creditor_v2/facts',
                   'parts' => [
@@ -466,6 +468,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/aged_debtor/facts',
                   'parts' => [
@@ -546,6 +549,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/aged_debtor_v2/facts',
                   'parts' => [
@@ -581,7 +585,7 @@ class MunicipalFinanceConfig
           'fields' => [
             [
               'active' => true,
-              'name' => 'cell',
+              'name' => 'cells',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 0,
@@ -629,6 +633,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/audit_opinions/facts',
                   'parts' => [
@@ -670,6 +675,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/bsheet/facts',
                   'parts' => [
@@ -711,6 +717,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/capital/facts',
                   'parts' => [
@@ -752,6 +759,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/capital_v2/facts',
                   'parts' => [
@@ -793,6 +801,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/cflow/facts',
                   'parts' => [
@@ -834,6 +843,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/cflow_v2/facts',
                   'parts' => [
@@ -875,6 +885,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/conditional_grants/facts',
                   'parts' => [
@@ -916,6 +927,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/demarcation_changes/facts',
                   'parts' => [
@@ -957,6 +969,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/financial_position_v2/facts',
                   'parts' => [
@@ -998,6 +1011,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/grants_v2/facts',
                   'parts' => [
@@ -1039,6 +1053,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/incexp/facts',
                   'parts' => [
@@ -1080,6 +1095,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/incexp_v2/facts',
                   'parts' => [
@@ -1121,6 +1137,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/municipalities/facts',
                   'parts' => [
@@ -1162,6 +1179,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/officials/facts',
                   'parts' => [
@@ -1203,6 +1221,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/repmaint/facts',
                   'parts' => [
@@ -1244,6 +1263,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/repmaint_v2/facts',
                   'parts' => [
@@ -1285,6 +1305,7 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/uifwexp/facts',
                   'parts' => [

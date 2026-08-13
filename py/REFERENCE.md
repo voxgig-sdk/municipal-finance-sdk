@@ -226,7 +226,7 @@ fact = client.Fact()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cell` | `list` | No |  |
+| `cells` | `list` | No |  |
 | `summary` | `dict` | No |  |
 | `total_cell_count` | `int` | No |  |
 

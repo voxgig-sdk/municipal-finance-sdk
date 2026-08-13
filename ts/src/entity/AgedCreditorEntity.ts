@@ -37,7 +37,7 @@ class AgedCreditorEntity extends MunicipalFinanceEntityBase<AgedCreditor> {
 
 
 
-  async list(this: any, reqmatch?: AgedCreditorListMatch, ctrl?: Control): Promise<AgedCreditor[]> {
+  async list(this: any, reqmatch?: AgedCreditorListMatch, ctrl?: Control): Promise<AgedCreditorEntity[]> {
 
     const utility = this._utility
 

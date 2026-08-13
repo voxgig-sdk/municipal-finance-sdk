@@ -23,8 +23,8 @@ module MunicipalFinanceTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("MUNICIPALFINANCE_TEST_LIVE")
-    override = getenv("MUNICIPALFINANCE_TEST_OVERRIDE")
+    live = getenv("MUNICIPAL_FINANCE_TEST_LIVE")
+    override = getenv("MUNICIPAL_FINANCE_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module MunicipalFinanceTestRunner
       end
     end
 
-    explain = getenv("MUNICIPALFINANCE_TEST_EXPLAIN")
-    m["MUNICIPALFINANCE_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("MUNICIPAL_FINANCE_TEST_EXPLAIN")
+    m["MUNICIPAL_FINANCE_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

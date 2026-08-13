@@ -53,7 +53,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $agedcreditors = $client->AgedCreditor()->list();
+    $ageddebtors = $client->AgedDebtor()->list();
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -125,9 +125,10 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = MunicipalFinanceSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
-$agedcreditor = $client->AgedCreditor()->list();
-print_r($agedcreditor);
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
+$ageddebtor = $client->AgedDebtor()->list();
+print_r($ageddebtor);
 ```
 
 ### Use a custom fetch function
@@ -226,7 +227,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -293,7 +294,7 @@ API path: `/cubes/aged_debtor/facts`
 
 | Field | Description |
 | --- | --- |
-| `cell` |  |
+| `cells` |  |
 | `summary` |  |
 | `total_cell_count` |  |
 
@@ -393,7 +394,7 @@ Create an instance: `$fact = $client->Fact();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `cell` | `array` |  |
+| `cells` | `array` |  |
 | `summary` | `array` |  |
 | `total_cell_count` | `int` |  |
 
@@ -481,11 +482,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$agedcreditor = $client->AgedCreditor();
-$agedcreditor->list();
+$ageddebtor = $client->AgedDebtor();
+$ageddebtor->list();
 
-// $agedcreditor->data_get() now returns the agedcreditor data from the last list
-// $agedcreditor->match_get() returns the last match criteria
+// $ageddebtor->data_get() now returns the ageddebtor data from the last list
+// $ageddebtor->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

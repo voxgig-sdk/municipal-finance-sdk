@@ -37,7 +37,7 @@ class AgedDebtorEntity extends MunicipalFinanceEntityBase<AgedDebtor> {
 
 
 
-  async list(this: any, reqmatch?: AgedDebtorListMatch, ctrl?: Control): Promise<AgedDebtor[]> {
+  async list(this: any, reqmatch?: AgedDebtorListMatch, ctrl?: Control): Promise<AgedDebtorEntity[]> {
 
     const utility = this._utility
 

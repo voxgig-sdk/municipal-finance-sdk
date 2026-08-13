@@ -35,7 +35,9 @@ const client = new MunicipalFinanceSDK()
 
 ### 2. List agedcreditor records
 
-`list()` resolves to an array of AgedCreditor objects — iterate it directly:
+`list()` resolves to an array of AgedCreditor ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const agedcreditors = await client.AgedCreditor().list()
@@ -52,8 +54,8 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const agedcreditors = await client.AgedCreditor().list()
-  console.log(agedcreditors)
+  const ageddebtors = await client.AgedDebtor().list()
+  console.log(ageddebtors)
 } catch (err) {
   console.error('list failed:', err)
 }
@@ -119,9 +121,10 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = MunicipalFinanceSDK.test()
 
-const agedcreditor = await client.AgedCreditor().list()
-// agedcreditor is a bare entity populated with mock response data
-console.log(agedcreditor)
+const ageddebtor = await client.AgedDebtor().list()
+// ageddebtor is the entity, populated with mock response data
+// — call ageddebtor.data() for the record itself
+console.log(ageddebtor)
 ```
 
 You can also use the instance method:
@@ -136,7 +139,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.AgedCreditor()
+const entity = client.AgedDebtor()
 
 // First call runs the operation and stores its result
 await entity.list()
@@ -331,7 +334,7 @@ API path: `/cubes/aged_debtor/facts`
 
 | Field | Description |
 | --- | --- |
-| `cell` |  |
+| `cells` |  |
 | `summary` |  |
 | `total_cell_count` |  |
 
@@ -429,7 +432,7 @@ Create an instance: `const fact = client.Fact()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `cell` | `any[]` |  |
+| `cells` | `any[]` |  |
 | `summary` | `Record<string, any>` |  |
 | `total_cell_count` | `number` |  |
 
@@ -509,11 +512,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const agedcreditor = client.AgedCreditor()
-await agedcreditor.list()
+const ageddebtor = client.AgedDebtor()
+await ageddebtor.list()
 
-// agedcreditor.data() now returns the agedcreditor data from the last `list`
-// agedcreditor.match() returns the last match criteria
+// ageddebtor.data() now returns the ageddebtor data from the last `list`
+// ageddebtor.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

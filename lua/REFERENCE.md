@@ -227,7 +227,7 @@ local fact = client:Fact(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cell` | `table` | No |  |
+| `cells` | `table` | No |  |
 | `summary` | `table` | No |  |
 | `total_cell_count` | `number` | No |  |
 

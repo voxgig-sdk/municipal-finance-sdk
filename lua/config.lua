@@ -184,6 +184,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/aged_creditor/facts",
                 ["parts"] = {
@@ -264,6 +265,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/aged_creditor_v2/facts",
                 ["parts"] = {
@@ -460,6 +462,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/aged_debtor/facts",
                 ["parts"] = {
@@ -540,6 +543,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/aged_debtor_v2/facts",
                 ["parts"] = {
@@ -575,7 +579,7 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "cell",
+            ["name"] = "cells",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 0,
@@ -623,6 +627,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/audit_opinions/facts",
                 ["parts"] = {
@@ -664,6 +669,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/bsheet/facts",
                 ["parts"] = {
@@ -705,6 +711,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/capital/facts",
                 ["parts"] = {
@@ -746,6 +753,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/capital_v2/facts",
                 ["parts"] = {
@@ -787,6 +795,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/cflow/facts",
                 ["parts"] = {
@@ -828,6 +837,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/cflow_v2/facts",
                 ["parts"] = {
@@ -869,6 +879,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/conditional_grants/facts",
                 ["parts"] = {
@@ -910,6 +921,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/demarcation_changes/facts",
                 ["parts"] = {
@@ -951,6 +963,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/financial_position_v2/facts",
                 ["parts"] = {
@@ -992,6 +1005,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/grants_v2/facts",
                 ["parts"] = {
@@ -1033,6 +1047,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/incexp/facts",
                 ["parts"] = {
@@ -1074,6 +1089,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/incexp_v2/facts",
                 ["parts"] = {
@@ -1115,6 +1131,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/municipalities/facts",
                 ["parts"] = {
@@ -1156,6 +1173,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/officials/facts",
                 ["parts"] = {
@@ -1197,6 +1215,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/repmaint/facts",
                 ["parts"] = {
@@ -1238,6 +1257,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/repmaint_v2/facts",
                 ["parts"] = {
@@ -1279,6 +1299,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/cubes/uifwexp/facts",
                 ["parts"] = {

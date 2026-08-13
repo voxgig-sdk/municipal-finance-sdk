@@ -246,7 +246,7 @@ AgedDebtorListMatch = Struct.new(
 
 # Fact entity data model.
 #
-# @!attribute [rw] cell
+# @!attribute [rw] cells
 #   @return [Array, nil]
 #
 # @!attribute [rw] summary
@@ -255,7 +255,7 @@ AgedDebtorListMatch = Struct.new(
 # @!attribute [rw] total_cell_count
 #   @return [Integer, nil]
 Fact = Struct.new(
-  :cell,
+  :cells,
   :summary,
   :total_cell_count,
   keyword_init: true
@@ -263,7 +263,7 @@ Fact = Struct.new(
 
 # Request payload for Fact#list.
 #
-# @!attribute [rw] cell
+# @!attribute [rw] cells
 #   @return [Array, nil]
 #
 # @!attribute [rw] summary
@@ -272,7 +272,7 @@ Fact = Struct.new(
 # @!attribute [rw] total_cell_count
 #   @return [Integer, nil]
 FactListMatch = Struct.new(
-  :cell,
+  :cells,
   :summary,
   :total_cell_count,
   keyword_init: true

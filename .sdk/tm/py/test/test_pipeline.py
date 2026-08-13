@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import MunicipalFinanceSDK
-from core.error import MunicipalFinanceError
-from core.result import MunicipalFinanceResult
-from core.response import MunicipalFinanceResponse
-from core.spec import MunicipalFinanceSpec
-from feature.base_feature import MunicipalFinanceBaseFeature
+from projectname_sdk.core.error import MunicipalFinanceError
+from projectname_sdk.core.result import MunicipalFinanceResult
+from projectname_sdk.core.response import MunicipalFinanceResponse
+from projectname_sdk.core.spec import MunicipalFinanceSpec
+from projectname_sdk.feature.base_feature import MunicipalFinanceBaseFeature
 
 
 def _client():

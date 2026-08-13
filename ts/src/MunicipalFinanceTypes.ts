@@ -35,6 +35,12 @@ export interface AgedCreditorListMatch {
   item_position_in_return_form?: number
   item_return_form_structure?: string
   period_length_length?: string
+
+  // Selects a custom action instead of the plain list:
+  //   'fact'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 
 export interface AgedDebtor {
@@ -69,16 +75,22 @@ export interface AgedDebtorListMatch {
   item_position_in_return_form?: number
   item_return_form_structure?: string
   period_length_length?: string
+
+  // Selects a custom action instead of the plain list:
+  //   'fact'
+  // The remaining keys are that action's own payload.
+  $action?: string
+  [action: string]: any
 }
 
 export interface Fact {
-  cell?: any[]
+  cells?: any[]
   summary?: Record<string, any>
   total_cell_count?: number
 }
 
 export interface FactListMatch {
-  cell?: any[]
+  cells?: any[]
   summary?: Record<string, any>
   total_cell_count?: number
 }

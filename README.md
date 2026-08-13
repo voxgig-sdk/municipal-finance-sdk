@@ -38,18 +38,27 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = MunicipalFinanceSDK.test()
-const agedcreditors = await client.AgedCreditor().list()
-// agedcreditors is an array of bare AgedCreditor records populated with mock data
-console.log(agedcreditors)
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = MunicipalFinanceSDK.test({
+  entity: {
+    aged_debtor: {
+      test01: { id: 'test01' },
+    },
+  },
+})
+const ageddebtors = await client.AgedDebtor().list()
+// ageddebtors is an array of AgedDebtor entities, populated with mock data
+// — call ageddebtors[0].data() for the record itself
+console.log(ageddebtors)
 ```
 
 ### Python
 
 ```python
 client = MunicipalFinanceSDK.test()
-agedcreditors = client.AgedCreditor().list()
-print(agedcreditors)
+ageddebtors = client.AgedDebtor().list()
+print(ageddebtors)
 ```
 
 ### PHP
@@ -57,16 +66,16 @@ print(agedcreditors)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = MunicipalFinanceSDK::test([
-    "entity" => ["agedcreditor" => ["test01" => []]],
+    "entity" => ["ageddebtor" => ["test01" => []]],
 ]);
-$agedcreditors = $client->AgedCreditor()->list();
+$ageddebtors = $client->AgedDebtor()->list();
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.AgedCreditor(nil).List(
+result, err := client.AgedDebtor(nil).List(
     nil, nil,
 )
 ```
@@ -76,16 +85,16 @@ result, err := client.AgedCreditor(nil).List(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = MunicipalFinanceSDK.test({
-  "entity" => { "agedcreditor" => { "test01" => {} } },
+  "entity" => { "ageddebtor" => { "test01" => {} } },
 })
-agedcreditors = client.AgedCreditor.list()
+ageddebtors = client.AgedDebtor.list()
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local results, err = client:AgedCreditor():list()
+local results, err = client:AgedDebtor():list()
 ```
 
 ## Packages
@@ -110,7 +119,7 @@ import { MunicipalFinanceSDK } from '@voxgig-sdk/municipal-finance'
 
 const client = new MunicipalFinanceSDK()
 
-// List all agedcreditors (returns AgedCreditor[])
+// List all agedcreditors (returns AgedCreditorEntity[] — .data() for the record)
 const agedcreditors = await client.AgedCreditor().list()
 for (const agedcreditor of agedcreditors) {
   console.log(agedcreditor)
@@ -155,8 +164,8 @@ The API exposes 3 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **AgedCreditor** | The AgedCreditor entity (list). | `/cubes/aged_creditor/facts` |
-| **AgedDebtor** | The AgedDebtor entity (list). | `/cubes/aged_debtor/facts` |
+| **AgedCreditor** | The AgedCreditor entity (list). | `/cubes/aged_creditor_v2/facts` |
+| **AgedDebtor** | The AgedDebtor entity (list). | `/cubes/aged_debtor_v2/facts` |
 | **Fact** | The Fact entity (list). | `/cubes/audit_opinions/facts` |
 
 The operations available across these entities are **list** — see each entity's
@@ -345,6 +354,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://municipaldata.treasury.gov.za/docs#general](https://municipaldata.treasury.gov.za/docs#general)
 
