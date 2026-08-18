@@ -33,7 +33,7 @@ class FactEntityTest < Minitest::Test
     assert_equal 3, seen.length
 
     # Inbound: streaming active -> yields each item from the feature.
-    cfg = MunicipalFinanceConfig.make_config
+    cfg = MunicipalFinanceConfig.shared_config
     if cfg["feature"].is_a?(Hash) && cfg["feature"].key?("streaming")
       sdk = MunicipalFinanceSDK.test(seed, { "feature" => { "streaming" => { "active" => true } } })
       got = []

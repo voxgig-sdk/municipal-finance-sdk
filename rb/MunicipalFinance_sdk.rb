@@ -28,7 +28,7 @@ class MunicipalFinanceSDK
     utility = MunicipalFinanceUtility.new
     @_utility = utility
 
-    config = MunicipalFinanceConfig.make_config
+    config = MunicipalFinanceConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

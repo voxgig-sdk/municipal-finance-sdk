@@ -5,6 +5,29 @@ declare(strict_types=1);
 
 class MunicipalFinanceConfig
 {
+    /** @var array<string,mixed>|null */
+    private static ?array $shared_config = null;
+
+    /**
+     * Return the process-wide config, built once on first use. The SDK reads
+     * the config on every request and never writes to it, so one instance is
+     * shared by every client rather than rebuilt per client.
+     *
+     * PHP arrays are copy-on-write, so callers that do mutate the result get
+     * their own copy and cannot disturb the shared one.
+     */
+    public static function shared_config(): array
+    {
+        if (self::$shared_config === null) {
+            self::$shared_config = self::make_config();
+        }
+        return self::$shared_config;
+    }
+
+    /**
+     * Build a fresh, fully materialised config array. Every call rebuilds the
+     * whole structure, so prefer shared_config unless you need a private copy.
+     */
     public static function make_config(): array
     {
         return [
@@ -33,95 +56,56 @@ class MunicipalFinanceConfig
         'aged_creditor' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'amount_sum',
-              'req' => false,
               'type' => '`$NUMBER`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'amount_type_code',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 1,
             ],
             [
-              'active' => true,
               'name' => 'amount_type_label',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 2,
             ],
             [
-              'active' => true,
               'name' => 'demarcation_code',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 3,
             ],
             [
-              'active' => true,
               'name' => 'demarcation_label',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 4,
             ],
             [
-              'active' => true,
               'name' => 'financial_period_period',
-              'req' => false,
               'type' => '`$INTEGER`',
-              'index$' => 5,
             ],
             [
-              'active' => true,
               'name' => 'financial_year_end_year',
-              'req' => false,
               'type' => '`$INTEGER`',
-              'index$' => 6,
             ],
             [
-              'active' => true,
               'name' => 'item_code',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 7,
             ],
             [
-              'active' => true,
               'name' => 'item_composition',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 8,
             ],
             [
-              'active' => true,
               'name' => 'item_label',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 9,
             ],
             [
-              'active' => true,
               'name' => 'item_position_in_return_form',
-              'req' => false,
               'type' => '`$INTEGER`',
-              'index$' => 10,
             ],
             [
-              'active' => true,
               'name' => 'item_return_form_structure',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 11,
             ],
             [
-              'active' => true,
               'name' => 'period_length_length',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 12,
             ],
           ],
           'name' => 'aged_creditor',
@@ -131,61 +115,48 @@ class MunicipalFinanceConfig
               'name' => 'list',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'example' => 'amount.sum',
                         'kind' => 'query',
                         'name' => 'aggregate',
                         'orig' => 'aggregate',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 'financial_year_end.year:2020|demarcation.code:CPT',
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 'item.code|financial_period.period',
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 'financial_period.period:asc',
                         'kind' => 'query',
                         'name' => 'order',
                         'orig' => 'order',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 0,
                         'kind' => 'query',
                         'name' => 'page',
                         'orig' => 'page',
-                        'reqd' => false,
                         'type' => '`$INTEGER`',
                       ],
                       [
-                        'active' => true,
                         'example' => 10000,
                         'kind' => 'query',
                         'name' => 'pagesize',
                         'orig' => 'pagesize',
-                        'reqd' => false,
                         'type' => '`$INTEGER`',
                       ],
                     ],
@@ -213,60 +184,46 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'aggregate',
                         'orig' => 'aggregate',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'order',
                         'orig' => 'order',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 0,
                         'kind' => 'query',
                         'name' => 'page',
                         'orig' => 'page',
-                        'reqd' => false,
                         'type' => '`$INTEGER`',
                       ],
                       [
-                        'active' => true,
                         'example' => 10000,
                         'kind' => 'query',
                         'name' => 'pagesize',
                         'orig' => 'pagesize',
-                        'reqd' => false,
                         'type' => '`$INTEGER`',
                       ],
                     ],
@@ -293,10 +250,8 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 1,
                 ],
               ],
-              'key$' => 'list',
             ],
           ],
           'relations' => [
@@ -306,102 +261,60 @@ class MunicipalFinanceConfig
         'aged_debtor' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'amount_sum',
-              'req' => false,
               'type' => '`$NUMBER`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'amount_type_code',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 1,
             ],
             [
-              'active' => true,
               'name' => 'amount_type_label',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 2,
             ],
             [
-              'active' => true,
               'name' => 'customer_group_code',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 3,
             ],
             [
-              'active' => true,
               'name' => 'demarcation_code',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 4,
             ],
             [
-              'active' => true,
               'name' => 'demarcation_label',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 5,
             ],
             [
-              'active' => true,
               'name' => 'financial_period_period',
-              'req' => false,
               'type' => '`$INTEGER`',
-              'index$' => 6,
             ],
             [
-              'active' => true,
               'name' => 'financial_year_end_year',
-              'req' => false,
               'type' => '`$INTEGER`',
-              'index$' => 7,
             ],
             [
-              'active' => true,
               'name' => 'item_code',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 8,
             ],
             [
-              'active' => true,
               'name' => 'item_composition',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 9,
             ],
             [
-              'active' => true,
               'name' => 'item_label',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 10,
             ],
             [
-              'active' => true,
               'name' => 'item_position_in_return_form',
-              'req' => false,
               'type' => '`$INTEGER`',
-              'index$' => 11,
             ],
             [
-              'active' => true,
               'name' => 'item_return_form_structure',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 12,
             ],
             [
-              'active' => true,
               'name' => 'period_length_length',
-              'req' => false,
               'type' => '`$STRING`',
-              'index$' => 13,
             ],
           ],
           'name' => 'aged_debtor',
@@ -411,59 +324,46 @@ class MunicipalFinanceConfig
               'name' => 'list',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'aggregate',
                         'orig' => 'aggregate',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 'financial_year_end.year:2020|customer_group.code:households',
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 'item.code|customer_group.code',
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'order',
                         'orig' => 'order',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 0,
                         'kind' => 'query',
                         'name' => 'page',
                         'orig' => 'page',
-                        'reqd' => false,
                         'type' => '`$INTEGER`',
                       ],
                       [
-                        'active' => true,
                         'example' => 10000,
                         'kind' => 'query',
                         'name' => 'pagesize',
                         'orig' => 'pagesize',
-                        'reqd' => false,
                         'type' => '`$INTEGER`',
                       ],
                     ],
@@ -491,60 +391,46 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'aggregate',
                         'orig' => 'aggregate',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'order',
                         'orig' => 'order',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'example' => 0,
                         'kind' => 'query',
                         'name' => 'page',
                         'orig' => 'page',
-                        'reqd' => false,
                         'type' => '`$INTEGER`',
                       ],
                       [
-                        'active' => true,
                         'example' => 10000,
                         'kind' => 'query',
                         'name' => 'pagesize',
                         'orig' => 'pagesize',
-                        'reqd' => false,
                         'type' => '`$INTEGER`',
                       ],
                     ],
@@ -571,10 +457,8 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 1,
                 ],
               ],
-              'key$' => 'list',
             ],
           ],
           'relations' => [
@@ -584,25 +468,16 @@ class MunicipalFinanceConfig
         'fact' => [
           'fields' => [
             [
-              'active' => true,
               'name' => 'cells',
-              'req' => false,
               'type' => '`$ARRAY`',
-              'index$' => 0,
             ],
             [
-              'active' => true,
               'name' => 'summary',
-              'req' => false,
               'type' => '`$OBJECT`',
-              'index$' => 1,
             ],
             [
-              'active' => true,
               'name' => 'total_cell_count',
-              'req' => false,
               'type' => '`$INTEGER`',
-              'index$' => 2,
             ],
           ],
           'name' => 'fact',
@@ -612,23 +487,18 @@ class MunicipalFinanceConfig
               'name' => 'list',
               'points' => [
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -651,26 +521,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 0,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -693,26 +557,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 1,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -735,26 +593,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 2,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -777,26 +629,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 3,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -819,26 +665,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 4,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -861,26 +701,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 5,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -903,26 +737,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 6,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -945,26 +773,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 7,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -987,26 +809,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 8,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -1029,26 +845,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 9,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -1071,26 +881,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 10,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -1113,26 +917,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 11,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -1155,26 +953,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 12,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -1197,26 +989,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 13,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -1239,26 +1025,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 14,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -1281,26 +1061,20 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 15,
                 ],
                 [
-                  'active' => true,
                   'args' => [
                     'query' => [
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'cut',
                         'orig' => 'cut',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                       [
-                        'active' => true,
                         'kind' => 'query',
                         'name' => 'drilldown',
                         'orig' => 'drilldown',
-                        'reqd' => false,
                         'type' => '`$STRING`',
                       ],
                     ],
@@ -1323,10 +1097,8 @@ class MunicipalFinanceConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'index$' => 16,
                 ],
               ],
-              'key$' => 'list',
             ],
           ],
           'relations' => [

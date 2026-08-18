@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://municipaldata.treasury.gov.za/api',
+    base: "https://municipaldata.treasury.gov.za/api",
 
     headers: {
       "content-type": "application/json"
@@ -61,95 +61,56 @@ class Config {
     "aged_creditor": {
       "fields": [
         {
-          "active": true,
           "name": "amount_sum",
-          "req": false,
-          "type": "`$NUMBER`",
-          "index$": 0
+          "type": "`$NUMBER`"
         },
         {
-          "active": true,
           "name": "amount_type_code",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "amount_type_label",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "demarcation_code",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "demarcation_label",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "financial_period_period",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 5
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "financial_year_end_year",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 6
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "item_code",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 7
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "item_composition",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 8
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "item_label",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 9
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "item_position_in_return_form",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 10
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "item_return_form_structure",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 11
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "period_length_length",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 12
+          "type": "`$STRING`"
         }
       ],
       "name": "aged_creditor",
@@ -159,61 +120,48 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "example": "amount.sum",
                     "kind": "query",
                     "name": "aggregate",
                     "orig": "aggregate",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "financial_year_end.year:2020|demarcation.code:CPT",
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "item.code|financial_period.period",
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "financial_period.period:asc",
                     "kind": "query",
                     "name": "order",
                     "orig": "order",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": 0,
                     "kind": "query",
                     "name": "page",
                     "orig": "page",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": 10000,
                     "kind": "query",
                     "name": "pagesize",
                     "orig": "pagesize",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   }
                 ]
@@ -240,61 +188,47 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "aggregate",
                     "orig": "aggregate",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "order",
                     "orig": "order",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": 0,
                     "kind": "query",
                     "name": "page",
                     "orig": "page",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": 10000,
                     "kind": "query",
                     "name": "pagesize",
                     "orig": "pagesize",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   }
                 ]
@@ -320,11 +254,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 1
+              }
             }
-          ],
-          "key$": "list"
+          ]
         }
       },
       "relations": {
@@ -334,102 +266,60 @@ class Config {
     "aged_debtor": {
       "fields": [
         {
-          "active": true,
           "name": "amount_sum",
-          "req": false,
-          "type": "`$NUMBER`",
-          "index$": 0
+          "type": "`$NUMBER`"
         },
         {
-          "active": true,
           "name": "amount_type_code",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "amount_type_label",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 2
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "customer_group_code",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "demarcation_code",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 4
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "demarcation_label",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 5
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "financial_period_period",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 6
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "financial_year_end_year",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 7
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "item_code",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 8
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "item_composition",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 9
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "item_label",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 10
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "item_position_in_return_form",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 11
+          "type": "`$INTEGER`"
         },
         {
-          "active": true,
           "name": "item_return_form_structure",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 12
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "period_length_length",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 13
+          "type": "`$STRING`"
         }
       ],
       "name": "aged_debtor",
@@ -439,59 +329,46 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "aggregate",
                     "orig": "aggregate",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "financial_year_end.year:2020|customer_group.code:households",
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": "item.code|customer_group.code",
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "order",
                     "orig": "order",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": 0,
                     "kind": "query",
                     "name": "page",
                     "orig": "page",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": 10000,
                     "kind": "query",
                     "name": "pagesize",
                     "orig": "pagesize",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   }
                 ]
@@ -518,61 +395,47 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "aggregate",
                     "orig": "aggregate",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "order",
                     "orig": "order",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "example": 0,
                     "kind": "query",
                     "name": "page",
                     "orig": "page",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   },
                   {
-                    "active": true,
                     "example": 10000,
                     "kind": "query",
                     "name": "pagesize",
                     "orig": "pagesize",
-                    "reqd": false,
                     "type": "`$INTEGER`"
                   }
                 ]
@@ -598,11 +461,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 1
+              }
             }
-          ],
-          "key$": "list"
+          ]
         }
       },
       "relations": {
@@ -612,25 +473,16 @@ class Config {
     "fact": {
       "fields": [
         {
-          "active": true,
           "name": "cells",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 0
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "summary",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 1
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "total_cell_count",
-          "req": false,
-          "type": "`$INTEGER`",
-          "index$": 2
+          "type": "`$INTEGER`"
         }
       ],
       "name": "fact",
@@ -640,23 +492,18 @@ class Config {
           "name": "list",
           "points": [
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -678,27 +525,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -720,27 +561,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 1
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -762,27 +597,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 2
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -804,27 +633,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 3
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -846,27 +669,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 4
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -888,27 +705,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 5
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -930,27 +741,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 6
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -972,27 +777,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 7
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -1014,27 +813,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 8
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -1056,27 +849,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 9
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -1098,27 +885,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 10
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -1140,27 +921,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 11
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -1182,27 +957,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 12
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -1224,27 +993,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 13
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -1266,27 +1029,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 14
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -1308,27 +1065,21 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 15
+              }
             },
             {
-              "active": true,
               "args": {
                 "query": [
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "cut",
                     "orig": "cut",
-                    "reqd": false,
                     "type": "`$STRING`"
                   },
                   {
-                    "active": true,
                     "kind": "query",
                     "name": "drilldown",
                     "orig": "drilldown",
-                    "reqd": false,
                     "type": "`$STRING`"
                   }
                 ]
@@ -1350,11 +1101,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 16
+              }
             }
-          ],
-          "key$": "list"
+          ]
         }
       },
       "relations": {
