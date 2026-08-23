@@ -95,19 +95,19 @@ aged_creditor = client.AgedCreditor()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount_sum` | `float` | No |  |
-| `amount_type_code` | `str` | No |  |
-| `amount_type_label` | `str` | No |  |
-| `demarcation_code` | `str` | No |  |
-| `demarcation_label` | `str` | No |  |
-| `financial_period_period` | `int` | No |  |
-| `financial_year_end_year` | `int` | No |  |
-| `item_code` | `str` | No |  |
-| `item_composition` | `str` | No |  |
-| `item_label` | `str` | No |  |
-| `item_position_in_return_form` | `int` | No |  |
-| `item_return_form_structure` | `str` | No |  |
-| `period_length_length` | `str` | No |  |
+| `amount_sum` | `float` | No | Sum of the amount |
+| `amount_type_code` | `str` | No | Amount type code |
+| `amount_type_label` | `str` | No | Amount type label |
+| `demarcation_code` | `str` | No | Municipality demarcation code |
+| `demarcation_label` | `str` | No | Municipality name |
+| `financial_period_period` | `int` | No | Financial period number |
+| `financial_year_end_year` | `int` | No | Financial year end |
+| `item_code` | `str` | No | Item code |
+| `item_composition` | `str` | No | Item composition formula |
+| `item_label` | `str` | No | Item label |
+| `item_position_in_return_form` | `int` | No | Position in return form |
+| `item_return_form_structure` | `str` | No | Return form structure |
+| `period_length_length` | `str` | No | Period length |
 
 ### Operations
 
@@ -160,20 +160,20 @@ aged_debtor = client.AgedDebtor()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount_sum` | `float` | No |  |
-| `amount_type_code` | `str` | No |  |
-| `amount_type_label` | `str` | No |  |
-| `customer_group_code` | `str` | No |  |
-| `demarcation_code` | `str` | No |  |
-| `demarcation_label` | `str` | No |  |
-| `financial_period_period` | `int` | No |  |
-| `financial_year_end_year` | `int` | No |  |
-| `item_code` | `str` | No |  |
-| `item_composition` | `str` | No |  |
-| `item_label` | `str` | No |  |
-| `item_position_in_return_form` | `int` | No |  |
-| `item_return_form_structure` | `str` | No |  |
-| `period_length_length` | `str` | No |  |
+| `amount_sum` | `float` | No | Sum of the amount |
+| `amount_type_code` | `str` | No | Amount type code |
+| `amount_type_label` | `str` | No | Amount type label |
+| `customer_group_code` | `str` | No | Customer group code |
+| `demarcation_code` | `str` | No | Municipality demarcation code |
+| `demarcation_label` | `str` | No | Municipality name |
+| `financial_period_period` | `int` | No | Financial period number |
+| `financial_year_end_year` | `int` | No | Financial year end |
+| `item_code` | `str` | No | Item code |
+| `item_composition` | `str` | No | Item composition formula |
+| `item_label` | `str` | No | Item label |
+| `item_position_in_return_form` | `int` | No | Position in return form |
+| `item_return_form_structure` | `str` | No | Return form structure |
+| `period_length_length` | `str` | No | Period length |
 
 ### Operations
 
@@ -228,7 +228,7 @@ fact = client.Fact()
 | --- | --- | --- | --- |
 | `cells` | `list` | No |  |
 | `summary` | `dict` | No |  |
-| `total_cell_count` | `int` | No |  |
+| `total_cell_count` | `int` | No | Total number of cells in the result |
 
 ### Operations
 

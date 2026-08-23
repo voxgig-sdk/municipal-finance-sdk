@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "MunicipalFinance",
+            "slug": "municipal-finance",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -52,54 +55,67 @@ def make_config():
         "fields": [
           {
             "name": "amount_sum",
+            "short": "Sum of the amount",
             "type": "`$NUMBER`",
           },
           {
             "name": "amount_type_code",
+            "short": "Amount type code",
             "type": "`$STRING`",
           },
           {
             "name": "amount_type_label",
+            "short": "Amount type label",
             "type": "`$STRING`",
           },
           {
             "name": "demarcation_code",
+            "short": "Municipality demarcation code",
             "type": "`$STRING`",
           },
           {
             "name": "demarcation_label",
+            "short": "Municipality name",
             "type": "`$STRING`",
           },
           {
             "name": "financial_period_period",
+            "short": "Financial period number",
             "type": "`$INTEGER`",
           },
           {
             "name": "financial_year_end_year",
+            "short": "Financial year end",
             "type": "`$INTEGER`",
           },
           {
             "name": "item_code",
+            "short": "Item code",
             "type": "`$STRING`",
           },
           {
             "name": "item_composition",
+            "short": "Item composition formula",
             "type": "`$STRING`",
           },
           {
             "name": "item_label",
+            "short": "Item label",
             "type": "`$STRING`",
           },
           {
             "name": "item_position_in_return_form",
+            "short": "Position in return form",
             "type": "`$INTEGER`",
           },
           {
             "name": "item_return_form_structure",
+            "short": "Return form structure",
             "type": "`$STRING`",
           },
           {
             "name": "period_length_length",
+            "short": "Period length",
             "type": "`$STRING`",
           },
         ],
@@ -257,58 +273,72 @@ def make_config():
         "fields": [
           {
             "name": "amount_sum",
+            "short": "Sum of the amount",
             "type": "`$NUMBER`",
           },
           {
             "name": "amount_type_code",
+            "short": "Amount type code",
             "type": "`$STRING`",
           },
           {
             "name": "amount_type_label",
+            "short": "Amount type label",
             "type": "`$STRING`",
           },
           {
             "name": "customer_group_code",
+            "short": "Customer group code",
             "type": "`$STRING`",
           },
           {
             "name": "demarcation_code",
+            "short": "Municipality demarcation code",
             "type": "`$STRING`",
           },
           {
             "name": "demarcation_label",
+            "short": "Municipality name",
             "type": "`$STRING`",
           },
           {
             "name": "financial_period_period",
+            "short": "Financial period number",
             "type": "`$INTEGER`",
           },
           {
             "name": "financial_year_end_year",
+            "short": "Financial year end",
             "type": "`$INTEGER`",
           },
           {
             "name": "item_code",
+            "short": "Item code",
             "type": "`$STRING`",
           },
           {
             "name": "item_composition",
+            "short": "Item composition formula",
             "type": "`$STRING`",
           },
           {
             "name": "item_label",
+            "short": "Item label",
             "type": "`$STRING`",
           },
           {
             "name": "item_position_in_return_form",
+            "short": "Position in return form",
             "type": "`$INTEGER`",
           },
           {
             "name": "item_return_form_structure",
+            "short": "Return form structure",
             "type": "`$STRING`",
           },
           {
             "name": "period_length_length",
+            "short": "Period length",
             "type": "`$STRING`",
           },
         ],
@@ -472,6 +502,7 @@ def make_config():
           },
           {
             "name": "total_cell_count",
+            "short": "Total number of cells in the result",
             "type": "`$INTEGER`",
           },
         ],

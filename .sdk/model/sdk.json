@@ -36,78 +36,91 @@
               "active": true,
               "name": "amount_sum",
               "req": false,
+              "short": "Sum of the amount",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "amount_type_code",
               "req": false,
+              "short": "Amount type code",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "amount_type_label",
               "req": false,
+              "short": "Amount type label",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "demarcation_code",
               "req": false,
+              "short": "Municipality demarcation code",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "demarcation_label",
               "req": false,
+              "short": "Municipality name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "financial_period_period",
               "req": false,
+              "short": "Financial period number",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "financial_year_end_year",
               "req": false,
+              "short": "Financial year end",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "item_code",
               "req": false,
+              "short": "Item code",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "item_composition",
               "req": false,
+              "short": "Item composition formula",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "item_label",
               "req": false,
+              "short": "Item label",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "item_position_in_return_form",
               "req": false,
+              "short": "Position in return form",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "item_return_form_structure",
               "req": false,
+              "short": "Return form structure",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "period_length_length",
               "req": false,
+              "short": "Period length",
               "type": "`$STRING`"
             }
           ],
@@ -297,84 +310,98 @@
               "active": true,
               "name": "amount_sum",
               "req": false,
+              "short": "Sum of the amount",
               "type": "`$NUMBER`"
             },
             {
               "active": true,
               "name": "amount_type_code",
               "req": false,
+              "short": "Amount type code",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "amount_type_label",
               "req": false,
+              "short": "Amount type label",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "customer_group_code",
               "req": false,
+              "short": "Customer group code",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "demarcation_code",
               "req": false,
+              "short": "Municipality demarcation code",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "demarcation_label",
               "req": false,
+              "short": "Municipality name",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "financial_period_period",
               "req": false,
+              "short": "Financial period number",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "financial_year_end_year",
               "req": false,
+              "short": "Financial year end",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "item_code",
               "req": false,
+              "short": "Item code",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "item_composition",
               "req": false,
+              "short": "Item composition formula",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "item_label",
               "req": false,
+              "short": "Item label",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "item_position_in_return_form",
               "req": false,
+              "short": "Position in return form",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "item_return_form_structure",
               "req": false,
+              "short": "Return form structure",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "period_length_length",
               "req": false,
+              "short": "Period length",
               "type": "`$STRING`"
             }
           ],
@@ -574,6 +601,7 @@
               "active": true,
               "name": "total_cell_count",
               "req": false,
+              "short": "Total number of cells in the result",
               "type": "`$INTEGER`"
             }
           ],

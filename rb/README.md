@@ -239,19 +239,19 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `amount_sum` |  |
-| `amount_type_code` |  |
-| `amount_type_label` |  |
-| `demarcation_code` |  |
-| `demarcation_label` |  |
-| `financial_period_period` |  |
-| `financial_year_end_year` |  |
-| `item_code` |  |
-| `item_composition` |  |
-| `item_label` |  |
-| `item_position_in_return_form` |  |
-| `item_return_form_structure` |  |
-| `period_length_length` |  |
+| `amount_sum` | Sum of the amount |
+| `amount_type_code` | Amount type code |
+| `amount_type_label` | Amount type label |
+| `demarcation_code` | Municipality demarcation code |
+| `demarcation_label` | Municipality name |
+| `financial_period_period` | Financial period number |
+| `financial_year_end_year` | Financial year end |
+| `item_code` | Item code |
+| `item_composition` | Item composition formula |
+| `item_label` | Item label |
+| `item_position_in_return_form` | Position in return form |
+| `item_return_form_structure` | Return form structure |
+| `period_length_length` | Period length |
 
 Operations: List.
 
@@ -261,20 +261,20 @@ API path: `/cubes/aged_creditor/facts`
 
 | Field | Description |
 | --- | --- |
-| `amount_sum` |  |
-| `amount_type_code` |  |
-| `amount_type_label` |  |
-| `customer_group_code` |  |
-| `demarcation_code` |  |
-| `demarcation_label` |  |
-| `financial_period_period` |  |
-| `financial_year_end_year` |  |
-| `item_code` |  |
-| `item_composition` |  |
-| `item_label` |  |
-| `item_position_in_return_form` |  |
-| `item_return_form_structure` |  |
-| `period_length_length` |  |
+| `amount_sum` | Sum of the amount |
+| `amount_type_code` | Amount type code |
+| `amount_type_label` | Amount type label |
+| `customer_group_code` | Customer group code |
+| `demarcation_code` | Municipality demarcation code |
+| `demarcation_label` | Municipality name |
+| `financial_period_period` | Financial period number |
+| `financial_year_end_year` | Financial year end |
+| `item_code` | Item code |
+| `item_composition` | Item composition formula |
+| `item_label` | Item label |
+| `item_position_in_return_form` | Position in return form |
+| `item_return_form_structure` | Return form structure |
+| `period_length_length` | Period length |
 
 Operations: List.
 
@@ -286,7 +286,7 @@ API path: `/cubes/aged_debtor/facts`
 | --- | --- |
 | `cells` |  |
 | `summary` |  |
-| `total_cell_count` |  |
+| `total_cell_count` | Total number of cells in the result |
 
 Operations: List.
 
@@ -311,19 +311,19 @@ Create an instance: `aged_creditor = client.AgedCreditor`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `amount_sum` | `Float` |  |
-| `amount_type_code` | `String` |  |
-| `amount_type_label` | `String` |  |
-| `demarcation_code` | `String` |  |
-| `demarcation_label` | `String` |  |
-| `financial_period_period` | `Integer` |  |
-| `financial_year_end_year` | `Integer` |  |
-| `item_code` | `String` |  |
-| `item_composition` | `String` |  |
-| `item_label` | `String` |  |
-| `item_position_in_return_form` | `Integer` |  |
-| `item_return_form_structure` | `String` |  |
-| `period_length_length` | `String` |  |
+| `amount_sum` | `Float` | Sum of the amount |
+| `amount_type_code` | `String` | Amount type code |
+| `amount_type_label` | `String` | Amount type label |
+| `demarcation_code` | `String` | Municipality demarcation code |
+| `demarcation_label` | `String` | Municipality name |
+| `financial_period_period` | `Integer` | Financial period number |
+| `financial_year_end_year` | `Integer` | Financial year end |
+| `item_code` | `String` | Item code |
+| `item_composition` | `String` | Item composition formula |
+| `item_label` | `String` | Item label |
+| `item_position_in_return_form` | `Integer` | Position in return form |
+| `item_return_form_structure` | `String` | Return form structure |
+| `period_length_length` | `String` | Period length |
 
 #### Example: List
 
@@ -347,20 +347,20 @@ Create an instance: `aged_debtor = client.AgedDebtor`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `amount_sum` | `Float` |  |
-| `amount_type_code` | `String` |  |
-| `amount_type_label` | `String` |  |
-| `customer_group_code` | `String` |  |
-| `demarcation_code` | `String` |  |
-| `demarcation_label` | `String` |  |
-| `financial_period_period` | `Integer` |  |
-| `financial_year_end_year` | `Integer` |  |
-| `item_code` | `String` |  |
-| `item_composition` | `String` |  |
-| `item_label` | `String` |  |
-| `item_position_in_return_form` | `Integer` |  |
-| `item_return_form_structure` | `String` |  |
-| `period_length_length` | `String` |  |
+| `amount_sum` | `Float` | Sum of the amount |
+| `amount_type_code` | `String` | Amount type code |
+| `amount_type_label` | `String` | Amount type label |
+| `customer_group_code` | `String` | Customer group code |
+| `demarcation_code` | `String` | Municipality demarcation code |
+| `demarcation_label` | `String` | Municipality name |
+| `financial_period_period` | `Integer` | Financial period number |
+| `financial_year_end_year` | `Integer` | Financial year end |
+| `item_code` | `String` | Item code |
+| `item_composition` | `String` | Item composition formula |
+| `item_label` | `String` | Item label |
+| `item_position_in_return_form` | `Integer` | Position in return form |
+| `item_return_form_structure` | `String` | Return form structure |
+| `period_length_length` | `String` | Period length |
 
 #### Example: List
 
@@ -386,7 +386,7 @@ Create an instance: `fact = client.Fact`
 | --- | --- | --- |
 | `cells` | `Array` |  |
 | `summary` | `Hash` |  |
-| `total_cell_count` | `Integer` |  |
+| `total_cell_count` | `Integer` | Total number of cells in the result |
 
 #### Example: List
 

@@ -8,71 +8,85 @@ main: kit: entity: aged_debtor: {
     {
       name: "amount_sum"
       req: false
+      short: "Sum of the amount"
       type: "`$NUMBER`"
     }
     {
       name: "amount_type_code"
       req: false
+      short: "Amount type code"
       type: "`$STRING`"
     }
     {
       name: "amount_type_label"
       req: false
+      short: "Amount type label"
       type: "`$STRING`"
     }
     {
       name: "customer_group_code"
       req: false
+      short: "Customer group code"
       type: "`$STRING`"
     }
     {
       name: "demarcation_code"
       req: false
+      short: "Municipality demarcation code"
       type: "`$STRING`"
     }
     {
       name: "demarcation_label"
       req: false
+      short: "Municipality name"
       type: "`$STRING`"
     }
     {
       name: "financial_period_period"
       req: false
+      short: "Financial period number"
       type: "`$INTEGER`"
     }
     {
       name: "financial_year_end_year"
       req: false
+      short: "Financial year end"
       type: "`$INTEGER`"
     }
     {
       name: "item_code"
       req: false
+      short: "Item code"
       type: "`$STRING`"
     }
     {
       name: "item_composition"
       req: false
+      short: "Item composition formula"
       type: "`$STRING`"
     }
     {
       name: "item_label"
       req: false
+      short: "Item label"
       type: "`$STRING`"
     }
     {
       name: "item_position_in_return_form"
       req: false
+      short: "Position in return form"
       type: "`$INTEGER`"
     }
     {
       name: "item_return_form_structure"
       req: false
+      short: "Return form structure"
       type: "`$STRING`"
     }
     {
       name: "period_length_length"
       req: false
+      short: "Period length"
       type: "`$STRING`"
     }
   ]

@@ -106,19 +106,19 @@ fmt.Println(agedCreditor.GetName()) // "aged_creditor"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount_sum` | `float64` | No |  |
-| `amount_type_code` | `string` | No |  |
-| `amount_type_label` | `string` | No |  |
-| `demarcation_code` | `string` | No |  |
-| `demarcation_label` | `string` | No |  |
-| `financial_period_period` | `int` | No |  |
-| `financial_year_end_year` | `int` | No |  |
-| `item_code` | `string` | No |  |
-| `item_composition` | `string` | No |  |
-| `item_label` | `string` | No |  |
-| `item_position_in_return_form` | `int` | No |  |
-| `item_return_form_structure` | `string` | No |  |
-| `period_length_length` | `string` | No |  |
+| `amount_sum` | `float64` | No | Sum of the amount |
+| `amount_type_code` | `string` | No | Amount type code |
+| `amount_type_label` | `string` | No | Amount type label |
+| `demarcation_code` | `string` | No | Municipality demarcation code |
+| `demarcation_label` | `string` | No | Municipality name |
+| `financial_period_period` | `int` | No | Financial period number |
+| `financial_year_end_year` | `int` | No | Financial year end |
+| `item_code` | `string` | No | Item code |
+| `item_composition` | `string` | No | Item composition formula |
+| `item_label` | `string` | No | Item label |
+| `item_position_in_return_form` | `int` | No | Position in return form |
+| `item_return_form_structure` | `string` | No | Return form structure |
+| `period_length_length` | `string` | No | Period length |
 
 ### Operations
 
@@ -169,20 +169,20 @@ fmt.Println(agedDebtor.GetName()) // "aged_debtor"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `amount_sum` | `float64` | No |  |
-| `amount_type_code` | `string` | No |  |
-| `amount_type_label` | `string` | No |  |
-| `customer_group_code` | `string` | No |  |
-| `demarcation_code` | `string` | No |  |
-| `demarcation_label` | `string` | No |  |
-| `financial_period_period` | `int` | No |  |
-| `financial_year_end_year` | `int` | No |  |
-| `item_code` | `string` | No |  |
-| `item_composition` | `string` | No |  |
-| `item_label` | `string` | No |  |
-| `item_position_in_return_form` | `int` | No |  |
-| `item_return_form_structure` | `string` | No |  |
-| `period_length_length` | `string` | No |  |
+| `amount_sum` | `float64` | No | Sum of the amount |
+| `amount_type_code` | `string` | No | Amount type code |
+| `amount_type_label` | `string` | No | Amount type label |
+| `customer_group_code` | `string` | No | Customer group code |
+| `demarcation_code` | `string` | No | Municipality demarcation code |
+| `demarcation_label` | `string` | No | Municipality name |
+| `financial_period_period` | `int` | No | Financial period number |
+| `financial_year_end_year` | `int` | No | Financial year end |
+| `item_code` | `string` | No | Item code |
+| `item_composition` | `string` | No | Item composition formula |
+| `item_label` | `string` | No | Item label |
+| `item_position_in_return_form` | `int` | No | Position in return form |
+| `item_return_form_structure` | `string` | No | Return form structure |
+| `period_length_length` | `string` | No | Period length |
 
 ### Operations
 
@@ -235,7 +235,7 @@ fmt.Println(fact.GetName()) // "fact"
 | --- | --- | --- | --- |
 | `cells` | `[]any` | No |  |
 | `summary` | `map[string]any` | No |  |
-| `total_cell_count` | `int` | No |  |
+| `total_cell_count` | `int` | No | Total number of cells in the result |
 
 ### Operations
 

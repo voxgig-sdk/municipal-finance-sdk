@@ -233,19 +233,19 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `amount_sum` |  |
-| `amount_type_code` |  |
-| `amount_type_label` |  |
-| `demarcation_code` |  |
-| `demarcation_label` |  |
-| `financial_period_period` |  |
-| `financial_year_end_year` |  |
-| `item_code` |  |
-| `item_composition` |  |
-| `item_label` |  |
-| `item_position_in_return_form` |  |
-| `item_return_form_structure` |  |
-| `period_length_length` |  |
+| `amount_sum` | Sum of the amount |
+| `amount_type_code` | Amount type code |
+| `amount_type_label` | Amount type label |
+| `demarcation_code` | Municipality demarcation code |
+| `demarcation_label` | Municipality name |
+| `financial_period_period` | Financial period number |
+| `financial_year_end_year` | Financial year end |
+| `item_code` | Item code |
+| `item_composition` | Item composition formula |
+| `item_label` | Item label |
+| `item_position_in_return_form` | Position in return form |
+| `item_return_form_structure` | Return form structure |
+| `period_length_length` | Period length |
 
 Operations: List.
 
@@ -255,20 +255,20 @@ API path: `/cubes/aged_creditor/facts`
 
 | Field | Description |
 | --- | --- |
-| `amount_sum` |  |
-| `amount_type_code` |  |
-| `amount_type_label` |  |
-| `customer_group_code` |  |
-| `demarcation_code` |  |
-| `demarcation_label` |  |
-| `financial_period_period` |  |
-| `financial_year_end_year` |  |
-| `item_code` |  |
-| `item_composition` |  |
-| `item_label` |  |
-| `item_position_in_return_form` |  |
-| `item_return_form_structure` |  |
-| `period_length_length` |  |
+| `amount_sum` | Sum of the amount |
+| `amount_type_code` | Amount type code |
+| `amount_type_label` | Amount type label |
+| `customer_group_code` | Customer group code |
+| `demarcation_code` | Municipality demarcation code |
+| `demarcation_label` | Municipality name |
+| `financial_period_period` | Financial period number |
+| `financial_year_end_year` | Financial year end |
+| `item_code` | Item code |
+| `item_composition` | Item composition formula |
+| `item_label` | Item label |
+| `item_position_in_return_form` | Position in return form |
+| `item_return_form_structure` | Return form structure |
+| `period_length_length` | Period length |
 
 Operations: List.
 
@@ -280,7 +280,7 @@ API path: `/cubes/aged_debtor/facts`
 | --- | --- |
 | `cells` |  |
 | `summary` |  |
-| `total_cell_count` |  |
+| `total_cell_count` | Total number of cells in the result |
 
 Operations: List.
 
@@ -305,19 +305,19 @@ Create an instance: `local aged_creditor = client:AgedCreditor(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `amount_sum` | `number` |  |
-| `amount_type_code` | `string` |  |
-| `amount_type_label` | `string` |  |
-| `demarcation_code` | `string` |  |
-| `demarcation_label` | `string` |  |
-| `financial_period_period` | `number` |  |
-| `financial_year_end_year` | `number` |  |
-| `item_code` | `string` |  |
-| `item_composition` | `string` |  |
-| `item_label` | `string` |  |
-| `item_position_in_return_form` | `number` |  |
-| `item_return_form_structure` | `string` |  |
-| `period_length_length` | `string` |  |
+| `amount_sum` | `number` | Sum of the amount |
+| `amount_type_code` | `string` | Amount type code |
+| `amount_type_label` | `string` | Amount type label |
+| `demarcation_code` | `string` | Municipality demarcation code |
+| `demarcation_label` | `string` | Municipality name |
+| `financial_period_period` | `number` | Financial period number |
+| `financial_year_end_year` | `number` | Financial year end |
+| `item_code` | `string` | Item code |
+| `item_composition` | `string` | Item composition formula |
+| `item_label` | `string` | Item label |
+| `item_position_in_return_form` | `number` | Position in return form |
+| `item_return_form_structure` | `string` | Return form structure |
+| `period_length_length` | `string` | Period length |
 
 #### Example: List
 
@@ -340,20 +340,20 @@ Create an instance: `local aged_debtor = client:AgedDebtor(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `amount_sum` | `number` |  |
-| `amount_type_code` | `string` |  |
-| `amount_type_label` | `string` |  |
-| `customer_group_code` | `string` |  |
-| `demarcation_code` | `string` |  |
-| `demarcation_label` | `string` |  |
-| `financial_period_period` | `number` |  |
-| `financial_year_end_year` | `number` |  |
-| `item_code` | `string` |  |
-| `item_composition` | `string` |  |
-| `item_label` | `string` |  |
-| `item_position_in_return_form` | `number` |  |
-| `item_return_form_structure` | `string` |  |
-| `period_length_length` | `string` |  |
+| `amount_sum` | `number` | Sum of the amount |
+| `amount_type_code` | `string` | Amount type code |
+| `amount_type_label` | `string` | Amount type label |
+| `customer_group_code` | `string` | Customer group code |
+| `demarcation_code` | `string` | Municipality demarcation code |
+| `demarcation_label` | `string` | Municipality name |
+| `financial_period_period` | `number` | Financial period number |
+| `financial_year_end_year` | `number` | Financial year end |
+| `item_code` | `string` | Item code |
+| `item_composition` | `string` | Item composition formula |
+| `item_label` | `string` | Item label |
+| `item_position_in_return_form` | `number` | Position in return form |
+| `item_return_form_structure` | `string` | Return form structure |
+| `period_length_length` | `string` | Period length |
 
 #### Example: List
 
@@ -378,7 +378,7 @@ Create an instance: `local fact = client:Fact(nil)`
 | --- | --- | --- |
 | `cells` | `table` |  |
 | `summary` | `table` |  |
-| `total_cell_count` | `number` |  |
+| `total_cell_count` | `number` | Total number of cells in the result |
 
 #### Example: List
 

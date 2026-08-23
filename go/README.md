@@ -6,7 +6,7 @@ The Golang SDK for the MunicipalFinance API — an entity-oriented client using 
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.AgedCreditor(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -262,19 +262,19 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"amount_sum"` |  |
-| `"amount_type_code"` |  |
-| `"amount_type_label"` |  |
-| `"demarcation_code"` |  |
-| `"demarcation_label"` |  |
-| `"financial_period_period"` |  |
-| `"financial_year_end_year"` |  |
-| `"item_code"` |  |
-| `"item_composition"` |  |
-| `"item_label"` |  |
-| `"item_position_in_return_form"` |  |
-| `"item_return_form_structure"` |  |
-| `"period_length_length"` |  |
+| `"amount_sum"` | Sum of the amount |
+| `"amount_type_code"` | Amount type code |
+| `"amount_type_label"` | Amount type label |
+| `"demarcation_code"` | Municipality demarcation code |
+| `"demarcation_label"` | Municipality name |
+| `"financial_period_period"` | Financial period number |
+| `"financial_year_end_year"` | Financial year end |
+| `"item_code"` | Item code |
+| `"item_composition"` | Item composition formula |
+| `"item_label"` | Item label |
+| `"item_position_in_return_form"` | Position in return form |
+| `"item_return_form_structure"` | Return form structure |
+| `"period_length_length"` | Period length |
 
 Operations: List.
 
@@ -284,20 +284,20 @@ API path: `/cubes/aged_creditor/facts`
 
 | Field | Description |
 | --- | --- |
-| `"amount_sum"` |  |
-| `"amount_type_code"` |  |
-| `"amount_type_label"` |  |
-| `"customer_group_code"` |  |
-| `"demarcation_code"` |  |
-| `"demarcation_label"` |  |
-| `"financial_period_period"` |  |
-| `"financial_year_end_year"` |  |
-| `"item_code"` |  |
-| `"item_composition"` |  |
-| `"item_label"` |  |
-| `"item_position_in_return_form"` |  |
-| `"item_return_form_structure"` |  |
-| `"period_length_length"` |  |
+| `"amount_sum"` | Sum of the amount |
+| `"amount_type_code"` | Amount type code |
+| `"amount_type_label"` | Amount type label |
+| `"customer_group_code"` | Customer group code |
+| `"demarcation_code"` | Municipality demarcation code |
+| `"demarcation_label"` | Municipality name |
+| `"financial_period_period"` | Financial period number |
+| `"financial_year_end_year"` | Financial year end |
+| `"item_code"` | Item code |
+| `"item_composition"` | Item composition formula |
+| `"item_label"` | Item label |
+| `"item_position_in_return_form"` | Position in return form |
+| `"item_return_form_structure"` | Return form structure |
+| `"period_length_length"` | Period length |
 
 Operations: List.
 
@@ -309,7 +309,7 @@ API path: `/cubes/aged_debtor/facts`
 | --- | --- |
 | `"cells"` |  |
 | `"summary"` |  |
-| `"total_cell_count"` |  |
+| `"total_cell_count"` | Total number of cells in the result |
 
 Operations: List.
 
@@ -334,19 +334,19 @@ Create an instance: `agedCreditor := client.AgedCreditor(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `amount_sum` | `float64` |  |
-| `amount_type_code` | `string` |  |
-| `amount_type_label` | `string` |  |
-| `demarcation_code` | `string` |  |
-| `demarcation_label` | `string` |  |
-| `financial_period_period` | `int` |  |
-| `financial_year_end_year` | `int` |  |
-| `item_code` | `string` |  |
-| `item_composition` | `string` |  |
-| `item_label` | `string` |  |
-| `item_position_in_return_form` | `int` |  |
-| `item_return_form_structure` | `string` |  |
-| `period_length_length` | `string` |  |
+| `amount_sum` | `float64` | Sum of the amount |
+| `amount_type_code` | `string` | Amount type code |
+| `amount_type_label` | `string` | Amount type label |
+| `demarcation_code` | `string` | Municipality demarcation code |
+| `demarcation_label` | `string` | Municipality name |
+| `financial_period_period` | `int` | Financial period number |
+| `financial_year_end_year` | `int` | Financial year end |
+| `item_code` | `string` | Item code |
+| `item_composition` | `string` | Item composition formula |
+| `item_label` | `string` | Item label |
+| `item_position_in_return_form` | `int` | Position in return form |
+| `item_return_form_structure` | `string` | Return form structure |
+| `period_length_length` | `string` | Period length |
 
 #### Example: List
 
@@ -373,20 +373,20 @@ Create an instance: `agedDebtor := client.AgedDebtor(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `amount_sum` | `float64` |  |
-| `amount_type_code` | `string` |  |
-| `amount_type_label` | `string` |  |
-| `customer_group_code` | `string` |  |
-| `demarcation_code` | `string` |  |
-| `demarcation_label` | `string` |  |
-| `financial_period_period` | `int` |  |
-| `financial_year_end_year` | `int` |  |
-| `item_code` | `string` |  |
-| `item_composition` | `string` |  |
-| `item_label` | `string` |  |
-| `item_position_in_return_form` | `int` |  |
-| `item_return_form_structure` | `string` |  |
-| `period_length_length` | `string` |  |
+| `amount_sum` | `float64` | Sum of the amount |
+| `amount_type_code` | `string` | Amount type code |
+| `amount_type_label` | `string` | Amount type label |
+| `customer_group_code` | `string` | Customer group code |
+| `demarcation_code` | `string` | Municipality demarcation code |
+| `demarcation_label` | `string` | Municipality name |
+| `financial_period_period` | `int` | Financial period number |
+| `financial_year_end_year` | `int` | Financial year end |
+| `item_code` | `string` | Item code |
+| `item_composition` | `string` | Item composition formula |
+| `item_label` | `string` | Item label |
+| `item_position_in_return_form` | `int` | Position in return form |
+| `item_return_form_structure` | `string` | Return form structure |
+| `period_length_length` | `string` | Period length |
 
 #### Example: List
 
@@ -415,7 +415,7 @@ Create an instance: `fact := client.Fact(nil)`
 | --- | --- | --- |
 | `cells` | `[]any` |  |
 | `summary` | `map[string]any` |  |
-| `total_cell_count` | `int` |  |
+| `total_cell_count` | `int` | Total number of cells in the result |
 
 #### Example: List
 

@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "MunicipalFinance",
+			"slug": "municipal-finance",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -35,54 +38,67 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "amount_sum",
+						"short": "Sum of the amount",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "amount_type_code",
+						"short": "Amount type code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "amount_type_label",
+						"short": "Amount type label",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "demarcation_code",
+						"short": "Municipality demarcation code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "demarcation_label",
+						"short": "Municipality name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "financial_period_period",
+						"short": "Financial period number",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "financial_year_end_year",
+						"short": "Financial year end",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "item_code",
+						"short": "Item code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "item_composition",
+						"short": "Item composition formula",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "item_label",
+						"short": "Item label",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "item_position_in_return_form",
+						"short": "Position in return form",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "item_return_form_structure",
+						"short": "Return form structure",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "period_length_length",
+						"short": "Period length",
 						"type": "`$STRING`",
 					},
 				},
@@ -240,58 +256,72 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "amount_sum",
+						"short": "Sum of the amount",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "amount_type_code",
+						"short": "Amount type code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "amount_type_label",
+						"short": "Amount type label",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "customer_group_code",
+						"short": "Customer group code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "demarcation_code",
+						"short": "Municipality demarcation code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "demarcation_label",
+						"short": "Municipality name",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "financial_period_period",
+						"short": "Financial period number",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "financial_year_end_year",
+						"short": "Financial year end",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "item_code",
+						"short": "Item code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "item_composition",
+						"short": "Item composition formula",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "item_label",
+						"short": "Item label",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "item_position_in_return_form",
+						"short": "Position in return form",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "item_return_form_structure",
+						"short": "Return form structure",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "period_length_length",
+						"short": "Period length",
 						"type": "`$STRING`",
 					},
 				},
@@ -455,6 +485,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "total_cell_count",
+						"short": "Total number of cells in the result",
 						"type": "`$INTEGER`",
 					},
 				},
