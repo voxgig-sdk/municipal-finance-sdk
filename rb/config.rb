@@ -28,6 +28,7 @@ module MunicipalFinanceConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
