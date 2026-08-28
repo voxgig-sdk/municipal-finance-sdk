@@ -67,58 +67,30 @@ AgedCreditor = Struct.new(
 
 # Request payload for AgedCreditor#list.
 #
-# @!attribute [rw] amount_sum
-#   @return [Float, nil]
-#
-# @!attribute [rw] amount_type_code
+# @!attribute [rw] aggregate
 #   @return [String, nil]
 #
-# @!attribute [rw] amount_type_label
+# @!attribute [rw] cut
 #   @return [String, nil]
 #
-# @!attribute [rw] demarcation_code
+# @!attribute [rw] drilldown
 #   @return [String, nil]
 #
-# @!attribute [rw] demarcation_label
+# @!attribute [rw] order
 #   @return [String, nil]
 #
-# @!attribute [rw] financial_period_period
+# @!attribute [rw] page
 #   @return [Integer, nil]
 #
-# @!attribute [rw] financial_year_end_year
+# @!attribute [rw] pagesize
 #   @return [Integer, nil]
-#
-# @!attribute [rw] item_code
-#   @return [String, nil]
-#
-# @!attribute [rw] item_composition
-#   @return [String, nil]
-#
-# @!attribute [rw] item_label
-#   @return [String, nil]
-#
-# @!attribute [rw] item_position_in_return_form
-#   @return [Integer, nil]
-#
-# @!attribute [rw] item_return_form_structure
-#   @return [String, nil]
-#
-# @!attribute [rw] period_length_length
-#   @return [String, nil]
 AgedCreditorListMatch = Struct.new(
-  :amount_sum,
-  :amount_type_code,
-  :amount_type_label,
-  :demarcation_code,
-  :demarcation_label,
-  :financial_period_period,
-  :financial_year_end_year,
-  :item_code,
-  :item_composition,
-  :item_label,
-  :item_position_in_return_form,
-  :item_return_form_structure,
-  :period_length_length,
+  :aggregate,
+  :cut,
+  :drilldown,
+  :order,
+  :page,
+  :pagesize,
   keyword_init: true
 )
 
@@ -185,62 +157,30 @@ AgedDebtor = Struct.new(
 
 # Request payload for AgedDebtor#list.
 #
-# @!attribute [rw] amount_sum
-#   @return [Float, nil]
-#
-# @!attribute [rw] amount_type_code
+# @!attribute [rw] aggregate
 #   @return [String, nil]
 #
-# @!attribute [rw] amount_type_label
+# @!attribute [rw] cut
 #   @return [String, nil]
 #
-# @!attribute [rw] customer_group_code
+# @!attribute [rw] drilldown
 #   @return [String, nil]
 #
-# @!attribute [rw] demarcation_code
+# @!attribute [rw] order
 #   @return [String, nil]
 #
-# @!attribute [rw] demarcation_label
-#   @return [String, nil]
-#
-# @!attribute [rw] financial_period_period
+# @!attribute [rw] page
 #   @return [Integer, nil]
 #
-# @!attribute [rw] financial_year_end_year
+# @!attribute [rw] pagesize
 #   @return [Integer, nil]
-#
-# @!attribute [rw] item_code
-#   @return [String, nil]
-#
-# @!attribute [rw] item_composition
-#   @return [String, nil]
-#
-# @!attribute [rw] item_label
-#   @return [String, nil]
-#
-# @!attribute [rw] item_position_in_return_form
-#   @return [Integer, nil]
-#
-# @!attribute [rw] item_return_form_structure
-#   @return [String, nil]
-#
-# @!attribute [rw] period_length_length
-#   @return [String, nil]
 AgedDebtorListMatch = Struct.new(
-  :amount_sum,
-  :amount_type_code,
-  :amount_type_label,
-  :customer_group_code,
-  :demarcation_code,
-  :demarcation_label,
-  :financial_period_period,
-  :financial_year_end_year,
-  :item_code,
-  :item_composition,
-  :item_label,
-  :item_position_in_return_form,
-  :item_return_form_structure,
-  :period_length_length,
+  :aggregate,
+  :cut,
+  :drilldown,
+  :order,
+  :page,
+  :pagesize,
   keyword_init: true
 )
 
@@ -263,18 +203,14 @@ Fact = Struct.new(
 
 # Request payload for Fact#list.
 #
-# @!attribute [rw] cells
-#   @return [Array, nil]
+# @!attribute [rw] cut
+#   @return [String, nil]
 #
-# @!attribute [rw] summary
-#   @return [Hash, nil]
-#
-# @!attribute [rw] total_cell_count
-#   @return [Integer, nil]
+# @!attribute [rw] drilldown
+#   @return [String, nil]
 FactListMatch = Struct.new(
-  :cells,
-  :summary,
-  :total_cell_count,
+  :cut,
+  :drilldown,
   keyword_init: true
 )
 

@@ -33,19 +33,12 @@ class AgedCreditor(TypedDict, total=False):
 
 
 class AgedCreditorListMatch(TypedDict, total=False):
-    amount_sum: float
-    amount_type_code: str
-    amount_type_label: str
-    demarcation_code: str
-    demarcation_label: str
-    financial_period_period: int
-    financial_year_end_year: int
-    item_code: str
-    item_composition: str
-    item_label: str
-    item_position_in_return_form: int
-    item_return_form_structure: str
-    period_length_length: str
+    aggregate: str
+    cut: str
+    drilldown: str
+    order: str
+    page: int
+    pagesize: int
 
 
 class AgedDebtor(TypedDict, total=False):
@@ -66,20 +59,12 @@ class AgedDebtor(TypedDict, total=False):
 
 
 class AgedDebtorListMatch(TypedDict, total=False):
-    amount_sum: float
-    amount_type_code: str
-    amount_type_label: str
-    customer_group_code: str
-    demarcation_code: str
-    demarcation_label: str
-    financial_period_period: int
-    financial_year_end_year: int
-    item_code: str
-    item_composition: str
-    item_label: str
-    item_position_in_return_form: int
-    item_return_form_structure: str
-    period_length_length: str
+    aggregate: str
+    cut: str
+    drilldown: str
+    order: str
+    page: int
+    pagesize: int
 
 
 class Fact(TypedDict, total=False):
@@ -89,6 +74,5 @@ class Fact(TypedDict, total=False):
 
 
 class FactListMatch(TypedDict, total=False):
-    cells: list
-    summary: dict
-    total_cell_count: int
+    cut: str
+    drilldown: str

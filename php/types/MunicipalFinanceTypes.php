@@ -33,19 +33,12 @@ class AgedCreditor
 /** Request payload for AgedCreditor#list. */
 class AgedCreditorListMatch
 {
-    public ?float $amount_sum = null;
-    public ?string $amount_type_code = null;
-    public ?string $amount_type_label = null;
-    public ?string $demarcation_code = null;
-    public ?string $demarcation_label = null;
-    public ?int $financial_period_period = null;
-    public ?int $financial_year_end_year = null;
-    public ?string $item_code = null;
-    public ?string $item_composition = null;
-    public ?string $item_label = null;
-    public ?int $item_position_in_return_form = null;
-    public ?string $item_return_form_structure = null;
-    public ?string $period_length_length = null;
+    public ?string $aggregate = null;
+    public ?string $cut = null;
+    public ?string $drilldown = null;
+    public ?string $order = null;
+    public ?int $page = null;
+    public ?int $pagesize = null;
 }
 
 /** AgedDebtor entity data model. */
@@ -70,20 +63,12 @@ class AgedDebtor
 /** Request payload for AgedDebtor#list. */
 class AgedDebtorListMatch
 {
-    public ?float $amount_sum = null;
-    public ?string $amount_type_code = null;
-    public ?string $amount_type_label = null;
-    public ?string $customer_group_code = null;
-    public ?string $demarcation_code = null;
-    public ?string $demarcation_label = null;
-    public ?int $financial_period_period = null;
-    public ?int $financial_year_end_year = null;
-    public ?string $item_code = null;
-    public ?string $item_composition = null;
-    public ?string $item_label = null;
-    public ?int $item_position_in_return_form = null;
-    public ?string $item_return_form_structure = null;
-    public ?string $period_length_length = null;
+    public ?string $aggregate = null;
+    public ?string $cut = null;
+    public ?string $drilldown = null;
+    public ?string $order = null;
+    public ?int $page = null;
+    public ?int $pagesize = null;
 }
 
 /** Fact entity data model. */
@@ -97,8 +82,7 @@ class Fact
 /** Request payload for Fact#list. */
 class FactListMatch
 {
-    public ?array $cells = null;
-    public ?array $summary = null;
-    public ?int $total_cell_count = null;
+    public ?string $cut = null;
+    public ?string $drilldown = null;
 }
 

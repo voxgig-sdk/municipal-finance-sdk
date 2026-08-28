@@ -31,19 +31,12 @@ type AgedCreditor struct {
 
 // AgedCreditorListMatch is the typed request payload for AgedCreditor.ListTyped.
 type AgedCreditorListMatch struct {
-	AmountSum *float64 `json:"amount_sum,omitempty"`
-	AmountTypeCode *string `json:"amount_type_code,omitempty"`
-	AmountTypeLabel *string `json:"amount_type_label,omitempty"`
-	DemarcationCode *string `json:"demarcation_code,omitempty"`
-	DemarcationLabel *string `json:"demarcation_label,omitempty"`
-	FinancialPeriodPeriod *int `json:"financial_period_period,omitempty"`
-	FinancialYearEndYear *int `json:"financial_year_end_year,omitempty"`
-	ItemCode *string `json:"item_code,omitempty"`
-	ItemComposition *string `json:"item_composition,omitempty"`
-	ItemLabel *string `json:"item_label,omitempty"`
-	ItemPositionInReturnForm *int `json:"item_position_in_return_form,omitempty"`
-	ItemReturnFormStructure *string `json:"item_return_form_structure,omitempty"`
-	PeriodLengthLength *string `json:"period_length_length,omitempty"`
+	Aggregate *string `json:"aggregate,omitempty"`
+	Cut *string `json:"cut,omitempty"`
+	Drilldown *string `json:"drilldown,omitempty"`
+	Order *string `json:"order,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Pagesize *int `json:"pagesize,omitempty"`
 }
 
 // AgedDebtor is the typed data model for the aged_debtor entity.
@@ -66,20 +59,12 @@ type AgedDebtor struct {
 
 // AgedDebtorListMatch is the typed request payload for AgedDebtor.ListTyped.
 type AgedDebtorListMatch struct {
-	AmountSum *float64 `json:"amount_sum,omitempty"`
-	AmountTypeCode *string `json:"amount_type_code,omitempty"`
-	AmountTypeLabel *string `json:"amount_type_label,omitempty"`
-	CustomerGroupCode *string `json:"customer_group_code,omitempty"`
-	DemarcationCode *string `json:"demarcation_code,omitempty"`
-	DemarcationLabel *string `json:"demarcation_label,omitempty"`
-	FinancialPeriodPeriod *int `json:"financial_period_period,omitempty"`
-	FinancialYearEndYear *int `json:"financial_year_end_year,omitempty"`
-	ItemCode *string `json:"item_code,omitempty"`
-	ItemComposition *string `json:"item_composition,omitempty"`
-	ItemLabel *string `json:"item_label,omitempty"`
-	ItemPositionInReturnForm *int `json:"item_position_in_return_form,omitempty"`
-	ItemReturnFormStructure *string `json:"item_return_form_structure,omitempty"`
-	PeriodLengthLength *string `json:"period_length_length,omitempty"`
+	Aggregate *string `json:"aggregate,omitempty"`
+	Cut *string `json:"cut,omitempty"`
+	Drilldown *string `json:"drilldown,omitempty"`
+	Order *string `json:"order,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Pagesize *int `json:"pagesize,omitempty"`
 }
 
 // Fact is the typed data model for the fact entity.
@@ -91,9 +76,8 @@ type Fact struct {
 
 // FactListMatch is the typed request payload for Fact.ListTyped.
 type FactListMatch struct {
-	Cells *[]any `json:"cells,omitempty"`
-	Summary *map[string]any `json:"summary,omitempty"`
-	TotalCellCount *int `json:"total_cell_count,omitempty"`
+	Cut *string `json:"cut,omitempty"`
+	Drilldown *string `json:"drilldown,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the
