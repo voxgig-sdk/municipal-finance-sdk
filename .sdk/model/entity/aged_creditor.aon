@@ -145,10 +145,16 @@ main: kit: entity: aged_creditor: {
           }
           method: "GET"
           orig: "/cubes/aged_creditor/facts"
-          parts: [
-            "cubes"
-            "aged_creditor"
-            "facts"
+          segments: [
+            {
+              lit: "cubes"
+            }
+            {
+              lit: "aged_creditor"
+            }
+            {
+              lit: "facts"
+            }
           ]
           select: {
             "$action": "fact"
@@ -217,10 +223,16 @@ main: kit: entity: aged_creditor: {
           }
           method: "GET"
           orig: "/cubes/aged_creditor_v2/facts"
-          parts: [
-            "cubes"
-            "aged_creditor_v2"
-            "facts"
+          segments: [
+            {
+              lit: "cubes"
+            }
+            {
+              lit: "aged_creditor_v2"
+            }
+            {
+              lit: "facts"
+            }
           ]
           select: {
             exist: [

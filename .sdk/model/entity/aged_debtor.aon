@@ -149,10 +149,16 @@ main: kit: entity: aged_debtor: {
           }
           method: "GET"
           orig: "/cubes/aged_debtor/facts"
-          parts: [
-            "cubes"
-            "aged_debtor"
-            "facts"
+          segments: [
+            {
+              lit: "cubes"
+            }
+            {
+              lit: "aged_debtor"
+            }
+            {
+              lit: "facts"
+            }
           ]
           select: {
             "$action": "fact"
@@ -221,10 +227,16 @@ main: kit: entity: aged_debtor: {
           }
           method: "GET"
           orig: "/cubes/aged_debtor_v2/facts"
-          parts: [
-            "cubes"
-            "aged_debtor_v2"
-            "facts"
+          segments: [
+            {
+              lit: "cubes"
+            }
+            {
+              lit: "aged_debtor_v2"
+            }
+            {
+              lit: "facts"
+            }
           ]
           select: {
             exist: [

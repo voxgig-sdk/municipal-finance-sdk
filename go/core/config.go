@@ -159,10 +159,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/aged_creditor/facts",
-								"parts": []any{
-									"cubes",
-									"aged_creditor",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "aged_creditor",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"$action": "fact",
@@ -178,6 +184,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"aged_creditor",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -226,10 +237,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/aged_creditor_v2/facts",
-								"parts": []any{
-									"cubes",
-									"aged_creditor_v2",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "aged_creditor_v2",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -244,6 +261,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"aged_creditor_v2",
+									"facts",
 								},
 							},
 						},
@@ -380,10 +402,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/aged_debtor/facts",
-								"parts": []any{
-									"cubes",
-									"aged_debtor",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "aged_debtor",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"$action": "fact",
@@ -399,6 +427,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"aged_debtor",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -447,10 +480,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/aged_debtor_v2/facts",
-								"parts": []any{
-									"cubes",
-									"aged_debtor_v2",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "aged_debtor_v2",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -465,6 +504,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"aged_debtor_v2",
+									"facts",
 								},
 							},
 						},
@@ -516,10 +560,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/audit_opinions/facts",
-								"parts": []any{
-									"cubes",
-									"audit_opinions",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "audit_opinions",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -530,6 +580,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"audit_opinions",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -552,10 +607,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/bsheet/facts",
-								"parts": []any{
-									"cubes",
-									"bsheet",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "bsheet",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -566,6 +627,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"bsheet",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -588,10 +654,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/capital/facts",
-								"parts": []any{
-									"cubes",
-									"capital",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "capital",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -602,6 +674,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"capital",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -624,10 +701,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/capital_v2/facts",
-								"parts": []any{
-									"cubes",
-									"capital_v2",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "capital_v2",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -638,6 +721,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"capital_v2",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -660,10 +748,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/cflow/facts",
-								"parts": []any{
-									"cubes",
-									"cflow",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "cflow",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -674,6 +768,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"cflow",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -696,10 +795,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/cflow_v2/facts",
-								"parts": []any{
-									"cubes",
-									"cflow_v2",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "cflow_v2",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -710,6 +815,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"cflow_v2",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -732,10 +842,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/conditional_grants/facts",
-								"parts": []any{
-									"cubes",
-									"conditional_grants",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "conditional_grants",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -746,6 +862,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"conditional_grants",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -768,10 +889,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/demarcation_changes/facts",
-								"parts": []any{
-									"cubes",
-									"demarcation_changes",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "demarcation_changes",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -782,6 +909,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"demarcation_changes",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -804,10 +936,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/financial_position_v2/facts",
-								"parts": []any{
-									"cubes",
-									"financial_position_v2",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "financial_position_v2",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -818,6 +956,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"financial_position_v2",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -840,10 +983,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/grants_v2/facts",
-								"parts": []any{
-									"cubes",
-									"grants_v2",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "grants_v2",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -854,6 +1003,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"grants_v2",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -876,10 +1030,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/incexp/facts",
-								"parts": []any{
-									"cubes",
-									"incexp",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "incexp",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -890,6 +1050,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"incexp",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -912,10 +1077,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/incexp_v2/facts",
-								"parts": []any{
-									"cubes",
-									"incexp_v2",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "incexp_v2",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -926,6 +1097,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"incexp_v2",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -948,10 +1124,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/municipalities/facts",
-								"parts": []any{
-									"cubes",
-									"municipalities",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "municipalities",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -962,6 +1144,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"municipalities",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -984,10 +1171,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/officials/facts",
-								"parts": []any{
-									"cubes",
-									"officials",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "officials",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -998,6 +1191,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"officials",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -1020,10 +1218,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/repmaint/facts",
-								"parts": []any{
-									"cubes",
-									"repmaint",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "repmaint",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1034,6 +1238,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"repmaint",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -1056,10 +1265,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/repmaint_v2/facts",
-								"parts": []any{
-									"cubes",
-									"repmaint_v2",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "repmaint_v2",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1070,6 +1285,11 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"cubes",
+									"repmaint_v2",
+									"facts",
 								},
 							},
 							map[string]any{
@@ -1092,10 +1312,16 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/uifwexp/facts",
-								"parts": []any{
-									"cubes",
-									"uifwexp",
-									"facts",
+								"segments": []any{
+									map[string]any{
+										"lit": "cubes",
+									},
+									map[string]any{
+										"lit": "uifwexp",
+									},
+									map[string]any{
+										"lit": "facts",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -1107,6 +1333,11 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
+								"parts": []any{
+									"cubes",
+									"uifwexp",
+									"facts",
+								},
 							},
 						},
 					},
@@ -1117,6 +1348,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (

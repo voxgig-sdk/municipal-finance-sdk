@@ -193,10 +193,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/aged_creditor/facts",
-                  "parts": [
-                    "cubes",
-                    "aged_creditor",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "aged_creditor"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "$action": "fact",
@@ -273,10 +279,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/aged_creditor_v2/facts",
-                  "parts": [
-                    "cubes",
-                    "aged_creditor_v2",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "aged_creditor_v2"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -472,10 +484,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/aged_debtor/facts",
-                  "parts": [
-                    "cubes",
-                    "aged_debtor",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "aged_debtor"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "$action": "fact",
@@ -552,10 +570,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/aged_debtor_v2/facts",
-                  "parts": [
-                    "cubes",
-                    "aged_debtor_v2",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "aged_debtor_v2"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -636,10 +660,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/audit_opinions/facts",
-                  "parts": [
-                    "cubes",
-                    "audit_opinions",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "audit_opinions"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -677,10 +707,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/bsheet/facts",
-                  "parts": [
-                    "cubes",
-                    "bsheet",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "bsheet"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -718,10 +754,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/capital/facts",
-                  "parts": [
-                    "cubes",
-                    "capital",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "capital"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -759,10 +801,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/capital_v2/facts",
-                  "parts": [
-                    "cubes",
-                    "capital_v2",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "capital_v2"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -800,10 +848,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/cflow/facts",
-                  "parts": [
-                    "cubes",
-                    "cflow",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "cflow"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -841,10 +895,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/cflow_v2/facts",
-                  "parts": [
-                    "cubes",
-                    "cflow_v2",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "cflow_v2"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -882,10 +942,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/conditional_grants/facts",
-                  "parts": [
-                    "cubes",
-                    "conditional_grants",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "conditional_grants"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -923,10 +989,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/demarcation_changes/facts",
-                  "parts": [
-                    "cubes",
-                    "demarcation_changes",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "demarcation_changes"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -964,10 +1036,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/financial_position_v2/facts",
-                  "parts": [
-                    "cubes",
-                    "financial_position_v2",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "financial_position_v2"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1005,10 +1083,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/grants_v2/facts",
-                  "parts": [
-                    "cubes",
-                    "grants_v2",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "grants_v2"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1046,10 +1130,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/incexp/facts",
-                  "parts": [
-                    "cubes",
-                    "incexp",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "incexp"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1087,10 +1177,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/incexp_v2/facts",
-                  "parts": [
-                    "cubes",
-                    "incexp_v2",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "incexp_v2"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1128,10 +1224,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/municipalities/facts",
-                  "parts": [
-                    "cubes",
-                    "municipalities",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "municipalities"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1169,10 +1271,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/officials/facts",
-                  "parts": [
-                    "cubes",
-                    "officials",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "officials"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1210,10 +1318,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/repmaint/facts",
-                  "parts": [
-                    "cubes",
-                    "repmaint",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "repmaint"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1251,10 +1365,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/repmaint_v2/facts",
-                  "parts": [
-                    "cubes",
-                    "repmaint_v2",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "repmaint_v2"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1292,10 +1412,16 @@
                   "kind": "http",
                   "method": "GET",
                   "orig": "/cubes/uifwexp/facts",
-                  "parts": [
-                    "cubes",
-                    "uifwexp",
-                    "facts"
+                  "segments": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "uifwexp"
+                    },
+                    {
+                      "lit": "facts"
+                    }
                   ],
                   "select": {
                     "exist": [
@@ -1380,8 +1506,11 @@
             }
           },
           "name": "test",
+          "needs": {},
           "origname": "",
           "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
           "target": {
             "go": {
               "deps": {}
@@ -1553,6 +1682,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1578,6 +1710,10 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/runner_test.go",
+            "test/struct_runner_test.go"
+          ],
           "title": "Golang"
         },
         "go-cli": {
@@ -1629,6 +1765,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -1653,6 +1790,7 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [],
           "title": "Go CLI"
         },
         "go-mcp": {
@@ -1704,6 +1842,7 @@
               "active": false
             }
           },
+          "provides": {},
           "publish": {
             "registry": {
               "active": false,
@@ -1728,6 +1867,7 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [],
           "title": "Go MCP server"
         },
         "lua": {
@@ -1768,6 +1908,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1793,6 +1936,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.lua"
+          ],
           "title": "Lua"
         },
         "php": {
@@ -1827,6 +1973,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1852,6 +2001,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/StructRunner.php"
+          ],
           "title": "PHP"
         },
         "py": {
@@ -1892,6 +2044,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1917,6 +2072,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.py"
+          ],
           "title": "Python"
         },
         "rb": {
@@ -1962,6 +2120,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -1987,6 +2148,9 @@
             "version": "0.0.1"
           },
           "srcfeature": false,
+          "superseded": [
+            "test/struct_runner.rb"
+          ],
           "title": "Ruby"
         },
         "ts": {
@@ -2004,11 +2168,6 @@
               "active": true,
               "kind": "dev",
               "version": "^25.6.0"
-            },
-            "dotenv": {
-              "active": true,
-              "kind": "dev",
-              "version": "^17.4.2"
             },
             "typescript": {
               "active": true,
@@ -2037,6 +2196,9 @@
             "sdkrel": ""
           },
           "package": "@voxgig/sdkgen",
+          "provides": {
+            "sekreto": true
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -2061,6 +2223,14 @@
             },
             "version": "0.0.1"
           },
+          "superseded": [
+            "test/runner.ts",
+            "test/vendor/omni/compat.ts",
+            "src/feature/secrets/sekreto/Providers.ts",
+            "src/feature/secrets/sekreto/Sigv4.ts",
+            "src/feature/secrets/sekreto/provider/Registry.ts",
+            "src/feature/secrets/sekreto/provider/http.ts"
+          ],
           "title": "TypeScript"
         }
       },

@@ -181,10 +181,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/aged_creditor/facts',
-                  'parts' => [
-                    'cubes',
-                    'aged_creditor',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'aged_creditor',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     '$action' => 'fact',
@@ -200,6 +206,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'aged_creditor',
+                    'facts',
                   ],
                 ],
                 [
@@ -248,10 +259,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/aged_creditor_v2/facts',
-                  'parts' => [
-                    'cubes',
-                    'aged_creditor_v2',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'aged_creditor_v2',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -266,6 +283,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'aged_creditor_v2',
+                    'facts',
                   ],
                 ],
               ],
@@ -402,10 +424,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/aged_debtor/facts',
-                  'parts' => [
-                    'cubes',
-                    'aged_debtor',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'aged_debtor',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     '$action' => 'fact',
@@ -421,6 +449,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'aged_debtor',
+                    'facts',
                   ],
                 ],
                 [
@@ -469,10 +502,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/aged_debtor_v2/facts',
-                  'parts' => [
-                    'cubes',
-                    'aged_debtor_v2',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'aged_debtor_v2',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -487,6 +526,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'aged_debtor_v2',
+                    'facts',
                   ],
                 ],
               ],
@@ -538,10 +582,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/audit_opinions/facts',
-                  'parts' => [
-                    'cubes',
-                    'audit_opinions',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'audit_opinions',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -552,6 +602,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'audit_opinions',
+                    'facts',
                   ],
                 ],
                 [
@@ -574,10 +629,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/bsheet/facts',
-                  'parts' => [
-                    'cubes',
-                    'bsheet',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'bsheet',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -588,6 +649,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'bsheet',
+                    'facts',
                   ],
                 ],
                 [
@@ -610,10 +676,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/capital/facts',
-                  'parts' => [
-                    'cubes',
-                    'capital',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'capital',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -624,6 +696,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'capital',
+                    'facts',
                   ],
                 ],
                 [
@@ -646,10 +723,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/capital_v2/facts',
-                  'parts' => [
-                    'cubes',
-                    'capital_v2',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'capital_v2',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -660,6 +743,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'capital_v2',
+                    'facts',
                   ],
                 ],
                 [
@@ -682,10 +770,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/cflow/facts',
-                  'parts' => [
-                    'cubes',
-                    'cflow',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'cflow',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -696,6 +790,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'cflow',
+                    'facts',
                   ],
                 ],
                 [
@@ -718,10 +817,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/cflow_v2/facts',
-                  'parts' => [
-                    'cubes',
-                    'cflow_v2',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'cflow_v2',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -732,6 +837,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'cflow_v2',
+                    'facts',
                   ],
                 ],
                 [
@@ -754,10 +864,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/conditional_grants/facts',
-                  'parts' => [
-                    'cubes',
-                    'conditional_grants',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'conditional_grants',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -768,6 +884,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'conditional_grants',
+                    'facts',
                   ],
                 ],
                 [
@@ -790,10 +911,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/demarcation_changes/facts',
-                  'parts' => [
-                    'cubes',
-                    'demarcation_changes',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'demarcation_changes',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -804,6 +931,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'demarcation_changes',
+                    'facts',
                   ],
                 ],
                 [
@@ -826,10 +958,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/financial_position_v2/facts',
-                  'parts' => [
-                    'cubes',
-                    'financial_position_v2',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'financial_position_v2',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -840,6 +978,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'financial_position_v2',
+                    'facts',
                   ],
                 ],
                 [
@@ -862,10 +1005,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/grants_v2/facts',
-                  'parts' => [
-                    'cubes',
-                    'grants_v2',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'grants_v2',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -876,6 +1025,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'grants_v2',
+                    'facts',
                   ],
                 ],
                 [
@@ -898,10 +1052,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/incexp/facts',
-                  'parts' => [
-                    'cubes',
-                    'incexp',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'incexp',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -912,6 +1072,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'incexp',
+                    'facts',
                   ],
                 ],
                 [
@@ -934,10 +1099,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/incexp_v2/facts',
-                  'parts' => [
-                    'cubes',
-                    'incexp_v2',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'incexp_v2',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -948,6 +1119,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'incexp_v2',
+                    'facts',
                   ],
                 ],
                 [
@@ -970,10 +1146,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/municipalities/facts',
-                  'parts' => [
-                    'cubes',
-                    'municipalities',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'municipalities',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -984,6 +1166,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'municipalities',
+                    'facts',
                   ],
                 ],
                 [
@@ -1006,10 +1193,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/officials/facts',
-                  'parts' => [
-                    'cubes',
-                    'officials',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'officials',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1020,6 +1213,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'officials',
+                    'facts',
                   ],
                 ],
                 [
@@ -1042,10 +1240,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/repmaint/facts',
-                  'parts' => [
-                    'cubes',
-                    'repmaint',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'repmaint',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1056,6 +1260,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'repmaint',
+                    'facts',
                   ],
                 ],
                 [
@@ -1078,10 +1287,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/repmaint_v2/facts',
-                  'parts' => [
-                    'cubes',
-                    'repmaint_v2',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'repmaint_v2',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1092,6 +1307,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'repmaint_v2',
+                    'facts',
                   ],
                 ],
                 [
@@ -1114,10 +1334,16 @@ class MunicipalFinanceConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/cubes/uifwexp/facts',
-                  'parts' => [
-                    'cubes',
-                    'uifwexp',
-                    'facts',
+                  'segments' => [
+                    [
+                      'lit' => 'cubes',
+                    ],
+                    [
+                      'lit' => 'uifwexp',
+                    ],
+                    [
+                      'lit' => 'facts',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -1128,6 +1354,11 @@ class MunicipalFinanceConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'cubes',
+                    'uifwexp',
+                    'facts',
                   ],
                 ],
               ],
