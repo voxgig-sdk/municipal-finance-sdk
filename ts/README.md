@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { MunicipalFinanceSDK } from '@voxgig-sdk/municipal-finance'
+import { MunicipalFinanceSDK } from '@voxgig-sdk/municipal-finance-sdk'
 
 const client = new MunicipalFinanceSDK()
 ```
@@ -525,7 +525,7 @@ municipal-finance/
 Import the SDK from the package root:
 
 ```ts
-import { MunicipalFinanceSDK } from '@voxgig-sdk/municipal-finance'
+import { MunicipalFinanceSDK } from '@voxgig-sdk/municipal-finance-sdk'
 ```
 
 ### Entity state

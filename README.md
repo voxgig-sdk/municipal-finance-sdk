@@ -105,7 +105,7 @@ local results, err = client:AgedDebtor():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/municipal-finance` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/releases) |
+| TypeScript | `@voxgig-sdk/municipal-finance-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/releases) |
 | Python | `voxgig-sdk-municipal-finance` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/releases) |
 | PHP | `voxgig-sdk/municipal-finance` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/municipal-finance-sdk/go` | `go get github.com/voxgig-sdk/municipal-finance-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:AgedDebtor():list()
 ### TypeScript
 
 ```ts
-import { MunicipalFinanceSDK } from '@voxgig-sdk/municipal-finance'
+import { MunicipalFinanceSDK } from '@voxgig-sdk/municipal-finance-sdk'
 
 const client = new MunicipalFinanceSDK()
 
