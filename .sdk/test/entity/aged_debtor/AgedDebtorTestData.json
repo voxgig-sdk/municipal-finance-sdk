@@ -8,12 +8,12 @@
         "customer_group_code": "s8f",
         "demarcation_code": "s90",
         "demarcation_label": "s91",
-        "financial_period_period": "s92",
-        "financial_year_end_year": "s93",
+        "financial_period_period": 146,
+        "financial_year_end_year": 147,
         "item_code": "s94",
         "item_composition": "s95",
         "item_label": "s96",
-        "item_position_in_return_form": "s97",
+        "item_position_in_return_form": 151,
         "item_return_form_structure": "s98",
         "period_length_length": "s99"
       },
@@ -24,12 +24,12 @@
         "customer_group_code": "s11b",
         "demarcation_code": "s11c",
         "demarcation_label": "s11d",
-        "financial_period_period": "s11e",
-        "financial_year_end_year": "s11f",
+        "financial_period_period": 286,
+        "financial_year_end_year": 287,
         "item_code": "s120",
         "item_composition": "s121",
         "item_label": "s122",
-        "item_position_in_return_form": "s123",
+        "item_position_in_return_form": 291,
         "item_return_form_structure": "s124",
         "period_length_length": "s125"
       },
@@ -40,12 +40,12 @@
         "customer_group_code": "s1a7",
         "demarcation_code": "s1a8",
         "demarcation_label": "s1a9",
-        "financial_period_period": "s1aa",
-        "financial_year_end_year": "s1ab",
+        "financial_period_period": 426,
+        "financial_year_end_year": 427,
         "item_code": "s1ac",
         "item_composition": "s1ad",
         "item_label": "s1ae",
-        "item_position_in_return_form": "s1af",
+        "item_position_in_return_form": 431,
         "item_return_form_structure": "s1b0",
         "period_length_length": "s1b1"
       }
@@ -60,14 +60,402 @@
         "customer_group_code": "s233",
         "demarcation_code": "s234",
         "demarcation_label": "s235",
-        "financial_period_period": "s236",
-        "financial_year_end_year": "s237",
+        "financial_period_period": 566,
+        "financial_year_end_year": 567,
         "item_code": "s238",
         "item_composition": "s239",
         "item_label": "s23a",
-        "item_position_in_return_form": "s23b",
+        "item_position_in_return_form": 571,
         "item_return_form_structure": "s23c",
         "period_length_length": "s23d"
+      }
+    }
+  },
+  "requests": {
+    "GET /cubes/aged_debtor/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getAgedDebtorAnalysis",
+        "parameters": [
+          {
+            "description": "Filter dimensions using pipe-separated dimension:value pairs",
+            "example": "financial_year_end.year:2020|customer_group.code:households",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by (pipe-separated)",
+            "example": "item.code|customer_group.code",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Aggregation measures to return",
+            "in": "query",
+            "name": "aggregates",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Order results by specified field",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number for pagination",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Number of results per page",
+            "in": "query",
+            "name": "pagesize",
+            "required": false,
+            "schema": {
+              "default": 10000,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "properties": {
+                          "amount.sum": {
+                            "description": "Sum of the amount",
+                            "type": "number"
+                          },
+                          "amount_type.code": {
+                            "description": "Amount type code",
+                            "type": "string"
+                          },
+                          "amount_type.label": {
+                            "description": "Amount type label",
+                            "type": "string"
+                          },
+                          "customer_group.code": {
+                            "description": "Customer group code",
+                            "type": "string"
+                          },
+                          "demarcation.code": {
+                            "description": "Municipality demarcation code",
+                            "type": "string"
+                          },
+                          "demarcation.label": {
+                            "description": "Municipality name",
+                            "type": "string"
+                          },
+                          "financial_period.period": {
+                            "description": "Financial period number",
+                            "type": "integer"
+                          },
+                          "financial_year_end.year": {
+                            "description": "Financial year end",
+                            "type": "integer"
+                          },
+                          "item.code": {
+                            "description": "Item code",
+                            "type": "string"
+                          },
+                          "item.composition": {
+                            "description": "Item composition formula",
+                            "type": "string"
+                          },
+                          "item.label": {
+                            "description": "Item label",
+                            "type": "string"
+                          },
+                          "item.position_in_return_form": {
+                            "description": "Position in return form",
+                            "type": "integer"
+                          },
+                          "item.return_form_structure": {
+                            "description": "Return form structure",
+                            "type": "string"
+                          },
+                          "period_length.length": {
+                            "description": "Period length",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with aged debtor data"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "Error status code",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request - invalid parameters"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "Error status code",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/aged_debtor_v2/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getAgedDebtorAnalysisV2",
+        "parameters": [
+          {
+            "description": "Filter dimensions using pipe-separated dimension:value pairs",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by (pipe-separated)",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Aggregation measures to return",
+            "in": "query",
+            "name": "aggregates",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Order results by specified field",
+            "in": "query",
+            "name": "order",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Page number for pagination",
+            "in": "query",
+            "name": "page",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Number of results per page",
+            "in": "query",
+            "name": "pagesize",
+            "required": false,
+            "schema": {
+              "default": 10000,
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "properties": {
+                          "amount.sum": {
+                            "description": "Sum of the amount",
+                            "type": "number"
+                          },
+                          "amount_type.code": {
+                            "description": "Amount type code",
+                            "type": "string"
+                          },
+                          "amount_type.label": {
+                            "description": "Amount type label",
+                            "type": "string"
+                          },
+                          "customer_group.code": {
+                            "description": "Customer group code",
+                            "type": "string"
+                          },
+                          "demarcation.code": {
+                            "description": "Municipality demarcation code",
+                            "type": "string"
+                          },
+                          "demarcation.label": {
+                            "description": "Municipality name",
+                            "type": "string"
+                          },
+                          "financial_period.period": {
+                            "description": "Financial period number",
+                            "type": "integer"
+                          },
+                          "financial_year_end.year": {
+                            "description": "Financial year end",
+                            "type": "integer"
+                          },
+                          "item.code": {
+                            "description": "Item code",
+                            "type": "string"
+                          },
+                          "item.composition": {
+                            "description": "Item composition formula",
+                            "type": "string"
+                          },
+                          "item.label": {
+                            "description": "Item label",
+                            "type": "string"
+                          },
+                          "item.position_in_return_form": {
+                            "description": "Position in return form",
+                            "type": "integer"
+                          },
+                          "item.return_form_structure": {
+                            "description": "Return form structure",
+                            "type": "string"
+                          },
+                          "period_length.length": {
+                            "description": "Period length",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with aged debtor data (v2)"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "Error status code",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request - invalid parameters"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "error": {
+                      "description": "Error message",
+                      "type": "string"
+                    },
+                    "status": {
+                      "description": "Error status code",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

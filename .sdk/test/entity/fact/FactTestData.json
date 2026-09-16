@@ -4,17 +4,17 @@
       "FACT00": {
         "cells": [],
         "summary": {},
-        "total_cell_count": "s20"
+        "total_cell_count": 32
       },
       "FACT01": {
         "cells": [],
         "summary": {},
-        "total_cell_count": "s3e"
+        "total_cell_count": 62
       },
       "FACT02": {
         "cells": [],
         "summary": {},
-        "total_cell_count": "s5c"
+        "total_cell_count": 92
       }
     }
   },
@@ -23,7 +23,978 @@
       "fact_ref01": {
         "cells": [],
         "summary": {},
-        "total_cell_count": "s7a"
+        "total_cell_count": 122
+      }
+    }
+  },
+  "requests": {
+    "GET /cubes/audit_opinions/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getAuditOpinions",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/bsheet/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getBalanceSheet",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/capital/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCapitalAcquisition",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/capital_v2/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCapitalAcquisitionV2",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/cflow/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCashFlow",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/cflow_v2/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getCashFlowV2",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/conditional_grants/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getConditionalGrants",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/demarcation_changes/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getDemarcationChanges",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/financial_position_v2/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getFinancialPositionV2",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/grants_v2/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getGrantsV2",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/incexp/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getIncomeExpenditure",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/incexp_v2/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getIncomeExpenditureV2",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/municipalities/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getMunicipalities",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/officials/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getMunicipalOfficials",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/repmaint/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getRepairsMaintenance",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/repmaint_v2/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getRepairsMaintenanceV2",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /cubes/uifwexp/facts": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getUIFWExpenditure",
+        "parameters": [
+          {
+            "description": "Filter dimensions",
+            "in": "query",
+            "name": "cut",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Dimensions to group by",
+            "in": "query",
+            "name": "drilldown",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "cells": {
+                      "items": {
+                        "additionalProperties": true,
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "summary": {
+                      "additionalProperties": true,
+                      "type": "object"
+                    },
+                    "total_cell_count": {
+                      "description": "Total number of cells in the result",
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response"
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

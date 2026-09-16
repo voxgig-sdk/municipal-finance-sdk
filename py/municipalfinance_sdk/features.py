@@ -1,12 +1,18 @@
 # MunicipalFinance SDK feature factory
 
 from municipalfinance_sdk.feature.base_feature import MunicipalFinanceBaseFeature
+from municipalfinance_sdk.feature.ratelimit_feature import MunicipalFinanceRatelimitFeature
+from municipalfinance_sdk.feature.retry_feature import MunicipalFinanceRetryFeature
 from municipalfinance_sdk.feature.test_feature import MunicipalFinanceTestFeature
+from municipalfinance_sdk.feature.timeout_feature import MunicipalFinanceTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: MunicipalFinanceBaseFeature(),
+    "ratelimit": lambda: MunicipalFinanceRatelimitFeature(),
+    "retry": lambda: MunicipalFinanceRetryFeature(),
     "test": lambda: MunicipalFinanceTestFeature(),
+    "timeout": lambda: MunicipalFinanceTimeoutFeature(),
 }
 
 
