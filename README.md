@@ -105,12 +105,12 @@ local results, err = client:AgedDebtor():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/municipal-finance-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/releases) |
-| Python | `voxgig-sdk-municipal-finance` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/releases) |
-| PHP | `voxgig-sdk/municipal-finance` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/releases) |
+| TypeScript | `@voxgig-sdk/municipal-finance-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/tags) |
+| Python | `voxgig-sdk-municipal-finance` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/tags) |
+| PHP | `voxgig-sdk/municipal-finance` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/municipal-finance-sdk/go` | `go get github.com/voxgig-sdk/municipal-finance-sdk/go@latest` |
-| Ruby | `voxgig-sdk-municipal-finance` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/releases) |
-| Lua | `voxgig-sdk-municipal-finance` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/releases) |
+| Ruby | `voxgig-sdk-municipal-finance` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/tags) |
+| Lua | `voxgig-sdk-municipal-finance` | publish pending — [install from git tag](https://github.com/voxgig-sdk/municipal-finance-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/municipal-finance-sdk/go-cli` | `go install github.com/voxgig-sdk/municipal-finance-sdk/go-cli/cmd/municipal-finance@latest` |
 | Go MCP server | `github.com/voxgig-sdk/municipal-finance-sdk/go-mcp` | `go get github.com/voxgig-sdk/municipal-finance-sdk/go-mcp@latest` |
 

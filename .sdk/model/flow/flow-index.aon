@@ -1,5 +1,5 @@
 # Flows
 
-@"BasicAgedCreditorFlow.aon"
-@"BasicAgedDebtorFlow.aon"
-@"BasicFactFlow.aon"
+@"./BasicAgedCreditorFlow.aon"
+@"./BasicAgedDebtorFlow.aon"
+@"./BasicFactFlow.aon"

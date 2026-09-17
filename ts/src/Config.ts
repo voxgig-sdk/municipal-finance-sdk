@@ -127,15 +127,15 @@ class Config {
 
     entity: {
       
-      aged_creditor: {
-      },
-
-      aged_debtor: {
-      },
-
-      fact: {
-      },
-
+        aged_creditor: {
+        },
+  
+        aged_debtor: {
+        },
+  
+        fact: {
+        },
+  
     }
   }
 
