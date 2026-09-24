@@ -19,7 +19,6 @@ import type {
   AgedDebtorListMatch,
 } from '../MunicipalFinanceTypes'
 
-// TODO: needs Entity superclass
 class AgedDebtorEntity extends MunicipalFinanceEntityBase<AgedDebtor> {
 
   constructor(client: MunicipalFinanceSDK, entopts: any) {

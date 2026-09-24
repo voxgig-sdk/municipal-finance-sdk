@@ -93,68 +93,81 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "amount_sum",
-						"short": "Sum of the amount",
+						"title": "Amount Sum",
 						"type": "`$NUMBER`",
+						"short": "Sum of the amount",
 					},
 					map[string]any{
 						"name": "amount_type_code",
-						"short": "Amount type code",
+						"title": "Amount Type Code",
 						"type": "`$STRING`",
+						"short": "Amount type code",
 					},
 					map[string]any{
 						"name": "amount_type_label",
-						"short": "Amount type label",
+						"title": "Amount Type Label",
 						"type": "`$STRING`",
+						"short": "Amount type label",
 					},
 					map[string]any{
 						"name": "demarcation_code",
-						"short": "Municipality demarcation code",
+						"title": "Demarcation Code",
 						"type": "`$STRING`",
+						"short": "Municipality demarcation code",
 					},
 					map[string]any{
 						"name": "demarcation_label",
-						"short": "Municipality name",
+						"title": "Demarcation Label",
 						"type": "`$STRING`",
+						"short": "Municipality name",
 					},
 					map[string]any{
 						"name": "financial_period_period",
-						"short": "Financial period number",
+						"title": "Financial Period Period",
 						"type": "`$INTEGER`",
+						"short": "Financial period number",
 					},
 					map[string]any{
 						"name": "financial_year_end_year",
-						"short": "Financial year end",
+						"title": "Financial Year End Year",
 						"type": "`$INTEGER`",
+						"short": "Financial year end",
 					},
 					map[string]any{
 						"name": "item_code",
-						"short": "Item code",
+						"title": "Item Code",
 						"type": "`$STRING`",
+						"short": "Item code",
 					},
 					map[string]any{
 						"name": "item_composition",
-						"short": "Item composition formula",
+						"title": "Item Composition",
 						"type": "`$STRING`",
+						"short": "Item composition formula",
 					},
 					map[string]any{
 						"name": "item_label",
-						"short": "Item label",
+						"title": "Item Label",
 						"type": "`$STRING`",
+						"short": "Item label",
 					},
 					map[string]any{
 						"name": "item_position_in_return_form",
-						"short": "Position in return form",
+						"title": "Item Position In Return Form",
 						"type": "`$INTEGER`",
+						"short": "Position in return form",
 					},
 					map[string]any{
 						"name": "item_return_form_structure",
-						"short": "Return form structure",
+						"title": "Item Return Form Structure",
 						"type": "`$STRING`",
+						"short": "Return form structure",
 					},
 					map[string]any{
 						"name": "period_length_length",
-						"short": "Period length",
+						"title": "Period Length Length",
 						"type": "`$STRING`",
+						"short": "Period length",
 					},
 				},
 				"name": "aged_creditor",
@@ -164,52 +177,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": "amount.sum",
-											"kind": "query",
-											"name": "aggregate",
-											"orig": "aggregate",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "financial_year_end.year:2020|demarcation.code:CPT",
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "item.code|financial_period.period",
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "financial_period.period:asc",
-											"kind": "query",
-											"name": "order",
-											"orig": "order",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "page",
-											"orig": "page",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 10000,
-											"kind": "query",
-											"name": "pagesize",
-											"orig": "pagesize",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/aged_creditor/facts",
@@ -224,6 +191,62 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"aged_creditor",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "aggregate",
+											"orig": "aggregate",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "amount.sum",
+										},
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "financial_year_end.year:2020|demarcation.code:CPT",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "item.code|financial_period.period",
+										},
+										map[string]any{
+											"name": "order",
+											"orig": "order",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "financial_period.period:asc",
+										},
+										map[string]any{
+											"name": "page",
+											"orig": "page",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+										map[string]any{
+											"name": "pagesize",
+											"orig": "pagesize",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 10000,
+										},
+									},
+								},
 								"select": map[string]any{
 									"$action": "fact",
 									"exist": []any{
@@ -235,59 +258,8 @@ func MakeConfig() map[string]any {
 										"pagesize",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"aged_creditor",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "aggregate",
-											"orig": "aggregate",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "order",
-											"orig": "order",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "page",
-											"orig": "page",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 10000,
-											"kind": "query",
-											"name": "pagesize",
-											"orig": "pagesize",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/aged_creditor_v2/facts",
@@ -302,6 +274,58 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"aged_creditor_v2",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "aggregate",
+											"orig": "aggregate",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "order",
+											"orig": "order",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "page",
+											"orig": "page",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+										map[string]any{
+											"name": "pagesize",
+											"orig": "pagesize",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 10000,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"aggregate",
@@ -311,15 +335,6 @@ func MakeConfig() map[string]any {
 										"page",
 										"pagesize",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"aged_creditor_v2",
-									"facts",
 								},
 							},
 						},
@@ -333,73 +348,87 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "amount_sum",
-						"short": "Sum of the amount",
+						"title": "Amount Sum",
 						"type": "`$NUMBER`",
+						"short": "Sum of the amount",
 					},
 					map[string]any{
 						"name": "amount_type_code",
-						"short": "Amount type code",
+						"title": "Amount Type Code",
 						"type": "`$STRING`",
+						"short": "Amount type code",
 					},
 					map[string]any{
 						"name": "amount_type_label",
-						"short": "Amount type label",
+						"title": "Amount Type Label",
 						"type": "`$STRING`",
+						"short": "Amount type label",
 					},
 					map[string]any{
 						"name": "customer_group_code",
-						"short": "Customer group code",
+						"title": "Customer Group Code",
 						"type": "`$STRING`",
+						"short": "Customer group code",
 					},
 					map[string]any{
 						"name": "demarcation_code",
-						"short": "Municipality demarcation code",
+						"title": "Demarcation Code",
 						"type": "`$STRING`",
+						"short": "Municipality demarcation code",
 					},
 					map[string]any{
 						"name": "demarcation_label",
-						"short": "Municipality name",
+						"title": "Demarcation Label",
 						"type": "`$STRING`",
+						"short": "Municipality name",
 					},
 					map[string]any{
 						"name": "financial_period_period",
-						"short": "Financial period number",
+						"title": "Financial Period Period",
 						"type": "`$INTEGER`",
+						"short": "Financial period number",
 					},
 					map[string]any{
 						"name": "financial_year_end_year",
-						"short": "Financial year end",
+						"title": "Financial Year End Year",
 						"type": "`$INTEGER`",
+						"short": "Financial year end",
 					},
 					map[string]any{
 						"name": "item_code",
-						"short": "Item code",
+						"title": "Item Code",
 						"type": "`$STRING`",
+						"short": "Item code",
 					},
 					map[string]any{
 						"name": "item_composition",
-						"short": "Item composition formula",
+						"title": "Item Composition",
 						"type": "`$STRING`",
+						"short": "Item composition formula",
 					},
 					map[string]any{
 						"name": "item_label",
-						"short": "Item label",
+						"title": "Item Label",
 						"type": "`$STRING`",
+						"short": "Item label",
 					},
 					map[string]any{
 						"name": "item_position_in_return_form",
-						"short": "Position in return form",
+						"title": "Item Position In Return Form",
 						"type": "`$INTEGER`",
+						"short": "Position in return form",
 					},
 					map[string]any{
 						"name": "item_return_form_structure",
-						"short": "Return form structure",
+						"title": "Item Return Form Structure",
 						"type": "`$STRING`",
+						"short": "Return form structure",
 					},
 					map[string]any{
 						"name": "period_length_length",
-						"short": "Period length",
+						"title": "Period Length Length",
 						"type": "`$STRING`",
+						"short": "Period length",
 					},
 				},
 				"name": "aged_debtor",
@@ -409,50 +438,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "aggregate",
-											"orig": "aggregate",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "financial_year_end.year:2020|customer_group.code:households",
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "item.code|customer_group.code",
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "order",
-											"orig": "order",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "page",
-											"orig": "page",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 10000,
-											"kind": "query",
-											"name": "pagesize",
-											"orig": "pagesize",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/aged_debtor/facts",
@@ -467,6 +452,60 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"aged_debtor",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "aggregate",
+											"orig": "aggregate",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "financial_year_end.year:2020|customer_group.code:households",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "item.code|customer_group.code",
+										},
+										map[string]any{
+											"name": "order",
+											"orig": "order",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "page",
+											"orig": "page",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+										map[string]any{
+											"name": "pagesize",
+											"orig": "pagesize",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 10000,
+										},
+									},
+								},
 								"select": map[string]any{
 									"$action": "fact",
 									"exist": []any{
@@ -478,59 +517,8 @@ func MakeConfig() map[string]any {
 										"pagesize",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"aged_debtor",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "aggregate",
-											"orig": "aggregate",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "order",
-											"orig": "order",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "page",
-											"orig": "page",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 10000,
-											"kind": "query",
-											"name": "pagesize",
-											"orig": "pagesize",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/aged_debtor_v2/facts",
@@ -545,6 +533,58 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"aged_debtor_v2",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "aggregate",
+											"orig": "aggregate",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "order",
+											"orig": "order",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "page",
+											"orig": "page",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+										map[string]any{
+											"name": "pagesize",
+											"orig": "pagesize",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 10000,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"aggregate",
@@ -554,15 +594,6 @@ func MakeConfig() map[string]any {
 										"page",
 										"pagesize",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"aged_debtor_v2",
-									"facts",
 								},
 							},
 						},
@@ -576,16 +607,19 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "cells",
+						"title": "Cells",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "summary",
+						"title": "Summary",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "total_cell_count",
-						"short": "Total number of cells in the result",
+						"title": "Total Cell Count",
 						"type": "`$INTEGER`",
+						"short": "Total number of cells in the result",
 					},
 				},
 				"name": "fact",
@@ -595,22 +629,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/audit_opinions/facts",
@@ -625,39 +643,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"audit_opinions",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"audit_opinions",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/bsheet/facts",
@@ -672,39 +691,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"bsheet",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"bsheet",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/capital/facts",
@@ -719,39 +739,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"capital",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"capital",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/capital_v2/facts",
@@ -766,39 +787,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"capital_v2",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"capital_v2",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/cflow/facts",
@@ -813,39 +835,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"cflow",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"cflow",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/cflow_v2/facts",
@@ -860,39 +883,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"cflow_v2",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"cflow_v2",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/conditional_grants/facts",
@@ -907,39 +931,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"conditional_grants",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"conditional_grants",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/demarcation_changes/facts",
@@ -954,39 +979,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"demarcation_changes",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"demarcation_changes",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/financial_position_v2/facts",
@@ -1001,39 +1027,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"financial_position_v2",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"financial_position_v2",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/grants_v2/facts",
@@ -1048,39 +1075,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"grants_v2",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"grants_v2",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/incexp/facts",
@@ -1095,39 +1123,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"incexp",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"incexp",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/incexp_v2/facts",
@@ -1142,39 +1171,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"incexp_v2",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"incexp_v2",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/municipalities/facts",
@@ -1189,39 +1219,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"municipalities",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"municipalities",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/officials/facts",
@@ -1236,39 +1267,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"officials",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"officials",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/repmaint/facts",
@@ -1283,39 +1315,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"repmaint",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"repmaint",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/repmaint_v2/facts",
@@ -1330,39 +1363,40 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"repmaint_v2",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"repmaint_v2",
-									"facts",
-								},
 							},
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "cut",
-											"orig": "cut",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"kind": "query",
-											"name": "drilldown",
-											"orig": "drilldown",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/cubes/uifwexp/facts",
@@ -1377,20 +1411,37 @@ func MakeConfig() map[string]any {
 										"lit": "facts",
 									},
 								},
+								"parts": []any{
+									"cubes",
+									"uifwexp",
+									"facts",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "cut",
+											"orig": "cut",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "drilldown",
+											"orig": "drilldown",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"cut",
 										"drilldown",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"cubes",
-									"uifwexp",
-									"facts",
 								},
 							},
 						},

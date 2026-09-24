@@ -43,7 +43,7 @@ local agedcreditors, err = client:AgedCreditor():list()
 if err then error(err) end
 
 for _, item in ipairs(agedcreditors) do
-  print(item["amount_type_code"])
+  print(item)
 end
 ```
 

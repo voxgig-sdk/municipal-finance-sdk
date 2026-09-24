@@ -1,0 +1,286 @@
+# Entity: aged_debtor
+
+main: kit: entity: aged_debtor: {
+
+  alias: field: {}
+
+  fields: {
+    amount_sum: {
+      h: "Amount Sum"
+      n: "amount_sum"
+      r: false
+      sh: "Sum of the amount"
+      t: "`$NUMBER`"
+    }
+    amount_type_code: {
+      h: "Amount Type Code"
+      n: "amount_type_code"
+      r: false
+      sh: "Amount type code"
+      t: "`$STRING`"
+    }
+    amount_type_label: {
+      h: "Amount Type Label"
+      n: "amount_type_label"
+      r: false
+      sh: "Amount type label"
+      t: "`$STRING`"
+    }
+    customer_group_code: {
+      h: "Customer Group Code"
+      n: "customer_group_code"
+      r: false
+      sh: "Customer group code"
+      t: "`$STRING`"
+    }
+    demarcation_code: {
+      h: "Demarcation Code"
+      n: "demarcation_code"
+      r: false
+      sh: "Municipality demarcation code"
+      t: "`$STRING`"
+    }
+    demarcation_label: {
+      h: "Demarcation Label"
+      n: "demarcation_label"
+      r: false
+      sh: "Municipality name"
+      t: "`$STRING`"
+    }
+    financial_period_period: {
+      h: "Financial Period Period"
+      n: "financial_period_period"
+      r: false
+      sh: "Financial period number"
+      t: "`$INTEGER`"
+    }
+    financial_year_end_year: {
+      h: "Financial Year End Year"
+      n: "financial_year_end_year"
+      r: false
+      sh: "Financial year end"
+      t: "`$INTEGER`"
+    }
+    item_code: {
+      h: "Item Code"
+      n: "item_code"
+      r: false
+      sh: "Item code"
+      t: "`$STRING`"
+    }
+    item_composition: {
+      h: "Item Composition"
+      n: "item_composition"
+      r: false
+      sh: "Item composition formula"
+      t: "`$STRING`"
+    }
+    item_label: {
+      h: "Item Label"
+      n: "item_label"
+      r: false
+      sh: "Item label"
+      t: "`$STRING`"
+    }
+    item_position_in_return_form: {
+      h: "Item Position In Return Form"
+      n: "item_position_in_return_form"
+      r: false
+      sh: "Position in return form"
+      t: "`$INTEGER`"
+    }
+    item_return_form_structure: {
+      h: "Item Return Form Structure"
+      n: "item_return_form_structure"
+      r: false
+      sh: "Return form structure"
+      t: "`$STRING`"
+    }
+    period_length_length: {
+      h: "Period Length Length"
+      n: "period_length_length"
+      r: false
+      sh: "Period length"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "aged_debtor"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /cubes/aged_debtor/facts"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "aggregate"
+                or: "aggregate"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "financial_year_end.year:2020|customer_group.code:households"
+                k: "query"
+                n: "cut"
+                or: "cut"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "item.code|customer_group.code"
+                k: "query"
+                n: "drilldown"
+                or: "drilldown"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 10000
+                k: "query"
+                n: "pagesize"
+                or: "pagesize"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/cubes/aged_debtor/facts"
+          q: {
+            "$action": "fact"
+            exist: [
+              "aggregate"
+              "cut"
+              "drilldown"
+              "order"
+              "page"
+              "pagesize"
+            ]
+          }
+          s: [
+            {
+              lit: "cubes"
+            }
+            {
+              lit: "aged_debtor"
+            }
+            {
+              lit: "facts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /cubes/aged_debtor_v2/facts"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "aggregate"
+                or: "aggregate"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "cut"
+                or: "cut"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "drilldown"
+                or: "drilldown"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 10000
+                k: "query"
+                n: "pagesize"
+                or: "pagesize"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/cubes/aged_debtor_v2/facts"
+          q: {
+            exist: [
+              "aggregate"
+              "cut"
+              "drilldown"
+              "order"
+              "page"
+              "pagesize"
+            ]
+          }
+          s: [
+            {
+              lit: "cubes"
+            }
+            {
+              lit: "aged_debtor_v2"
+            }
+            {
+              lit: "facts"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

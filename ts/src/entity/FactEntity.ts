@@ -19,7 +19,6 @@ import type {
   FactListMatch,
 } from '../MunicipalFinanceTypes'
 
-// TODO: needs Entity superclass
 class FactEntity extends MunicipalFinanceEntityBase<Fact> {
 
   constructor(client: MunicipalFinanceSDK, entopts: any) {

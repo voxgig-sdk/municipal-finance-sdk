@@ -1,7 +1,7 @@
 // Typed models for the MunicipalFinance SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,19 +14,6 @@ import (
 
 // AgedCreditor is the typed data model for the aged_creditor entity.
 type AgedCreditor struct {
-	AmountSum *float64 `json:"amount_sum,omitempty"`
-	AmountTypeCode *string `json:"amount_type_code,omitempty"`
-	AmountTypeLabel *string `json:"amount_type_label,omitempty"`
-	DemarcationCode *string `json:"demarcation_code,omitempty"`
-	DemarcationLabel *string `json:"demarcation_label,omitempty"`
-	FinancialPeriodPeriod *int `json:"financial_period_period,omitempty"`
-	FinancialYearEndYear *int `json:"financial_year_end_year,omitempty"`
-	ItemCode *string `json:"item_code,omitempty"`
-	ItemComposition *string `json:"item_composition,omitempty"`
-	ItemLabel *string `json:"item_label,omitempty"`
-	ItemPositionInReturnForm *int `json:"item_position_in_return_form,omitempty"`
-	ItemReturnFormStructure *string `json:"item_return_form_structure,omitempty"`
-	PeriodLengthLength *string `json:"period_length_length,omitempty"`
 }
 
 // AgedCreditorListMatch is the typed request payload for AgedCreditor.ListTyped.
@@ -41,20 +28,6 @@ type AgedCreditorListMatch struct {
 
 // AgedDebtor is the typed data model for the aged_debtor entity.
 type AgedDebtor struct {
-	AmountSum *float64 `json:"amount_sum,omitempty"`
-	AmountTypeCode *string `json:"amount_type_code,omitempty"`
-	AmountTypeLabel *string `json:"amount_type_label,omitempty"`
-	CustomerGroupCode *string `json:"customer_group_code,omitempty"`
-	DemarcationCode *string `json:"demarcation_code,omitempty"`
-	DemarcationLabel *string `json:"demarcation_label,omitempty"`
-	FinancialPeriodPeriod *int `json:"financial_period_period,omitempty"`
-	FinancialYearEndYear *int `json:"financial_year_end_year,omitempty"`
-	ItemCode *string `json:"item_code,omitempty"`
-	ItemComposition *string `json:"item_composition,omitempty"`
-	ItemLabel *string `json:"item_label,omitempty"`
-	ItemPositionInReturnForm *int `json:"item_position_in_return_form,omitempty"`
-	ItemReturnFormStructure *string `json:"item_return_form_structure,omitempty"`
-	PeriodLengthLength *string `json:"period_length_length,omitempty"`
 }
 
 // AgedDebtorListMatch is the typed request payload for AgedDebtor.ListTyped.
@@ -69,9 +42,6 @@ type AgedDebtorListMatch struct {
 
 // Fact is the typed data model for the fact entity.
 type Fact struct {
-	Cells *[]any `json:"cells,omitempty"`
-	Summary *map[string]any `json:"summary,omitempty"`
-	TotalCellCount *int `json:"total_cell_count,omitempty"`
 }
 
 // FactListMatch is the typed request payload for Fact.ListTyped.

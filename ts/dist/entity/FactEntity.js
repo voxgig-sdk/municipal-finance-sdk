@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FactEntity = void 0;
 const MunicipalFinanceEntityBase_1 = require("../MunicipalFinanceEntityBase");
-// TODO: needs Entity superclass
 class FactEntity extends MunicipalFinanceEntityBase_1.MunicipalFinanceEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

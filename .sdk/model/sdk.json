@@ -24,105 +24,184 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "aged_creditor": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "amount_sum",
-              "req": false,
-              "short": "Sum of the amount",
-              "type": "`$NUMBER`"
+          "fields": {
+            "amount_sum": {
+              "a": true,
+              "h": "Amount Sum",
+              "n": "amount_sum",
+              "r": false,
+              "sh": "Sum of the amount",
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "amount_type_code",
-              "req": false,
-              "short": "Amount type code",
-              "type": "`$STRING`"
+            "amount_type_code": {
+              "a": true,
+              "h": "Amount Type Code",
+              "n": "amount_type_code",
+              "r": false,
+              "sh": "Amount type code",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "amount_type_label",
-              "req": false,
-              "short": "Amount type label",
-              "type": "`$STRING`"
+            "amount_type_label": {
+              "a": true,
+              "h": "Amount Type Label",
+              "n": "amount_type_label",
+              "r": false,
+              "sh": "Amount type label",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "demarcation_code",
-              "req": false,
-              "short": "Municipality demarcation code",
-              "type": "`$STRING`"
+            "demarcation_code": {
+              "a": true,
+              "h": "Demarcation Code",
+              "n": "demarcation_code",
+              "r": false,
+              "sh": "Municipality demarcation code",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "demarcation_label",
-              "req": false,
-              "short": "Municipality name",
-              "type": "`$STRING`"
+            "demarcation_label": {
+              "a": true,
+              "h": "Demarcation Label",
+              "n": "demarcation_label",
+              "r": false,
+              "sh": "Municipality name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "financial_period_period",
-              "req": false,
-              "short": "Financial period number",
-              "type": "`$INTEGER`"
+            "financial_period_period": {
+              "a": true,
+              "h": "Financial Period Period",
+              "n": "financial_period_period",
+              "r": false,
+              "sh": "Financial period number",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "financial_year_end_year",
-              "req": false,
-              "short": "Financial year end",
-              "type": "`$INTEGER`"
+            "financial_year_end_year": {
+              "a": true,
+              "h": "Financial Year End Year",
+              "n": "financial_year_end_year",
+              "r": false,
+              "sh": "Financial year end",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "item_code",
-              "req": false,
-              "short": "Item code",
-              "type": "`$STRING`"
+            "item_code": {
+              "a": true,
+              "h": "Item Code",
+              "n": "item_code",
+              "r": false,
+              "sh": "Item code",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "item_composition",
-              "req": false,
-              "short": "Item composition formula",
-              "type": "`$STRING`"
+            "item_composition": {
+              "a": true,
+              "h": "Item Composition",
+              "n": "item_composition",
+              "r": false,
+              "sh": "Item composition formula",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "item_label",
-              "req": false,
-              "short": "Item label",
-              "type": "`$STRING`"
+            "item_label": {
+              "a": true,
+              "h": "Item Label",
+              "n": "item_label",
+              "r": false,
+              "sh": "Item label",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "item_position_in_return_form",
-              "req": false,
-              "short": "Position in return form",
-              "type": "`$INTEGER`"
+            "item_position_in_return_form": {
+              "a": true,
+              "h": "Item Position In Return Form",
+              "n": "item_position_in_return_form",
+              "r": false,
+              "sh": "Position in return form",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "item_return_form_structure",
-              "req": false,
-              "short": "Return form structure",
-              "type": "`$STRING`"
+            "item_return_form_structure": {
+              "a": true,
+              "h": "Item Return Form Structure",
+              "n": "item_return_form_structure",
+              "r": false,
+              "sh": "Return form structure",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "period_length_length",
-              "req": false,
-              "short": "Period length",
-              "type": "`$STRING`"
+            "period_length_length": {
+              "a": true,
+              "h": "Period Length Length",
+              "n": "period_length_length",
+              "r": false,
+              "sh": "Period length",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "aged_creditor",
           "op": {
             "list": {
@@ -130,86 +209,74 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/aged_creditor/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": "amount.sum",
-                        "kind": "query",
-                        "name": "aggregate",
-                        "orig": "aggregate",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "amount.sum",
+                        "k": "query",
+                        "n": "aggregate",
+                        "or": "aggregate",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "financial_year_end.year:2020|demarcation.code:CPT",
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "financial_year_end.year:2020|demarcation.code:CPT",
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "item.code|financial_period.period",
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "item.code|financial_period.period",
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "financial_period.period:asc",
-                        "kind": "query",
-                        "name": "order",
-                        "orig": "order",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "financial_period.period:asc",
+                        "k": "query",
+                        "n": "order",
+                        "or": "order",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "page",
-                        "orig": "page",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 10000,
-                        "kind": "query",
-                        "name": "pagesize",
-                        "orig": "pagesize",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 10000,
+                        "k": "query",
+                        "n": "pagesize",
+                        "or": "pagesize",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/aged_creditor/facts",
-                    "json": "{\"operationId\":\"getAgedCreditorAnalysis\",\"parameters\":[{\"description\":\"Filter dimensions using pipe-separated dimension:value pairs\",\"example\":\"financial_year_end.year:2020|demarcation.code:CPT\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by (pipe-separated)\",\"example\":\"item.code|financial_period.period\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Aggregation measures to return\",\"example\":\"amount.sum\",\"in\":\"query\",\"name\":\"aggregates\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Order results by specified field\",\"example\":\"financial_period.period:asc\",\"in\":\"query\",\"name\":\"order\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Page number for pagination\",\"in\":\"query\",\"name\":\"page\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}},{\"description\":\"Number of results per page\",\"in\":\"query\",\"name\":\"pagesize\",\"required\":false,\"schema\":{\"default\":10000,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"properties\":{\"amount.sum\":{\"description\":\"Sum of the amount\",\"type\":\"number\"},\"amount_type.code\":{\"description\":\"Amount type code\",\"type\":\"string\"},\"amount_type.label\":{\"description\":\"Amount type label\",\"type\":\"string\"},\"demarcation.code\":{\"description\":\"Municipality demarcation code\",\"type\":\"string\"},\"demarcation.label\":{\"description\":\"Municipality name\",\"type\":\"string\"},\"financial_period.period\":{\"description\":\"Financial period number\",\"type\":\"integer\"},\"financial_year_end.year\":{\"description\":\"Financial year end\",\"type\":\"integer\"},\"item.code\":{\"description\":\"Item code\",\"type\":\"string\"},\"item.composition\":{\"description\":\"Item composition formula\",\"type\":\"string\"},\"item.label\":{\"description\":\"Item label\",\"type\":\"string\"},\"item.position_in_return_form\":{\"description\":\"Position in return form\",\"type\":\"integer\"},\"item.return_form_structure\":{\"description\":\"Return form structure\",\"type\":\"string\"},\"period_length.length\":{\"description\":\"Period length\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with aged creditor data\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"Error status code\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - invalid parameters\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"Error status code\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/aged_creditor/facts",
-                  "segments": [
-                    {
-                      "lit": "cubes"
-                    },
-                    {
-                      "lit": "aged_creditor"
-                    },
-                    {
-                      "lit": "facts"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/aged_creditor/facts",
+                  "q": {
                     "$action": "fact",
                     "exist": [
                       "aggregate",
@@ -220,77 +287,99 @@
                       "pagesize"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "aged_creditor"
+                    },
+                    {
+                      "lit": "facts"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/aged_creditor_v2/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "aggregate",
-                        "orig": "aggregate",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "aggregate",
+                        "or": "aggregate",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "order",
-                        "orig": "order",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "order",
+                        "or": "order",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "page",
-                        "orig": "page",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 10000,
-                        "kind": "query",
-                        "name": "pagesize",
-                        "orig": "pagesize",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 10000,
+                        "k": "query",
+                        "n": "pagesize",
+                        "or": "pagesize",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/aged_creditor_v2/facts",
-                    "json": "{\"operationId\":\"getAgedCreditorAnalysisV2\",\"parameters\":[{\"description\":\"Filter dimensions using pipe-separated dimension:value pairs\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by (pipe-separated)\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Aggregation measures to return\",\"in\":\"query\",\"name\":\"aggregates\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Order results by specified field\",\"in\":\"query\",\"name\":\"order\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Page number for pagination\",\"in\":\"query\",\"name\":\"page\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}},{\"description\":\"Number of results per page\",\"in\":\"query\",\"name\":\"pagesize\",\"required\":false,\"schema\":{\"default\":10000,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"properties\":{\"amount.sum\":{\"description\":\"Sum of the amount\",\"type\":\"number\"},\"amount_type.code\":{\"description\":\"Amount type code\",\"type\":\"string\"},\"amount_type.label\":{\"description\":\"Amount type label\",\"type\":\"string\"},\"demarcation.code\":{\"description\":\"Municipality demarcation code\",\"type\":\"string\"},\"demarcation.label\":{\"description\":\"Municipality name\",\"type\":\"string\"},\"financial_period.period\":{\"description\":\"Financial period number\",\"type\":\"integer\"},\"financial_year_end.year\":{\"description\":\"Financial year end\",\"type\":\"integer\"},\"item.code\":{\"description\":\"Item code\",\"type\":\"string\"},\"item.composition\":{\"description\":\"Item composition formula\",\"type\":\"string\"},\"item.label\":{\"description\":\"Item label\",\"type\":\"string\"},\"item.position_in_return_form\":{\"description\":\"Position in return form\",\"type\":\"integer\"},\"item.return_form_structure\":{\"description\":\"Return form structure\",\"type\":\"string\"},\"period_length.length\":{\"description\":\"Period length\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with aged creditor data (v2)\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"Error status code\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - invalid parameters\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"Error status code\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/aged_creditor_v2/facts",
+                  "q": {
+                    "exist": [
+                      "aggregate",
+                      "cut",
+                      "drilldown",
+                      "order",
+                      "page",
+                      "pagesize"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/aged_creditor_v2/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -301,17 +390,7 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "aggregate",
-                      "cut",
-                      "drilldown",
-                      "order",
-                      "page",
-                      "pagesize"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -328,106 +407,120 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "amount_sum",
-              "req": false,
-              "short": "Sum of the amount",
-              "type": "`$NUMBER`"
+          "fields": {
+            "amount_sum": {
+              "a": true,
+              "h": "Amount Sum",
+              "n": "amount_sum",
+              "r": false,
+              "sh": "Sum of the amount",
+              "t": "`$NUMBER`"
             },
-            {
-              "active": true,
-              "name": "amount_type_code",
-              "req": false,
-              "short": "Amount type code",
-              "type": "`$STRING`"
+            "amount_type_code": {
+              "a": true,
+              "h": "Amount Type Code",
+              "n": "amount_type_code",
+              "r": false,
+              "sh": "Amount type code",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "amount_type_label",
-              "req": false,
-              "short": "Amount type label",
-              "type": "`$STRING`"
+            "amount_type_label": {
+              "a": true,
+              "h": "Amount Type Label",
+              "n": "amount_type_label",
+              "r": false,
+              "sh": "Amount type label",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "customer_group_code",
-              "req": false,
-              "short": "Customer group code",
-              "type": "`$STRING`"
+            "customer_group_code": {
+              "a": true,
+              "h": "Customer Group Code",
+              "n": "customer_group_code",
+              "r": false,
+              "sh": "Customer group code",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "demarcation_code",
-              "req": false,
-              "short": "Municipality demarcation code",
-              "type": "`$STRING`"
+            "demarcation_code": {
+              "a": true,
+              "h": "Demarcation Code",
+              "n": "demarcation_code",
+              "r": false,
+              "sh": "Municipality demarcation code",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "demarcation_label",
-              "req": false,
-              "short": "Municipality name",
-              "type": "`$STRING`"
+            "demarcation_label": {
+              "a": true,
+              "h": "Demarcation Label",
+              "n": "demarcation_label",
+              "r": false,
+              "sh": "Municipality name",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "financial_period_period",
-              "req": false,
-              "short": "Financial period number",
-              "type": "`$INTEGER`"
+            "financial_period_period": {
+              "a": true,
+              "h": "Financial Period Period",
+              "n": "financial_period_period",
+              "r": false,
+              "sh": "Financial period number",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "financial_year_end_year",
-              "req": false,
-              "short": "Financial year end",
-              "type": "`$INTEGER`"
+            "financial_year_end_year": {
+              "a": true,
+              "h": "Financial Year End Year",
+              "n": "financial_year_end_year",
+              "r": false,
+              "sh": "Financial year end",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "item_code",
-              "req": false,
-              "short": "Item code",
-              "type": "`$STRING`"
+            "item_code": {
+              "a": true,
+              "h": "Item Code",
+              "n": "item_code",
+              "r": false,
+              "sh": "Item code",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "item_composition",
-              "req": false,
-              "short": "Item composition formula",
-              "type": "`$STRING`"
+            "item_composition": {
+              "a": true,
+              "h": "Item Composition",
+              "n": "item_composition",
+              "r": false,
+              "sh": "Item composition formula",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "item_label",
-              "req": false,
-              "short": "Item label",
-              "type": "`$STRING`"
+            "item_label": {
+              "a": true,
+              "h": "Item Label",
+              "n": "item_label",
+              "r": false,
+              "sh": "Item label",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "item_position_in_return_form",
-              "req": false,
-              "short": "Position in return form",
-              "type": "`$INTEGER`"
+            "item_position_in_return_form": {
+              "a": true,
+              "h": "Item Position In Return Form",
+              "n": "item_position_in_return_form",
+              "r": false,
+              "sh": "Position in return form",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "name": "item_return_form_structure",
-              "req": false,
-              "short": "Return form structure",
-              "type": "`$STRING`"
+            "item_return_form_structure": {
+              "a": true,
+              "h": "Item Return Form Structure",
+              "n": "item_return_form_structure",
+              "r": false,
+              "sh": "Return form structure",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "period_length_length",
-              "req": false,
-              "short": "Period length",
-              "type": "`$STRING`"
+            "period_length_length": {
+              "a": true,
+              "h": "Period Length Length",
+              "n": "period_length_length",
+              "r": false,
+              "sh": "Period length",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "aged_debtor",
           "op": {
             "list": {
@@ -435,84 +528,72 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/aged_debtor/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "aggregate",
-                        "orig": "aggregate",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "aggregate",
+                        "or": "aggregate",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "financial_year_end.year:2020|customer_group.code:households",
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "financial_year_end.year:2020|customer_group.code:households",
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": "item.code|customer_group.code",
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "ex": "item.code|customer_group.code",
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "order",
-                        "orig": "order",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "order",
+                        "or": "order",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "page",
-                        "orig": "page",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 10000,
-                        "kind": "query",
-                        "name": "pagesize",
-                        "orig": "pagesize",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 10000,
+                        "k": "query",
+                        "n": "pagesize",
+                        "or": "pagesize",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/aged_debtor/facts",
-                    "json": "{\"operationId\":\"getAgedDebtorAnalysis\",\"parameters\":[{\"description\":\"Filter dimensions using pipe-separated dimension:value pairs\",\"example\":\"financial_year_end.year:2020|customer_group.code:households\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by (pipe-separated)\",\"example\":\"item.code|customer_group.code\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Aggregation measures to return\",\"in\":\"query\",\"name\":\"aggregates\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Order results by specified field\",\"in\":\"query\",\"name\":\"order\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Page number for pagination\",\"in\":\"query\",\"name\":\"page\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}},{\"description\":\"Number of results per page\",\"in\":\"query\",\"name\":\"pagesize\",\"required\":false,\"schema\":{\"default\":10000,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"properties\":{\"amount.sum\":{\"description\":\"Sum of the amount\",\"type\":\"number\"},\"amount_type.code\":{\"description\":\"Amount type code\",\"type\":\"string\"},\"amount_type.label\":{\"description\":\"Amount type label\",\"type\":\"string\"},\"customer_group.code\":{\"description\":\"Customer group code\",\"type\":\"string\"},\"demarcation.code\":{\"description\":\"Municipality demarcation code\",\"type\":\"string\"},\"demarcation.label\":{\"description\":\"Municipality name\",\"type\":\"string\"},\"financial_period.period\":{\"description\":\"Financial period number\",\"type\":\"integer\"},\"financial_year_end.year\":{\"description\":\"Financial year end\",\"type\":\"integer\"},\"item.code\":{\"description\":\"Item code\",\"type\":\"string\"},\"item.composition\":{\"description\":\"Item composition formula\",\"type\":\"string\"},\"item.label\":{\"description\":\"Item label\",\"type\":\"string\"},\"item.position_in_return_form\":{\"description\":\"Position in return form\",\"type\":\"integer\"},\"item.return_form_structure\":{\"description\":\"Return form structure\",\"type\":\"string\"},\"period_length.length\":{\"description\":\"Period length\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with aged debtor data\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"Error status code\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - invalid parameters\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"Error status code\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/aged_debtor/facts",
-                  "segments": [
-                    {
-                      "lit": "cubes"
-                    },
-                    {
-                      "lit": "aged_debtor"
-                    },
-                    {
-                      "lit": "facts"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/aged_debtor/facts",
+                  "q": {
                     "$action": "fact",
                     "exist": [
                       "aggregate",
@@ -523,77 +604,99 @@
                       "pagesize"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "cubes"
+                    },
+                    {
+                      "lit": "aged_debtor"
+                    },
+                    {
+                      "lit": "facts"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/aged_debtor_v2/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "aggregate",
-                        "orig": "aggregate",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "aggregate",
+                        "or": "aggregate",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "order",
-                        "orig": "order",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "order",
+                        "or": "order",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "page",
-                        "orig": "page",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "page",
+                        "or": "page",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 10000,
-                        "kind": "query",
-                        "name": "pagesize",
-                        "orig": "pagesize",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 10000,
+                        "k": "query",
+                        "n": "pagesize",
+                        "or": "pagesize",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/aged_debtor_v2/facts",
-                    "json": "{\"operationId\":\"getAgedDebtorAnalysisV2\",\"parameters\":[{\"description\":\"Filter dimensions using pipe-separated dimension:value pairs\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by (pipe-separated)\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Aggregation measures to return\",\"in\":\"query\",\"name\":\"aggregates\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Order results by specified field\",\"in\":\"query\",\"name\":\"order\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Page number for pagination\",\"in\":\"query\",\"name\":\"page\",\"required\":false,\"schema\":{\"default\":0,\"type\":\"integer\"}},{\"description\":\"Number of results per page\",\"in\":\"query\",\"name\":\"pagesize\",\"required\":false,\"schema\":{\"default\":10000,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"properties\":{\"amount.sum\":{\"description\":\"Sum of the amount\",\"type\":\"number\"},\"amount_type.code\":{\"description\":\"Amount type code\",\"type\":\"string\"},\"amount_type.label\":{\"description\":\"Amount type label\",\"type\":\"string\"},\"customer_group.code\":{\"description\":\"Customer group code\",\"type\":\"string\"},\"demarcation.code\":{\"description\":\"Municipality demarcation code\",\"type\":\"string\"},\"demarcation.label\":{\"description\":\"Municipality name\",\"type\":\"string\"},\"financial_period.period\":{\"description\":\"Financial period number\",\"type\":\"integer\"},\"financial_year_end.year\":{\"description\":\"Financial year end\",\"type\":\"integer\"},\"item.code\":{\"description\":\"Item code\",\"type\":\"string\"},\"item.composition\":{\"description\":\"Item composition formula\",\"type\":\"string\"},\"item.label\":{\"description\":\"Item label\",\"type\":\"string\"},\"item.position_in_return_form\":{\"description\":\"Position in return form\",\"type\":\"integer\"},\"item.return_form_structure\":{\"description\":\"Return form structure\",\"type\":\"string\"},\"period_length.length\":{\"description\":\"Period length\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with aged debtor data (v2)\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"Error status code\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Bad request - invalid parameters\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"description\":\"Error message\",\"type\":\"string\"},\"status\":{\"description\":\"Error status code\",\"type\":\"string\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/aged_debtor_v2/facts",
+                  "q": {
+                    "exist": [
+                      "aggregate",
+                      "cut",
+                      "drilldown",
+                      "order",
+                      "page",
+                      "pagesize"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/aged_debtor_v2/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -604,17 +707,7 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "aggregate",
-                      "cut",
-                      "drilldown",
-                      "order",
-                      "page",
-                      "pagesize"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -631,27 +724,30 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "cells",
-              "req": false,
-              "type": "`$ARRAY`"
+          "fields": {
+            "cells": {
+              "a": true,
+              "h": "Cells",
+              "n": "cells",
+              "r": false,
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "summary",
-              "req": false,
-              "type": "`$OBJECT`"
+            "summary": {
+              "a": true,
+              "h": "Summary",
+              "n": "summary",
+              "r": false,
+              "t": "`$OBJECT`"
             },
-            {
-              "active": true,
-              "name": "total_cell_count",
-              "req": false,
-              "short": "Total number of cells in the result",
-              "type": "`$INTEGER`"
+            "total_cell_count": {
+              "a": true,
+              "h": "Total Cell Count",
+              "n": "total_cell_count",
+              "r": false,
+              "sh": "Total number of cells in the result",
+              "t": "`$INTEGER`"
             }
-          ],
+          },
           "name": "fact",
           "op": {
             "list": {
@@ -659,37 +755,43 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/audit_opinions/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/audit_opinions/facts",
-                    "json": "{\"operationId\":\"getAuditOpinions\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/audit_opinions/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/audit_opinions/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -700,49 +802,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/bsheet/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/bsheet/facts",
-                    "json": "{\"operationId\":\"getBalanceSheet\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/bsheet/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/bsheet/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -753,49 +855,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/capital/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/capital/facts",
-                    "json": "{\"operationId\":\"getCapitalAcquisition\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/capital/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/capital/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -806,49 +908,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/capital_v2/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/capital_v2/facts",
-                    "json": "{\"operationId\":\"getCapitalAcquisitionV2\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/capital_v2/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/capital_v2/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -859,49 +961,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/cflow/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/cflow/facts",
-                    "json": "{\"operationId\":\"getCashFlow\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/cflow/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/cflow/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -912,49 +1014,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/cflow_v2/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/cflow_v2/facts",
-                    "json": "{\"operationId\":\"getCashFlowV2\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/cflow_v2/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/cflow_v2/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -965,49 +1067,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/conditional_grants/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/conditional_grants/facts",
-                    "json": "{\"operationId\":\"getConditionalGrants\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/conditional_grants/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/conditional_grants/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -1018,49 +1120,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/demarcation_changes/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/demarcation_changes/facts",
-                    "json": "{\"operationId\":\"getDemarcationChanges\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/demarcation_changes/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/demarcation_changes/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -1071,49 +1173,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/financial_position_v2/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/financial_position_v2/facts",
-                    "json": "{\"operationId\":\"getFinancialPositionV2\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/financial_position_v2/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/financial_position_v2/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -1124,49 +1226,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/grants_v2/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/grants_v2/facts",
-                    "json": "{\"operationId\":\"getGrantsV2\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/grants_v2/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/grants_v2/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -1177,49 +1279,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/incexp/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/incexp/facts",
-                    "json": "{\"operationId\":\"getIncomeExpenditure\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/incexp/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/incexp/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -1230,49 +1332,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/incexp_v2/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/incexp_v2/facts",
-                    "json": "{\"operationId\":\"getIncomeExpenditureV2\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/incexp_v2/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/incexp_v2/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -1283,49 +1385,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/municipalities/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/municipalities/facts",
-                    "json": "{\"operationId\":\"getMunicipalities\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/municipalities/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/municipalities/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -1336,49 +1438,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/officials/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/officials/facts",
-                    "json": "{\"operationId\":\"getMunicipalOfficials\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/officials/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/officials/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -1389,49 +1491,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/repmaint/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/repmaint/facts",
-                    "json": "{\"operationId\":\"getRepairsMaintenance\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/repmaint/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/repmaint/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -1442,49 +1544,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/repmaint_v2/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/repmaint_v2/facts",
-                    "json": "{\"operationId\":\"getRepairsMaintenanceV2\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/repmaint_v2/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/repmaint_v2/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -1495,49 +1597,49 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
                 },
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /cubes/uifwexp/facts",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "cut",
-                        "orig": "cut",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "cut",
+                        "or": "cut",
+                        "r": false,
+                        "t": "`$STRING`"
                       },
                       {
-                        "active": true,
-                        "kind": "query",
-                        "name": "drilldown",
-                        "orig": "drilldown",
-                        "reqd": false,
-                        "type": "`$STRING`"
+                        "a": true,
+                        "k": "query",
+                        "n": "drilldown",
+                        "or": "drilldown",
+                        "r": false,
+                        "t": "`$STRING`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /cubes/uifwexp/facts",
-                    "json": "{\"operationId\":\"getUIFWExpenditure\",\"parameters\":[{\"description\":\"Filter dimensions\",\"in\":\"query\",\"name\":\"cut\",\"required\":false,\"schema\":{\"type\":\"string\"}},{\"description\":\"Dimensions to group by\",\"in\":\"query\",\"name\":\"drilldown\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"cells\":{\"items\":{\"additionalProperties\":true,\"type\":\"object\"},\"type\":\"array\"},\"summary\":{\"additionalProperties\":true,\"type\":\"object\"},\"total_cell_count\":{\"description\":\"Total number of cells in the result\",\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response\"}},\"securitySource\":\"unspecified\"}",
-                    "source": "openapi3",
-                    "version": 1
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/cubes/uifwexp/facts",
+                  "q": {
+                    "exist": [
+                      "cut",
+                      "drilldown"
+                    ]
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/cubes/uifwexp/facts",
-                  "segments": [
+                  "r": {},
+                  "s": [
                     {
                       "lit": "cubes"
                     },
@@ -1548,13 +1650,7 @@
                       "lit": "facts"
                     }
                   ],
-                  "select": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -1983,13 +2079,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2009,13 +2105,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {
@@ -2035,13 +2131,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {

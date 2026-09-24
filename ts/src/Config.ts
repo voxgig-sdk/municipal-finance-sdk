@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -145,68 +138,81 @@ class Config {
       "fields": [
         {
           "name": "amount_sum",
-          "short": "Sum of the amount",
-          "type": "`$NUMBER`"
+          "title": "Amount Sum",
+          "type": "`$NUMBER`",
+          "short": "Sum of the amount"
         },
         {
           "name": "amount_type_code",
-          "short": "Amount type code",
-          "type": "`$STRING`"
+          "title": "Amount Type Code",
+          "type": "`$STRING`",
+          "short": "Amount type code"
         },
         {
           "name": "amount_type_label",
-          "short": "Amount type label",
-          "type": "`$STRING`"
+          "title": "Amount Type Label",
+          "type": "`$STRING`",
+          "short": "Amount type label"
         },
         {
           "name": "demarcation_code",
-          "short": "Municipality demarcation code",
-          "type": "`$STRING`"
+          "title": "Demarcation Code",
+          "type": "`$STRING`",
+          "short": "Municipality demarcation code"
         },
         {
           "name": "demarcation_label",
-          "short": "Municipality name",
-          "type": "`$STRING`"
+          "title": "Demarcation Label",
+          "type": "`$STRING`",
+          "short": "Municipality name"
         },
         {
           "name": "financial_period_period",
-          "short": "Financial period number",
-          "type": "`$INTEGER`"
+          "title": "Financial Period Period",
+          "type": "`$INTEGER`",
+          "short": "Financial period number"
         },
         {
           "name": "financial_year_end_year",
-          "short": "Financial year end",
-          "type": "`$INTEGER`"
+          "title": "Financial Year End Year",
+          "type": "`$INTEGER`",
+          "short": "Financial year end"
         },
         {
           "name": "item_code",
-          "short": "Item code",
-          "type": "`$STRING`"
+          "title": "Item Code",
+          "type": "`$STRING`",
+          "short": "Item code"
         },
         {
           "name": "item_composition",
-          "short": "Item composition formula",
-          "type": "`$STRING`"
+          "title": "Item Composition",
+          "type": "`$STRING`",
+          "short": "Item composition formula"
         },
         {
           "name": "item_label",
-          "short": "Item label",
-          "type": "`$STRING`"
+          "title": "Item Label",
+          "type": "`$STRING`",
+          "short": "Item label"
         },
         {
           "name": "item_position_in_return_form",
-          "short": "Position in return form",
-          "type": "`$INTEGER`"
+          "title": "Item Position In Return Form",
+          "type": "`$INTEGER`",
+          "short": "Position in return form"
         },
         {
           "name": "item_return_form_structure",
-          "short": "Return form structure",
-          "type": "`$STRING`"
+          "title": "Item Return Form Structure",
+          "type": "`$STRING`",
+          "short": "Return form structure"
         },
         {
           "name": "period_length_length",
-          "short": "Period length",
-          "type": "`$STRING`"
+          "title": "Period Length Length",
+          "type": "`$STRING`",
+          "short": "Period length"
         }
       ],
       "name": "aged_creditor",
@@ -216,52 +222,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "example": "amount.sum",
-                    "kind": "query",
-                    "name": "aggregate",
-                    "orig": "aggregate",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": "financial_year_end.year:2020|demarcation.code:CPT",
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": "item.code|financial_period.period",
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": "financial_period.period:asc",
-                    "kind": "query",
-                    "name": "order",
-                    "orig": "order",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": 0,
-                    "kind": "query",
-                    "name": "page",
-                    "orig": "page",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "example": 10000,
-                    "kind": "query",
-                    "name": "pagesize",
-                    "orig": "pagesize",
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/aged_creditor/facts",
@@ -276,6 +236,62 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "aged_creditor",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "aggregate",
+                    "orig": "aggregate",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "amount.sum"
+                  },
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "financial_year_end.year:2020|demarcation.code:CPT"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "item.code|financial_period.period"
+                  },
+                  {
+                    "name": "order",
+                    "orig": "order",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "financial_period.period:asc"
+                  },
+                  {
+                    "name": "page",
+                    "orig": "page",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 0
+                  },
+                  {
+                    "name": "pagesize",
+                    "orig": "pagesize",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 10000
+                  }
+                ]
+              },
               "select": {
                 "$action": "fact",
                 "exist": [
@@ -286,60 +302,9 @@ class Config {
                   "page",
                   "pagesize"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "aged_creditor",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "aggregate",
-                    "orig": "aggregate",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "order",
-                    "orig": "order",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": 0,
-                    "kind": "query",
-                    "name": "page",
-                    "orig": "page",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "example": 10000,
-                    "kind": "query",
-                    "name": "pagesize",
-                    "orig": "pagesize",
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/aged_creditor_v2/facts",
@@ -354,6 +319,58 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "aged_creditor_v2",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "aggregate",
+                    "orig": "aggregate",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "order",
+                    "orig": "order",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "page",
+                    "orig": "page",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 0
+                  },
+                  {
+                    "name": "pagesize",
+                    "orig": "pagesize",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 10000
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "aggregate",
@@ -363,16 +380,7 @@ class Config {
                   "page",
                   "pagesize"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "aged_creditor_v2",
-                "facts"
-              ]
+              }
             }
           ]
         }
@@ -385,73 +393,87 @@ class Config {
       "fields": [
         {
           "name": "amount_sum",
-          "short": "Sum of the amount",
-          "type": "`$NUMBER`"
+          "title": "Amount Sum",
+          "type": "`$NUMBER`",
+          "short": "Sum of the amount"
         },
         {
           "name": "amount_type_code",
-          "short": "Amount type code",
-          "type": "`$STRING`"
+          "title": "Amount Type Code",
+          "type": "`$STRING`",
+          "short": "Amount type code"
         },
         {
           "name": "amount_type_label",
-          "short": "Amount type label",
-          "type": "`$STRING`"
+          "title": "Amount Type Label",
+          "type": "`$STRING`",
+          "short": "Amount type label"
         },
         {
           "name": "customer_group_code",
-          "short": "Customer group code",
-          "type": "`$STRING`"
+          "title": "Customer Group Code",
+          "type": "`$STRING`",
+          "short": "Customer group code"
         },
         {
           "name": "demarcation_code",
-          "short": "Municipality demarcation code",
-          "type": "`$STRING`"
+          "title": "Demarcation Code",
+          "type": "`$STRING`",
+          "short": "Municipality demarcation code"
         },
         {
           "name": "demarcation_label",
-          "short": "Municipality name",
-          "type": "`$STRING`"
+          "title": "Demarcation Label",
+          "type": "`$STRING`",
+          "short": "Municipality name"
         },
         {
           "name": "financial_period_period",
-          "short": "Financial period number",
-          "type": "`$INTEGER`"
+          "title": "Financial Period Period",
+          "type": "`$INTEGER`",
+          "short": "Financial period number"
         },
         {
           "name": "financial_year_end_year",
-          "short": "Financial year end",
-          "type": "`$INTEGER`"
+          "title": "Financial Year End Year",
+          "type": "`$INTEGER`",
+          "short": "Financial year end"
         },
         {
           "name": "item_code",
-          "short": "Item code",
-          "type": "`$STRING`"
+          "title": "Item Code",
+          "type": "`$STRING`",
+          "short": "Item code"
         },
         {
           "name": "item_composition",
-          "short": "Item composition formula",
-          "type": "`$STRING`"
+          "title": "Item Composition",
+          "type": "`$STRING`",
+          "short": "Item composition formula"
         },
         {
           "name": "item_label",
-          "short": "Item label",
-          "type": "`$STRING`"
+          "title": "Item Label",
+          "type": "`$STRING`",
+          "short": "Item label"
         },
         {
           "name": "item_position_in_return_form",
-          "short": "Position in return form",
-          "type": "`$INTEGER`"
+          "title": "Item Position In Return Form",
+          "type": "`$INTEGER`",
+          "short": "Position in return form"
         },
         {
           "name": "item_return_form_structure",
-          "short": "Return form structure",
-          "type": "`$STRING`"
+          "title": "Item Return Form Structure",
+          "type": "`$STRING`",
+          "short": "Return form structure"
         },
         {
           "name": "period_length_length",
-          "short": "Period length",
-          "type": "`$STRING`"
+          "title": "Period Length Length",
+          "type": "`$STRING`",
+          "short": "Period length"
         }
       ],
       "name": "aged_debtor",
@@ -461,50 +483,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "aggregate",
-                    "orig": "aggregate",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": "financial_year_end.year:2020|customer_group.code:households",
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": "item.code|customer_group.code",
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "order",
-                    "orig": "order",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": 0,
-                    "kind": "query",
-                    "name": "page",
-                    "orig": "page",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "example": 10000,
-                    "kind": "query",
-                    "name": "pagesize",
-                    "orig": "pagesize",
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/aged_debtor/facts",
@@ -519,6 +497,60 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "aged_debtor",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "aggregate",
+                    "orig": "aggregate",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "financial_year_end.year:2020|customer_group.code:households"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query",
+                    "example": "item.code|customer_group.code"
+                  },
+                  {
+                    "name": "order",
+                    "orig": "order",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "page",
+                    "orig": "page",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 0
+                  },
+                  {
+                    "name": "pagesize",
+                    "orig": "pagesize",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 10000
+                  }
+                ]
+              },
               "select": {
                 "$action": "fact",
                 "exist": [
@@ -529,60 +561,9 @@ class Config {
                   "page",
                   "pagesize"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "aged_debtor",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "aggregate",
-                    "orig": "aggregate",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "order",
-                    "orig": "order",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "example": 0,
-                    "kind": "query",
-                    "name": "page",
-                    "orig": "page",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "example": 10000,
-                    "kind": "query",
-                    "name": "pagesize",
-                    "orig": "pagesize",
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/aged_debtor_v2/facts",
@@ -597,6 +578,58 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "aged_debtor_v2",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "aggregate",
+                    "orig": "aggregate",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "order",
+                    "orig": "order",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "page",
+                    "orig": "page",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 0
+                  },
+                  {
+                    "name": "pagesize",
+                    "orig": "pagesize",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 10000
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "aggregate",
@@ -606,16 +639,7 @@ class Config {
                   "page",
                   "pagesize"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "aged_debtor_v2",
-                "facts"
-              ]
+              }
             }
           ]
         }
@@ -628,16 +652,19 @@ class Config {
       "fields": [
         {
           "name": "cells",
+          "title": "Cells",
           "type": "`$ARRAY`"
         },
         {
           "name": "summary",
+          "title": "Summary",
           "type": "`$OBJECT`"
         },
         {
           "name": "total_cell_count",
-          "short": "Total number of cells in the result",
-          "type": "`$INTEGER`"
+          "title": "Total Cell Count",
+          "type": "`$INTEGER`",
+          "short": "Total number of cells in the result"
         }
       ],
       "name": "fact",
@@ -647,22 +674,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/audit_opinions/facts",
@@ -677,39 +688,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "audit_opinions",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "audit_opinions",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/bsheet/facts",
@@ -724,39 +736,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "bsheet",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "bsheet",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/capital/facts",
@@ -771,39 +784,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "capital",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "capital",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/capital_v2/facts",
@@ -818,39 +832,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "capital_v2",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "capital_v2",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/cflow/facts",
@@ -865,39 +880,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "cflow",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "cflow",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/cflow_v2/facts",
@@ -912,39 +928,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "cflow_v2",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "cflow_v2",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/conditional_grants/facts",
@@ -959,39 +976,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "conditional_grants",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "conditional_grants",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/demarcation_changes/facts",
@@ -1006,39 +1024,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "demarcation_changes",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "demarcation_changes",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/financial_position_v2/facts",
@@ -1053,39 +1072,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "financial_position_v2",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "financial_position_v2",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/grants_v2/facts",
@@ -1100,39 +1120,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "grants_v2",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "grants_v2",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/incexp/facts",
@@ -1147,39 +1168,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "incexp",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "incexp",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/incexp_v2/facts",
@@ -1194,39 +1216,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "incexp_v2",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "incexp_v2",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/municipalities/facts",
@@ -1241,39 +1264,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "municipalities",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "municipalities",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/officials/facts",
@@ -1288,39 +1312,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "officials",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "officials",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/repmaint/facts",
@@ -1335,39 +1360,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "repmaint",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "repmaint",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/repmaint_v2/facts",
@@ -1382,39 +1408,40 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "repmaint_v2",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "repmaint_v2",
-                "facts"
-              ]
+              }
             },
             {
-              "args": {
-                "query": [
-                  {
-                    "kind": "query",
-                    "name": "cut",
-                    "orig": "cut",
-                    "type": "`$STRING`"
-                  },
-                  {
-                    "kind": "query",
-                    "name": "drilldown",
-                    "orig": "drilldown",
-                    "type": "`$STRING`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/cubes/uifwexp/facts",
@@ -1429,21 +1456,38 @@ class Config {
                   "lit": "facts"
                 }
               ],
+              "parts": [
+                "cubes",
+                "uifwexp",
+                "facts"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "cut",
+                    "orig": "cut",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  },
+                  {
+                    "name": "drilldown",
+                    "orig": "drilldown",
+                    "type": "`$STRING`",
+                    "kind": "query"
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "cut",
                   "drilldown"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body`"
-              },
-              "parts": [
-                "cubes",
-                "uifwexp",
-                "facts"
-              ]
+              }
             }
           ]
         }
