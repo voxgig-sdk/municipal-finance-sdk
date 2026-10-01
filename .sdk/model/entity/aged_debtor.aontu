@@ -121,7 +121,7 @@ main: kit: entity: aged_debtor: {
               {
                 k: "query"
                 n: "aggregate"
-                or: "aggregate"
+                or: "aggregates"
                 r: false
                 t: "`$STRING`"
               }
@@ -192,7 +192,7 @@ main: kit: entity: aged_debtor: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -206,7 +206,7 @@ main: kit: entity: aged_debtor: {
               {
                 k: "query"
                 n: "aggregate"
-                or: "aggregate"
+                or: "aggregates"
                 r: false
                 t: "`$STRING`"
               }
@@ -274,7 +274,7 @@ main: kit: entity: aged_debtor: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
       ]

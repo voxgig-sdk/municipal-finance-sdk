@@ -76,7 +76,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -124,7 +124,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -172,7 +172,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -220,7 +220,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -268,7 +268,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -316,7 +316,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -364,7 +364,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -412,7 +412,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -460,7 +460,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -508,7 +508,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -556,7 +556,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -604,7 +604,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -652,7 +652,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -700,7 +700,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -748,7 +748,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -796,7 +796,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
         {
@@ -844,7 +844,7 @@ main: kit: entity: fact: {
           ]
           t: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.cells`"
           }
         }
       ]

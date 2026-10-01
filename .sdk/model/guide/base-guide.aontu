@@ -12,9 +12,11 @@ guide: {
     path: "/cubes/aged_creditor/facts": {
       action: "fact": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/aged_creditor_v2/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
   }
 
@@ -22,63 +24,82 @@ guide: {
     path: "/cubes/aged_debtor/facts": {
       action: "fact": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/aged_debtor_v2/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
   }
 
   entity: fact: {
     path: "/cubes/audit_opinions/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/bsheet/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/capital/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/capital_v2/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/cflow/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/cflow_v2/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/conditional_grants/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/demarcation_changes/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/financial_position_v2/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/grants_v2/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/incexp/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/incexp_v2/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/municipalities/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/officials/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/repmaint/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/repmaint_v2/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
     path: "/cubes/uifwexp/facts": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.cells`")|top
     }
   }
 

@@ -244,13 +244,13 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
                   {
                     "name": "aggregate",
-                    "orig": "aggregate",
+                    "orig": "aggregates",
                     "type": "`$STRING`",
                     "kind": "query",
                     "example": "amount.sum"
@@ -327,13 +327,13 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
                   {
                     "name": "aggregate",
-                    "orig": "aggregate",
+                    "orig": "aggregates",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
@@ -505,13 +505,13 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
                   {
                     "name": "aggregate",
-                    "orig": "aggregate",
+                    "orig": "aggregates",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
@@ -586,13 +586,13 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
                   {
                     "name": "aggregate",
-                    "orig": "aggregate",
+                    "orig": "aggregates",
                     "type": "`$STRING`",
                     "kind": "query"
                   },
@@ -696,7 +696,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -744,7 +744,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -792,7 +792,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -840,7 +840,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -888,7 +888,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -936,7 +936,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -984,7 +984,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -1032,7 +1032,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -1080,7 +1080,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -1128,7 +1128,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -1176,7 +1176,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -1224,7 +1224,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -1272,7 +1272,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -1320,7 +1320,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -1368,7 +1368,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -1416,7 +1416,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [
@@ -1464,7 +1464,7 @@ class Config {
               "rename": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.cells`"
               },
               "args": {
                 "query": [

@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 MunicipalFinanceUtility.registrar = ->(u) {
   u.clean = MunicipalFinanceUtilities::Clean
+  u.clean_add = MunicipalFinanceUtilities::CleanAdd
+  u.clean_explain = MunicipalFinanceUtilities::CleanExplain
   u.done = MunicipalFinanceUtilities::Done
   u.make_error = MunicipalFinanceUtilities::MakeError
   u.feature_add = MunicipalFinanceUtilities::FeatureAdd

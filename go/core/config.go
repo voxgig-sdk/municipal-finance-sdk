@@ -199,13 +199,13 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
 										map[string]any{
 											"name": "aggregate",
-											"orig": "aggregate",
+											"orig": "aggregates",
 											"type": "`$STRING`",
 											"kind": "query",
 											"example": "amount.sum",
@@ -282,13 +282,13 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
 										map[string]any{
 											"name": "aggregate",
-											"orig": "aggregate",
+											"orig": "aggregates",
 											"type": "`$STRING`",
 											"kind": "query",
 										},
@@ -460,13 +460,13 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
 										map[string]any{
 											"name": "aggregate",
-											"orig": "aggregate",
+											"orig": "aggregates",
 											"type": "`$STRING`",
 											"kind": "query",
 										},
@@ -541,13 +541,13 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
 										map[string]any{
 											"name": "aggregate",
-											"orig": "aggregate",
+											"orig": "aggregates",
 											"type": "`$STRING`",
 											"kind": "query",
 										},
@@ -651,7 +651,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -699,7 +699,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -747,7 +747,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -795,7 +795,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -843,7 +843,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -891,7 +891,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -939,7 +939,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -987,7 +987,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -1035,7 +1035,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -1083,7 +1083,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -1131,7 +1131,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -1179,7 +1179,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -1227,7 +1227,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -1275,7 +1275,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -1323,7 +1323,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -1371,7 +1371,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{
@@ -1419,7 +1419,7 @@ func MakeConfig() map[string]any {
 								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.cells`",
 								},
 								"args": map[string]any{
 									"query": []any{

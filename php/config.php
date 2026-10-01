@@ -221,13 +221,13 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
                       [
                         'name' => 'aggregate',
-                        'orig' => 'aggregate',
+                        'orig' => 'aggregates',
                         'type' => '`$STRING`',
                         'kind' => 'query',
                         'example' => 'amount.sum',
@@ -304,13 +304,13 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
                       [
                         'name' => 'aggregate',
-                        'orig' => 'aggregate',
+                        'orig' => 'aggregates',
                         'type' => '`$STRING`',
                         'kind' => 'query',
                       ],
@@ -482,13 +482,13 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
                       [
                         'name' => 'aggregate',
-                        'orig' => 'aggregate',
+                        'orig' => 'aggregates',
                         'type' => '`$STRING`',
                         'kind' => 'query',
                       ],
@@ -563,13 +563,13 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
                       [
                         'name' => 'aggregate',
-                        'orig' => 'aggregate',
+                        'orig' => 'aggregates',
                         'type' => '`$STRING`',
                         'kind' => 'query',
                       ],
@@ -673,7 +673,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -721,7 +721,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -769,7 +769,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -817,7 +817,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -865,7 +865,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -913,7 +913,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -961,7 +961,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -1009,7 +1009,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -1057,7 +1057,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -1105,7 +1105,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -1153,7 +1153,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -1201,7 +1201,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -1249,7 +1249,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -1297,7 +1297,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -1345,7 +1345,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -1393,7 +1393,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [
@@ -1441,7 +1441,7 @@ class MunicipalFinanceConfig
                   'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.cells`',
                   ],
                   'args' => [
                     'query' => [

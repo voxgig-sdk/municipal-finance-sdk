@@ -195,13 +195,13 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
                     {
                       ["name"] = "aggregate",
-                      ["orig"] = "aggregate",
+                      ["orig"] = "aggregates",
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                       ["example"] = "amount.sum",
@@ -278,13 +278,13 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
                     {
                       ["name"] = "aggregate",
-                      ["orig"] = "aggregate",
+                      ["orig"] = "aggregates",
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                     },
@@ -456,13 +456,13 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
                     {
                       ["name"] = "aggregate",
-                      ["orig"] = "aggregate",
+                      ["orig"] = "aggregates",
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                     },
@@ -537,13 +537,13 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
                     {
                       ["name"] = "aggregate",
-                      ["orig"] = "aggregate",
+                      ["orig"] = "aggregates",
                       ["type"] = "`$STRING`",
                       ["kind"] = "query",
                     },
@@ -647,7 +647,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -695,7 +695,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -743,7 +743,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -791,7 +791,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -839,7 +839,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -887,7 +887,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -935,7 +935,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -983,7 +983,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -1031,7 +1031,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -1079,7 +1079,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -1127,7 +1127,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -1175,7 +1175,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -1223,7 +1223,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -1271,7 +1271,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -1319,7 +1319,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -1367,7 +1367,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {
@@ -1415,7 +1415,7 @@ local function make_config()
                 ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
-                  ["res"] = "`body`",
+                  ["res"] = "`body.cells`",
                 },
                 ["args"] = {
                   ["query"] = {

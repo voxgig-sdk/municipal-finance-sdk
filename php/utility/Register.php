@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 MunicipalFinanceUtility::setRegistrar(function (MunicipalFinanceUtility $u): void {
     $u->clean = [MunicipalFinanceClean::class, 'call'];
+    $u->clean_add = [MunicipalFinanceClean::class, 'add'];
+    $u->clean_explain = [MunicipalFinanceDone::class, 'clean_explain'];
     $u->done = [MunicipalFinanceDone::class, 'call'];
     $u->make_error = [MunicipalFinanceMakeError::class, 'call'];
     $u->feature_add = [MunicipalFinanceFeatureAdd::class, 'call'];
