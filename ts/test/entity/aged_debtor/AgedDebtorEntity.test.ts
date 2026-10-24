@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { MunicipalFinanceSDK, BaseFeature, stdutil } from '../../..'
+import { MunicipalFinanceSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,64 @@ describe('AgedDebtorEntity', async () => {
   })
 
 
+  class FailHook extends BaseFeature {
+    name = 'failhook'
+    version = '0.0.1'
+    active = true
+    unexpected = 0
+    init() { }
+    PreSpec() { throw new Error('aged_debtor hook failed') }
+    PreUnexpected() { this.unexpected++ }
+  }
+
+  test('stream-error', async () => {
+    const offline = { net: { offline: true } }
+    await assert.rejects(async () => {
+      for await (const _item of MunicipalFinanceSDK.test(offline).AgedDebtor().stream('list')) { }
+    }, /offline/)
+
+    for await (const _item of MunicipalFinanceSDK.test(offline).AgedDebtor()
+      .stream('list', undefined, { ctrl: { throw: false } })) { }
+
+    if (null != (config as any).feature?.rbac) {
+      const denied = MunicipalFinanceSDK.test(undefined, { feature: { rbac: { active: true, deny: true } } })
+      await assert.rejects(async () => {
+        for await (const _item of denied.AgedDebtor().stream('list')) { }
+      }, (err: any) => 'rbac_denied' === err.code)
+    }
+  })
+
+  test('stream-ctrl', async () => {
+    const explain: any = {}
+    const ctrl: any = { explain }
+    for await (const _item of MunicipalFinanceSDK.test().AgedDebtor().stream('list', undefined, { ctrl })) { }
+    assert.deepStrictEqual(Object.keys(ctrl), ['explain'])
+    assert(explain === ctrl.explain && 0 < Object.keys(explain).length)
+  })
+
+  test('unexpected', async () => {
+    const hook = new FailHook()
+    const client = new MunicipalFinanceSDK({ feature: { test: { active: true } }, extend: [hook] })
+    await assert.rejects(client.AgedDebtor().list(), /hook failed/)
+    assert(0 < hook.unexpected)
+
+    const fired = hook.unexpected
+    assert.strictEqual(await client.AgedDebtor().list(undefined, { throw: false }), undefined)
+    assert(fired < hook.unexpected)
+  })
+
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = MunicipalFinanceSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.AgedDebtor().list({"aggregate":1} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.MUNICIPAL_FINANCE_TEST_LIVE
@@ -51,7 +109,7 @@ describe('AgedDebtorEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"amount_sum":{"a":true,"h":"Amount Sum","n":"amount_sum","r":false,"sh":"Sum of the amount","t":"`$NUMBER`","key$":"amount_sum","index$":0},"amount_type_code":{"a":true,"h":"Amount Type Code","n":"amount_type_code","r":false,"sh":"Amount type code","t":"`$STRING`","key$":"amount_type_code","index$":1},"amount_type_label":{"a":true,"h":"Amount Type Label","n":"amount_type_label","r":false,"sh":"Amount type label","t":"`$STRING`","key$":"amount_type_label","index$":2},"customer_group_code":{"a":true,"h":"Customer Group Code","n":"customer_group_code","r":false,"sh":"Customer group code","t":"`$STRING`","key$":"customer_group_code","index$":3},"demarcation_code":{"a":true,"h":"Demarcation Code","n":"demarcation_code","r":false,"sh":"Municipality demarcation code","t":"`$STRING`","key$":"demarcation_code","index$":4},"demarcation_label":{"a":true,"h":"Demarcation Label","n":"demarcation_label","r":false,"sh":"Municipality name","t":"`$STRING`","key$":"demarcation_label","index$":5},"financial_period_period":{"a":true,"h":"Financial Period Period","n":"financial_period_period","r":false,"sh":"Financial period number","t":"`$INTEGER`","key$":"financial_period_period","index$":6},"financial_year_end_year":{"a":true,"h":"Financial Year End Year","n":"financial_year_end_year","r":false,"sh":"Financial year end","t":"`$INTEGER`","key$":"financial_year_end_year","index$":7},"item_code":{"a":true,"h":"Item Code","n":"item_code","r":false,"sh":"Item code","t":"`$STRING`","key$":"item_code","index$":8},"item_composition":{"a":true,"h":"Item Composition","n":"item_composition","r":false,"sh":"Item composition formula","t":"`$STRING`","key$":"item_composition","index$":9},"item_label":{"a":true,"h":"Item Label","n":"item_label","r":false,"sh":"Item label","t":"`$STRING`","key$":"item_label","index$":10},"item_position_in_return_form":{"a":true,"h":"Item Position In Return Form","n":"item_position_in_return_form","r":false,"sh":"Position in return form","t":"`$INTEGER`","key$":"item_position_in_return_form","index$":11},"item_return_form_structure":{"a":true,"h":"Item Return Form Structure","n":"item_return_form_structure","r":false,"sh":"Return form structure","t":"`$STRING`","key$":"item_return_form_structure","index$":12},"period_length_length":{"a":true,"h":"Period Length Length","n":"period_length_length","r":false,"sh":"Period length","t":"`$STRING`","key$":"period_length_length","index$":13}},"name":"aged_debtor","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /cubes/aged_debtor/facts","source":"openapi3","version":2},"g":{"query":[{"a":true,"k":"query","n":"aggregate","or":"aggregates","r":false,"t":"`$STRING`","index$":0},{"a":true,"ex":"financial_year_end.year:2020|customer_group.code:households","k":"query","n":"cut","or":"cut","r":false,"t":"`$STRING`","index$":1},{"a":true,"ex":"item.code|customer_group.code","k":"query","n":"drilldown","or":"drilldown","r":false,"t":"`$STRING`","index$":2},{"a":true,"k":"query","n":"order","or":"order","r":false,"t":"`$STRING`","index$":3},{"a":true,"ex":0,"k":"query","n":"page","or":"page","r":false,"t":"`$INTEGER`","index$":4},{"a":true,"ex":10000,"k":"query","n":"pagesize","or":"pagesize","r":false,"t":"`$INTEGER`","index$":5}]},"k":"http","m":"GET","o":"/cubes/aged_debtor/facts","q":{"$action":"fact","exist":["aggregate","cut","drilldown","order","page","pagesize"]},"r":{},"s":[{"lit":"cubes"},{"lit":"aged_debtor"},{"lit":"facts"}],"t":{"req":"`reqdata`","res":"`body.cells`"},"index$":0},{"a":true,"co":{"id":"GET /cubes/aged_debtor_v2/facts","source":"openapi3","version":2},"g":{"query":[{"a":true,"k":"query","n":"aggregate","or":"aggregates","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"cut","or":"cut","r":false,"t":"`$STRING`","index$":1},{"a":true,"k":"query","n":"drilldown","or":"drilldown","r":false,"t":"`$STRING`","index$":2},{"a":true,"k":"query","n":"order","or":"order","r":false,"t":"`$STRING`","index$":3},{"a":true,"ex":0,"k":"query","n":"page","or":"page","r":false,"t":"`$INTEGER`","index$":4},{"a":true,"ex":10000,"k":"query","n":"pagesize","or":"pagesize","r":false,"t":"`$INTEGER`","index$":5}]},"k":"http","m":"GET","o":"/cubes/aged_debtor_v2/facts","q":{"exist":["aggregate","cut","drilldown","order","page","pagesize"]},"r":{},"s":[{"lit":"cubes"},{"lit":"aged_debtor_v2"},{"lit":"facts"}],"t":{"req":"`reqdata`","res":"`body.cells`"},"index$":1}],"key$":"list"}},"relations":{"ancestors":[]},"key$":"aged_debtor","name__orig":"aged_debtor","Name":"AgedDebtor","name_":"aged_debtor","name-":"aged-debtor","NAME":"AGED_DEBTOR","index$":1}, {"active":true,"entity":"aged_debtor","key$":"BasicAgedDebtorFlow","kind":"basic","name":"BasicAgedDebtorFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"aged_debtor_ref01"}}],"index$":0}]}, 'AgedDebtor', {"GET /cubes/aged_debtor/facts":{"protocol":"http","parameters":[{"name":"cut","in":"query","description":"Filter dimensions using pipe-separated dimension:value pairs","required":false,"schema":{"type":"string"},"example":"financial_year_end.year:2020|customer_group.code:households","index$":0},{"name":"drilldown","in":"query","description":"Dimensions to group by (pipe-separated)","required":false,"schema":{"type":"string"},"example":"item.code|customer_group.code","index$":1},{"name":"aggregates","in":"query","description":"Aggregation measures to return","required":false,"schema":{"type":"string"},"index$":2},{"name":"order","in":"query","description":"Order results by specified field","required":false,"schema":{"type":"string"},"index$":3},{"name":"page","in":"query","description":"Page number for pagination","required":false,"schema":{"type":"integer","default":0},"index$":4},{"name":"pagesize","in":"query","description":"Number of results per page","required":false,"schema":{"type":"integer","default":10000},"index$":5}]},"GET /cubes/aged_debtor_v2/facts":{"protocol":"http","parameters":[{"name":"cut","in":"query","description":"Filter dimensions using pipe-separated dimension:value pairs","required":false,"schema":{"type":"string"},"index$":0},{"name":"drilldown","in":"query","description":"Dimensions to group by (pipe-separated)","required":false,"schema":{"type":"string"},"index$":1},{"name":"aggregates","in":"query","description":"Aggregation measures to return","required":false,"schema":{"type":"string"},"index$":2},{"name":"order","in":"query","description":"Order results by specified field","required":false,"schema":{"type":"string"},"index$":3},{"name":"page","in":"query","description":"Page number for pagination","required":false,"schema":{"type":"integer","default":0},"index$":4},{"name":"pagesize","in":"query","description":"Number of results per page","required":false,"schema":{"type":"integer","default":10000},"index$":5}]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"amount_sum":{"a":true,"h":"Amount Sum","n":"amount_sum","r":false,"sh":"Sum of the amount","t":"`$NUMBER`","key$":"amount_sum","index$":0},"amount_type_code":{"a":true,"h":"Amount Type Code","n":"amount_type_code","r":false,"sh":"Amount type code","t":"`$STRING`","key$":"amount_type_code","index$":1},"amount_type_label":{"a":true,"h":"Amount Type Label","n":"amount_type_label","r":false,"sh":"Amount type label","t":"`$STRING`","key$":"amount_type_label","index$":2},"customer_group_code":{"a":true,"h":"Customer Group Code","n":"customer_group_code","r":false,"sh":"Customer group code","t":"`$STRING`","key$":"customer_group_code","index$":3},"demarcation_code":{"a":true,"h":"Demarcation Code","n":"demarcation_code","r":false,"sh":"Municipality demarcation code","t":"`$STRING`","key$":"demarcation_code","index$":4},"demarcation_label":{"a":true,"h":"Demarcation Label","n":"demarcation_label","r":false,"sh":"Municipality name","t":"`$STRING`","key$":"demarcation_label","index$":5},"financial_period_period":{"a":true,"h":"Financial Period Period","n":"financial_period_period","r":false,"sh":"Financial period number","t":"`$INTEGER`","key$":"financial_period_period","index$":6},"financial_year_end_year":{"a":true,"h":"Financial Year End Year","n":"financial_year_end_year","r":false,"sh":"Financial year end","t":"`$INTEGER`","key$":"financial_year_end_year","index$":7},"item_code":{"a":true,"h":"Item Code","n":"item_code","r":false,"sh":"Item code","t":"`$STRING`","key$":"item_code","index$":8},"item_composition":{"a":true,"h":"Item Composition","n":"item_composition","r":false,"sh":"Item composition formula","t":"`$STRING`","key$":"item_composition","index$":9},"item_label":{"a":true,"h":"Item Label","n":"item_label","r":false,"sh":"Item label","t":"`$STRING`","key$":"item_label","index$":10},"item_position_in_return_form":{"a":true,"h":"Item Position In Return Form","n":"item_position_in_return_form","r":false,"sh":"Position in return form","t":"`$INTEGER`","key$":"item_position_in_return_form","index$":11},"item_return_form_structure":{"a":true,"h":"Item Return Form Structure","n":"item_return_form_structure","r":false,"sh":"Return form structure","t":"`$STRING`","key$":"item_return_form_structure","index$":12},"period_length_length":{"a":true,"h":"Period Length Length","n":"period_length_length","r":false,"sh":"Period length","t":"`$STRING`","key$":"period_length_length","index$":13}},"name":"aged_debtor","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /cubes/aged_debtor/facts","source":"openapi3","version":2},"g":{"query":[{"a":true,"k":"query","n":"aggregate","or":"aggregates","r":false,"t":"`$STRING`","index$":0},{"a":true,"ex":"financial_year_end.year:2020|customer_group.code:households","k":"query","n":"cut","or":"cut","r":false,"t":"`$STRING`","index$":1},{"a":true,"ex":"item.code|customer_group.code","k":"query","n":"drilldown","or":"drilldown","r":false,"t":"`$STRING`","index$":2},{"a":true,"k":"query","n":"order","or":"order","r":false,"t":"`$STRING`","index$":3},{"a":true,"ex":0,"k":"query","n":"page","or":"page","r":false,"t":"`$INTEGER`","index$":4},{"a":true,"ex":10000,"k":"query","n":"pagesize","or":"pagesize","r":false,"t":"`$INTEGER`","index$":5}]},"k":"http","m":"GET","o":"/cubes/aged_debtor/facts","q":{"$action":"fact"},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"cubes"},{"lit":"aged_debtor"},{"lit":"facts"}],"t":{"req":"`reqdata`","res":"`body.cells`"},"index$":0},{"a":true,"co":{"id":"GET /cubes/aged_debtor_v2/facts","source":"openapi3","version":2},"g":{"query":[{"a":true,"k":"query","n":"aggregate","or":"aggregates","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"cut","or":"cut","r":false,"t":"`$STRING`","index$":1},{"a":true,"k":"query","n":"drilldown","or":"drilldown","r":false,"t":"`$STRING`","index$":2},{"a":true,"k":"query","n":"order","or":"order","r":false,"t":"`$STRING`","index$":3},{"a":true,"ex":0,"k":"query","n":"page","or":"page","r":false,"t":"`$INTEGER`","index$":4},{"a":true,"ex":10000,"k":"query","n":"pagesize","or":"pagesize","r":false,"t":"`$INTEGER`","index$":5}]},"k":"http","m":"GET","o":"/cubes/aged_debtor_v2/facts","q":{},"r":{},"rs":{"kind":"json","media":"application/json"},"s":[{"lit":"cubes"},{"lit":"aged_debtor_v2"},{"lit":"facts"}],"t":{"req":"`reqdata`","res":"`body.cells`"},"index$":1}],"key$":"list"}},"relations":{"ancestors":[]},"key$":"aged_debtor","name__orig":"aged_debtor","Name":"AgedDebtor","name_":"aged_debtor","name-":"aged-debtor","NAME":"AGED_DEBTOR","index$":1}, {"active":true,"entity":"aged_debtor","key$":"BasicAgedDebtorFlow","kind":"basic","name":"BasicAgedDebtorFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"aged_debtor_ref01"}}],"index$":0}]}, 'AgedDebtor', {"GET /cubes/aged_debtor/facts":{"protocol":"http","parameters":[{"name":"cut","in":"query","description":"Filter dimensions using pipe-separated dimension:value pairs","required":false,"schema":{"type":"string"},"example":"financial_year_end.year:2020|customer_group.code:households","index$":0},{"name":"drilldown","in":"query","description":"Dimensions to group by (pipe-separated)","required":false,"schema":{"type":"string"},"example":"item.code|customer_group.code","index$":1},{"name":"aggregates","in":"query","description":"Aggregation measures to return","required":false,"schema":{"type":"string"},"index$":2},{"name":"order","in":"query","description":"Order results by specified field","required":false,"schema":{"type":"string"},"index$":3},{"name":"page","in":"query","description":"Page number for pagination","required":false,"schema":{"type":"integer","default":0},"index$":4},{"name":"pagesize","in":"query","description":"Number of results per page","required":false,"schema":{"type":"integer","default":10000},"index$":5}]},"GET /cubes/aged_debtor_v2/facts":{"protocol":"http","parameters":[{"name":"cut","in":"query","description":"Filter dimensions using pipe-separated dimension:value pairs","required":false,"schema":{"type":"string"},"index$":0},{"name":"drilldown","in":"query","description":"Dimensions to group by (pipe-separated)","required":false,"schema":{"type":"string"},"index$":1},{"name":"aggregates","in":"query","description":"Aggregation measures to return","required":false,"schema":{"type":"string"},"index$":2},{"name":"order","in":"query","description":"Order results by specified field","required":false,"schema":{"type":"string"},"index$":3},{"name":"page","in":"query","description":"Page number for pagination","required":false,"schema":{"type":"integer","default":0},"index$":4},{"name":"pagesize","in":"query","description":"Number of results per page","required":false,"schema":{"type":"integer","default":10000},"index$":5}]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +130,12 @@ describe('AgedDebtorEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

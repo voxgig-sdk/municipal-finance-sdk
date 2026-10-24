@@ -111,14 +111,14 @@ aged_creditor = client.AgedCreditor()
 
 ### Operations
 
-#### `list(reqmatch=None, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list[AgedCreditorEntity]`
 
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
 
 ```python
 results = client.AgedCreditor().list()
 for aged_creditor in results:
-    print(aged_creditor)
+    print(aged_creditor.data_get())
 ```
 
 ### Common Methods
@@ -177,14 +177,14 @@ aged_debtor = client.AgedDebtor()
 
 ### Operations
 
-#### `list(reqmatch=None, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list[AgedDebtorEntity]`
 
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
 
 ```python
 results = client.AgedDebtor().list()
 for aged_debtor in results:
-    print(aged_debtor)
+    print(aged_debtor.data_get())
 ```
 
 ### Common Methods
@@ -232,14 +232,14 @@ fact = client.Fact()
 
 ### Operations
 
-#### `list(reqmatch=None, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list[FactEntity]`
 
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
 
 ```python
 results = client.Fact().list()
 for fact in results:
-    print(fact)
+    print(fact.data_get())
 ```
 
 ### Common Methods
@@ -428,6 +428,7 @@ Timeout.
 | Option | Type |
 |---|---|
 | `clearTimer` | function |
+| `now` | function |
 | `setTimer` | function |
 
 These take no default: the feature behaves one way when you supply them and

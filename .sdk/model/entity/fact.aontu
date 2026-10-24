@@ -57,11 +57,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/audit_opinions/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -105,11 +103,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/bsheet/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -153,11 +149,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/capital/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -201,11 +195,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/capital_v2/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -249,11 +241,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/cflow/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -297,11 +287,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/cflow_v2/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -345,11 +333,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/conditional_grants/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -393,11 +379,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/demarcation_changes/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -441,11 +425,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/financial_position_v2/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -489,11 +471,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/grants_v2/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -537,11 +517,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/incexp/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -585,11 +563,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/incexp_v2/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -633,11 +609,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/municipalities/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -681,11 +655,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/officials/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -729,11 +701,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/repmaint/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -777,11 +747,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/repmaint_v2/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -825,11 +793,9 @@ main: kit: entity: fact: {
           }
           m: "GET"
           o: "/cubes/uifwexp/facts"
-          q: {
-            exist: [
-              "cut"
-              "drilldown"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

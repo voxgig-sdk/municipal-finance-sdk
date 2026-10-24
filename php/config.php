@@ -93,6 +93,7 @@ class MunicipalFinanceConfig
           ],
           'optspec' => [
             'clearTimer' => '`$FUNCTION`',
+            'now' => '`$FUNCTION`',
             'setTimer' => '`$FUNCTION`',
           ],
           'strict' => false,
@@ -271,14 +272,10 @@ class MunicipalFinanceConfig
                   ],
                   'select' => [
                     '$action' => 'fact',
-                    'exist' => [
-                      'aggregate',
-                      'cut',
-                      'drilldown',
-                      'order',
-                      'page',
-                      'pagesize',
-                    ],
+                  ],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -348,15 +345,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'aggregate',
-                      'cut',
-                      'drilldown',
-                      'order',
-                      'page',
-                      'pagesize',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],
@@ -530,14 +522,10 @@ class MunicipalFinanceConfig
                   ],
                   'select' => [
                     '$action' => 'fact',
-                    'exist' => [
-                      'aggregate',
-                      'cut',
-                      'drilldown',
-                      'order',
-                      'page',
-                      'pagesize',
-                    ],
+                  ],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -607,15 +595,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'aggregate',
-                      'cut',
-                      'drilldown',
-                      'order',
-                      'page',
-                      'pagesize',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],
@@ -691,11 +674,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -739,11 +721,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -787,11 +768,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -835,11 +815,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -883,11 +862,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -931,11 +909,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -979,11 +956,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -1027,11 +1003,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -1075,11 +1050,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -1123,11 +1097,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -1171,11 +1144,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -1219,11 +1191,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -1267,11 +1238,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -1315,11 +1285,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -1363,11 +1332,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -1411,11 +1379,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
                 [
@@ -1459,11 +1426,10 @@ class MunicipalFinanceConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'cut',
-                      'drilldown',
-                    ],
+                  'select' => [],
+                  'response' => [
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],

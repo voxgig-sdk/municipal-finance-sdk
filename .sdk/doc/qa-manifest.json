@@ -3,5 +3,23 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Amount type code",
+      "Amount type label",
+      "Customer group code",
+      "Municipality demarcation code",
+      "Municipality name",
+      "Production API Server",
+      "Successful response",
+      "Successful response with aged creditor data",
+      "Successful response with aged creditor data (v2)",
+      "Successful response with aged debtor data",
+      "Successful response with aged debtor data (v2)",
+      "Sum of the amount",
+      "This API provides access to current and historical financial data from South African municipalities, enabling users to gather insights about municipal finances. It includes data sets covering various aspects of municipal financial performance and accountability, sourced from the National Treasury.",
+      "Total number of cells in the result"
+    ]
+  }
 }

@@ -165,14 +165,10 @@ main: kit: entity: aged_creditor: {
           o: "/cubes/aged_creditor/facts"
           q: {
             "$action": "fact"
-            exist: [
-              "aggregate"
-              "cut"
-              "drilldown"
-              "order"
-              "page"
-              "pagesize"
-            ]
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {
@@ -246,15 +242,9 @@ main: kit: entity: aged_creditor: {
           }
           m: "GET"
           o: "/cubes/aged_creditor_v2/facts"
-          q: {
-            exist: [
-              "aggregate"
-              "cut"
-              "drilldown"
-              "order"
-              "page"
-              "pagesize"
-            ]
+          rs: {
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

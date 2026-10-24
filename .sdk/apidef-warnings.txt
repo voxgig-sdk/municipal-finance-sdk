@@ -1,0 +1,26 @@
+{
+  point: "warning"
+  note: "Points GET /cubes/audit_opinions/facts, GET /cubes/bsheet/facts, GET /cubes/capital/facts, GET /cubes/capital_v2/facts, GET /cubes/cflow/facts, GET /cubes/cflow_v2/facts, GET /cubes/conditional_grants/facts, GET /cubes/demarcation_changes/facts, GET /cubes/financial_position_v2/facts, GET /cubes/grants_v2/facts, GET /cubes/incexp/facts, GET /cubes/incexp_v2/facts, GET /cubes/municipalities/facts, GET /cubes/officials/facts, GET /cubes/repmaint/facts, GET /cubes/repmaint_v2/facts and GET /cubes/uifwexp/facts on entity=fact op=list have the same selector (exist: none), so only GET /cubes/audit_opinions/facts is ever chosen. An action or another entity in guide.aontu tells them apart."
+  entity: "fact"
+  op: "list"
+  points: [
+    "GET /cubes/audit_opinions/facts"
+    "GET /cubes/bsheet/facts"
+    "GET /cubes/capital/facts"
+    "GET /cubes/capital_v2/facts"
+    "GET /cubes/cflow/facts"
+    "GET /cubes/cflow_v2/facts"
+    "GET /cubes/conditional_grants/facts"
+    "GET /cubes/demarcation_changes/facts"
+    "GET /cubes/financial_position_v2/facts"
+    "GET /cubes/grants_v2/facts"
+    "GET /cubes/incexp/facts"
+    "GET /cubes/incexp_v2/facts"
+    "GET /cubes/municipalities/facts"
+    "GET /cubes/officials/facts"
+    "GET /cubes/repmaint/facts"
+    "GET /cubes/repmaint_v2/facts"
+    "GET /cubes/uifwexp/facts"
+  ]
+
+}

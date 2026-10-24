@@ -277,17 +277,13 @@
                   "m": "GET",
                   "o": "/cubes/aged_creditor/facts",
                   "q": {
-                    "$action": "fact",
-                    "exist": [
-                      "aggregate",
-                      "cut",
-                      "drilldown",
-                      "order",
-                      "page",
-                      "pagesize"
-                    ]
+                    "$action": "fact"
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -368,17 +364,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/aged_creditor_v2/facts",
-                  "q": {
-                    "exist": [
-                      "aggregate",
-                      "cut",
-                      "drilldown",
-                      "order",
-                      "page",
-                      "pagesize"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -594,17 +585,13 @@
                   "m": "GET",
                   "o": "/cubes/aged_debtor/facts",
                   "q": {
-                    "$action": "fact",
-                    "exist": [
-                      "aggregate",
-                      "cut",
-                      "drilldown",
-                      "order",
-                      "page",
-                      "pagesize"
-                    ]
+                    "$action": "fact"
                   },
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -685,17 +672,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/aged_debtor_v2/facts",
-                  "q": {
-                    "exist": [
-                      "aggregate",
-                      "cut",
-                      "drilldown",
-                      "order",
-                      "page",
-                      "pagesize"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -784,13 +766,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/audit_opinions/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -837,13 +818,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/bsheet/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -890,13 +870,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/capital/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -943,13 +922,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/capital_v2/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -996,13 +974,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/cflow/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1049,13 +1026,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/cflow_v2/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1102,13 +1078,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/conditional_grants/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1155,13 +1130,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/demarcation_changes/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1208,13 +1182,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/financial_position_v2/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1261,13 +1234,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/grants_v2/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1314,13 +1286,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/incexp/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1367,13 +1338,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/incexp_v2/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1420,13 +1390,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/municipalities/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1473,13 +1442,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/officials/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1526,13 +1494,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/repmaint/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1579,13 +1546,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/repmaint_v2/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1632,13 +1598,12 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/cubes/uifwexp/facts",
-                  "q": {
-                    "exist": [
-                      "cut",
-                      "drilldown"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "cubes"
@@ -1985,6 +1950,7 @@
             },
             "optspec": {
               "clearTimer": "`$FUNCTION`",
+              "now": "`$FUNCTION`",
               "setTimer": "`$FUNCTION`"
             },
             "strict": false
@@ -2177,7 +2143,7 @@
       "optspec": {
         "allow": {
           "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
-          "op": "create,update,load,list,remove,command,direct,graphql"
+          "op": "create,update,patch,load,list,remove,command,direct,graphql"
         },
         "apikey": "",
         "auth": {
@@ -2230,6 +2196,11 @@
         "top": {
           "active": true
         }
+      },
+      "publisher": {
+        "name": "",
+        "security": "",
+        "url": ""
       },
       "repo": {
         "host": "github.com",
@@ -2460,7 +2431,10 @@
             "version": "0.0.1"
           },
           "superseded": [],
-          "title": "Go MCP server"
+          "title": "Go MCP server",
+          "tool": {
+            "write": false
+          }
         },
         "lua": {
           "active": true,
@@ -2837,6 +2811,17 @@
           "base": "",
           "strict": true
         }
+      },
+      "text": {
+        "about_md": "",
+        "docs_url": "",
+        "entity_desc": {},
+        "homepage": "",
+        "meta_source": "",
+        "summary": "",
+        "tagline": "",
+        "title": "",
+        "website": ""
       }
     }
   },

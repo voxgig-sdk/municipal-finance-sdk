@@ -79,6 +79,7 @@ module MunicipalFinanceConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -257,14 +258,10 @@ module MunicipalFinanceConfig
                   },
                   "select" => {
                     "$action" => "fact",
-                    "exist" => [
-                      "aggregate",
-                      "cut",
-                      "drilldown",
-                      "order",
-                      "page",
-                      "pagesize",
-                    ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -334,15 +331,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "aggregate",
-                      "cut",
-                      "drilldown",
-                      "order",
-                      "page",
-                      "pagesize",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -516,14 +508,10 @@ module MunicipalFinanceConfig
                   },
                   "select" => {
                     "$action" => "fact",
-                    "exist" => [
-                      "aggregate",
-                      "cut",
-                      "drilldown",
-                      "order",
-                      "page",
-                      "pagesize",
-                    ],
+                  },
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -593,15 +581,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "aggregate",
-                      "cut",
-                      "drilldown",
-                      "order",
-                      "page",
-                      "pagesize",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -677,11 +660,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -725,11 +707,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -773,11 +754,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -821,11 +801,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -869,11 +848,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -917,11 +895,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -965,11 +942,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1013,11 +989,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1061,11 +1036,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1109,11 +1083,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1157,11 +1130,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1205,11 +1177,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1253,11 +1224,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1301,11 +1271,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1349,11 +1318,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1397,11 +1365,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
                 {
@@ -1445,11 +1412,10 @@ module MunicipalFinanceConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "cut",
-                      "drilldown",
-                    ],
+                  "select" => {},
+                  "response" => {
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],

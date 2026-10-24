@@ -9,6 +9,19 @@ import { MunicipalFinanceEntityBase } from './MunicipalFinanceEntityBase';
 import { Utility } from './utility/Utility';
 import { BaseFeature } from './feature/base/BaseFeature';
 declare const stdutil: Utility;
+type DirectResult = {
+    ok: false;
+    err: any;
+    status?: undefined;
+    headers?: undefined;
+    data?: undefined;
+} | {
+    ok: boolean;
+    status: number;
+    headers: any;
+    data: any;
+    err?: any;
+};
 declare class MunicipalFinanceSDK {
     _mode: string;
     _options: any;
@@ -19,32 +32,8 @@ declare class MunicipalFinanceSDK {
     options(): any;
     utility(): any;
     prepare(fetchargs?: any): Promise<any>;
-    direct(fetchargs?: any): Promise<Error | {
-        ok: boolean;
-        err: any;
-        status?: undefined;
-        headers?: undefined;
-        data?: undefined;
-    } | {
-        ok: boolean;
-        status: number;
-        headers: any;
-        data: any;
-        err?: undefined;
-    }>;
-    _rawRequest(fetchargs?: any): Promise<Error | {
-        ok: boolean;
-        err: any;
-        status?: undefined;
-        headers?: undefined;
-        data?: undefined;
-    } | {
-        ok: boolean;
-        status: number;
-        headers: any;
-        data: any;
-        err?: undefined;
-    }>;
+    direct(fetchargs?: any): Promise<DirectResult>;
+    _rawRequest(fetchargs?: any): Promise<DirectResult>;
     graphql(query: string, variables?: any, ctrl?: any): Promise<any>;
     AgedCreditor(entopts?: Record<string, any>): AgedCreditorEntity;
     AgedDebtor(entopts?: Record<string, any>): AgedDebtorEntity;
@@ -59,3 +48,4 @@ declare class MunicipalFinanceSDK {
 }
 declare const SDK: typeof MunicipalFinanceSDK;
 export { stdutil, config, BaseFeature, MunicipalFinanceEntityBase, MunicipalFinanceSDK, SDK, };
+export type { DirectResult };
